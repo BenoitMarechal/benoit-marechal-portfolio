@@ -7,7 +7,9 @@ const Header = () => {
     <header>
       <nav>
         {navBarContent.map((elt) => {
-          return <MenuItem {...elt}></MenuItem>;
+          return (
+            <MenuItem {...elt} key={navBarContent.indexOf(elt)}></MenuItem>
+          );
         })}
       </nav>
     </header>

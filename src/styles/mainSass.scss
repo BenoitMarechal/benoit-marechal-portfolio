@@ -1,14 +1,33 @@
 @import '/src/pages/Home/home.scss';
 @import './variables.scss';
+@import '../components/NavLinks/navlinks';
+@import '../components/footer/footer.scss';
 
 body {
-  background-color: $color-tertiary;
+  // background-color: $color-tertiary;
   color: $color-primary;
+  border: 1px solid red;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
-a,
-a:active,
-a:visited {
-  color: $color-secondary;
-  text-decoration: none;
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
+
+// a,
+// a:active,
+// a:visited {
+//   color: $color-secondary;
+//   text-decoration: none;
+// }
