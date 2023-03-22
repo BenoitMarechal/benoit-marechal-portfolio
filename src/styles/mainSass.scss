@@ -1,0 +1,15 @@
+@import '/src/pages/Home/home.scss';
+@import './variables.scss';
+
+body {
+  background-color: $color-tertiary;
+  color: $color-primary;
+}
+a {
+  text-decoration: none;
+}
+a:active,
+a:visited {
+  color: $color-secondary;
+  text-decoration: none;
+}
