@@ -5,9 +5,8 @@ body {
   background-color: $color-tertiary;
   color: $color-primary;
 }
-a {
-  text-decoration: none;
-}
+
+a,
 a:active,
 a:visited {
   color: $color-secondary;
