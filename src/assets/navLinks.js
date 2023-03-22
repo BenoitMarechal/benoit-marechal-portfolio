@@ -1,5 +1,5 @@
 export const navBarContent = [
   { link: '/', text: 'CV' },
-  { link: '/projects', text: 'Projects' },
-  { link: '/about', text: 'About' },
+  { link: '/projets', text: 'Projets' },
+  { link: '/apropos', text: 'A propos' },
 ];

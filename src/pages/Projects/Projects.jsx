@@ -4,7 +4,7 @@ const Projects = () => {
   return (
     <div className='app'>
       <Header></Header>
-      <h1>PROJECTS</h1>
+      <h1>PROJETS</h1>
     </div>
   );
 };
