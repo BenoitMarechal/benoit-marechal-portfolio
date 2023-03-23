@@ -5,8 +5,6 @@ const ContactForm = () => {
   const form = useRef();
   function submitContactForm(e) {
     e.preventDefault();
-    // console.log('coucou');
-
     emailjs
       .sendForm(
         'service_9nf4118',
@@ -48,14 +46,17 @@ const ContactForm = () => {
           name='email'
           className='contactForm__container__form__input'
         />
-        <input
-          type='text'
+
+        <textarea
+          // type='text'
+          rows='4'
+          //cols='20'
           placeholder='Your message'
           name='message'
           className='contactForm__container__form__input message'
         />
+
         <input type='submit' value='Send' />
-        <button onClick={submitContactForm}>SUBMIT</button>
       </form>
     </div>
   );
