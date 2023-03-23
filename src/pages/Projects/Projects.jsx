@@ -5,7 +5,10 @@ const Projects = () => {
   return (
     <div className='app'>
       <Header></Header>
-      <h1>PROJETS</h1>
+      <main>
+        <h1>PROJETS</h1>
+      </main>
+
       <Footer></Footer>
     </div>
   );

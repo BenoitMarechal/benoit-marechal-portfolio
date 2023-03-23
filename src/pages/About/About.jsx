@@ -6,7 +6,10 @@ const About = () => {
   return (
     <div className='app'>
       <Header></Header>
-      <h1>A PROPOS</h1>
+      <main>
+        <h1>A PROPOS</h1>
+      </main>
+
       <Footer></Footer>
     </div>
   );
