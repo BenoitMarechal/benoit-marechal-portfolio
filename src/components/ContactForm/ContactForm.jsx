@@ -55,8 +55,12 @@ const ContactForm = () => {
           name='message'
           className='contactForm__container__form__input message'
         />
-
-        <input type='submit' value='Send' />
+        <input
+          type='submit'
+          value='Send'
+          disabled={true}
+          className='contactForm__container__form__input sendButton'
+        />
       </form>
     </div>
   );
