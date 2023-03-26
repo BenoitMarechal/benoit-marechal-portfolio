@@ -1,0 +1,96 @@
+[
+  {
+    "name": "Reservia",
+    "links": [
+      { "link": "https://github.com/BenoitMarechal/Livrable2", "type": "repo" },
+      { "link": "https://benoitmarechal.github.io/Livrable2/", "type": "page" }
+    ]
+  },
+  {
+    "name": "Ohmyfood",
+    "links": [
+      {
+        "link": "https://github.com/BenoitMarechal/BenoitMarechal_3_14062021",
+        "type": "repo"
+      },
+      {
+        "link": "https://benoitmarechal.github.io/BenoitMarechal_3_14062021/index.html",
+        "type": "page"
+      }
+    ]
+  },
+  {
+    "name": "GameOn",
+    "links": [
+      {
+        "link": "https://github.com/BenoitMarechal/GameOn-website-FR",
+        "type": "repo"
+      },
+      {
+        "link": "https://benoitmarechal.github.io/GameOn-website-FR/",
+        "type": "page"
+      }
+    ]
+  },
+  {
+    "name": "FishEye",
+    "links": [
+      {
+        "link": "https://github.com/BenoitMarechal/BenoitMarechal_6_17092021",
+        "type": "repo"
+      },
+      {
+        "link": "https://benoitmarechal.github.io/BenoitMarechal_6_17092021/",
+        "type": "page"
+      }
+    ]
+  },
+  {
+    "name": "Les petits plats",
+    "links": [
+      {
+        "link": "https://github.com/BenoitMarechal/BenoitMarechal_7_13122021",
+        "type": "repo"
+      },
+      {
+        "link": "https://benoitmarechal.github.io/BenoitMarechal_7_13122021/",
+        "type": "page"
+      }
+    ]
+  },
+  {
+    "name": "Billed",
+    "links": [
+      {
+        "link": "https://github.com/BenoitMarechal/Benoit_Marechal_9_05042022",
+        "type": "repo"
+      }
+    ]
+  },
+  {
+    "name": "Learn@home",
+    "links": [
+      {
+        "link": "https://www.figma.com/file/H9MMnCpQ3snfXrzqPhR6gA/Learn%40Home?node-id=0-1",
+        "type": "repo"
+      },
+      {
+        "link": "https://www.figma.com/file/H9MMnCpQ3snfXrzqPhR6gA/Learn%40Home?node-id=0-1",
+        "type": "figma"
+      }
+    ]
+  },
+  {
+    "name": "Kaza",
+    "links": [
+      {
+        "link": "https://www.figma.com/file/H9MMnCpQ3snfXrzqPhR6gA/Learn%40Home?node-id=0-1",
+        "type": "repo"
+      },
+      {
+        "link": "https://www.figma.com/file/H9MMnCpQ3snfXrzqPhR6gA/Learn%40Home?node-id=0-1",
+        "type": "figma"
+      }
+    ]
+  }
+]

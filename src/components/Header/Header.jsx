@@ -1,5 +1,5 @@
 import React from 'react';
-import { navBarContent } from '../../assets/navLinks';
+import navBarContent from '../../assets/navLinks.json';
 import MenuItem from '../NavLinks/MenuItem';
 import './header.scss';
 const Header = () => {
