@@ -1,6 +1,14 @@
 [
-  { "link": "/", "text": "CV" },
-  { "link": "/projets", "text": "Projets" },
-  { "link": "/apropos", "text": "A propos" },
-  { "link": "/contact", "text": "Contact" }
+  { "link": "/", "text": "CV", "type": "regular" },
+  {
+    "link": "/projets",
+    "text": "Projets",
+    "type": "dropDown",
+    "sublinks": [
+      { "link": "/projets/openclassrooms", "text": "OpenClassRomms" },
+      { "link": "/projets/autres", "text": "autres" }
+    ]
+  },
+  { "link": "/apropos", "text": "A propos", "type": "regular" },
+  { "link": "/contact", "text": "Contact", "type": "regular" }
 ]

@@ -9,12 +9,6 @@ const Contact = () => {
       <Header></Header>
       <main>
         <h1>CONTACT</h1>
-        {/* <div>
-          <p>fjhsk bla blabla blabla blabla blabla blabla bla</p>
-          <p>fjhsk bla blabla blabla blabla blabla blabla bla</p>
-          <p>fjhsk bla blabla blabla blabla blabla blabla bla</p>
-          <p>fjhsk bla blabla blabla blabla blabla blabla bla</p>
-        </div> */}
         <ContactForm></ContactForm>
       </main>
       <Footer></Footer>

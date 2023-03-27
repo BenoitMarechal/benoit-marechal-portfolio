@@ -1,6 +1,6 @@
 @import '/src/pages/Home/home.scss';
 @import './variables.scss';
-@import '../components/NavLinks/navlinks';
+//@import '../components/NavLinks/navlinks';
 @import '../components/footer/footer.scss';
 @import '../components/ContactForm/contactForm.scss';
 body {
@@ -31,10 +31,11 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: $headerHeigth;
 }
-// a,
-// a:active,
-// a:visited {
-//   color: $color-secondary;
-//   text-decoration: none;
-// }
+a,
+a:active,
+a:visited {
+  //color: $color-secondary;
+  text-decoration: none;
+}

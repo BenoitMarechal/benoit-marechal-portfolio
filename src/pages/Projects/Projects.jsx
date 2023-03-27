@@ -4,9 +4,12 @@ import Header from '../../components/Header/Header';
 import projects from '../../assets/projects.json';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
-const Projects = () => {
-  // console.log(projects);
+// Projets manquants:
+// Billed (back-End)
+// SportSee (backend)
+//Argent bank (backend)
 
+const Projects = () => {
   return (
     <div className='app'>
       <Header></Header>

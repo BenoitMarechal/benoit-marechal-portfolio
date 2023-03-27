@@ -1,4 +1,213 @@
-$color-primary:blue;
-$color-secondary:white;
-$color-tertiary:lightblue
+///Color theme
+$color-primary: rgb(33, 204, 167);
+$color-secondary: white;
+$color-tertiary: lightblue;
 
+$menuItem-height: 40px;
+$menuItem-width: 100px;
+
+$headerHeigth: 60px;
+
+$color-primary-darker-10: darken($color-primary, 10%);
+$color-primary-darker-20: darken($color-primary, 20%);
+$color-primary-darker-30: darken($color-primary, 30%);
+$color-primary-lighter-10: lighten($color-primary, 10%);
+$color-primary-lighter-20: lighten($color-primary, 20%);
+$color-primary-lighter-30: lighten($color-primary, 30%);
+
+$color-secondary-darker-10: darken($color-secondary, 10%);
+$color-secondary-darker-20: darken($color-secondary, 20%);
+$color-secondary-darker-30: darken($color-secondary, 30%);
+$color-secondary-lighter-10: lighten($color-secondary, 10%);
+$color-secondary-lighter-20: lighten($color-secondary, 20%);
+$color-secondary-lighter-30: lighten($color-secondary, 30%);
+
+$color-tertiary-darker-10: darken($color-tertiary, 10%);
+$color-tertiary-darker-20: darken($color-tertiary, 20%);
+$color-tertiary-darker-30: darken($color-tertiary, 30%);
+$color-tertiary-lighter-10: lighten($color-tertiary, 10%);
+$color-tertiary-lighter-20: lighten($color-tertiary, 20%);
+$color-tertiary-lighter-30: lighten($color-tertiary, 30%);
+
+//////////////////////////// backgrounds
+/// backgrounds light
+///
+.bg-gradient {
+  background: linear-gradient(
+    to bottom right,
+    $color-primary-lighter-20,
+    $color-primary-darker-10
+  );
+}
+.bg-primary {
+  background-color: $color-primary;
+}
+.bg-primary-light-10 {
+  background-color: $color-primary-lighter-10;
+}
+
+.bg-primary-light-20 {
+  background-color: $color-primary-lighter-20;
+}
+.bg-primary-light-30 {
+  background-color: $color-primary-lighter-30;
+}
+////////////////////////
+.bg-secondary {
+  background-color: $color-secondary;
+}
+.bg-secondary-light-10 {
+  background-color: $color-secondary-lighter-10;
+}
+
+.bg-secondary-light-20 {
+  background-color: $color-secondary-lighter-20;
+}
+.bg-secondary-light-30 {
+  background-color: $color-secondary-lighter-30;
+}
+////////////////////////
+.bg-tertiary {
+  background-color: $color-tertiary;
+}
+.bg-tertiary-light-10 {
+  background-color: $color-tertiary-lighter-10;
+}
+
+.bg-tertiary-light-20 {
+  background-color: $color-tertiary-lighter-20;
+}
+.bg-tertiary-light-30 {
+  background-color: $color-tertiary-lighter-30;
+}
+
+/////bg dark
+///
+.bg-primary {
+  background-color: $color-primary;
+}
+.bg-primary-dark-10 {
+  background-color: $color-primary-darker-10;
+}
+
+.bg-primary-dark-20 {
+  background-color: $color-primary-darker-20;
+}
+.bg-primary-dark-30 {
+  background-color: $color-primary-darker-30;
+}
+////////////////////////
+.bg-secondary {
+  background-color: $color-secondary;
+}
+.bg-secondary-dark-10 {
+  background-color: $color-secondary-darker-10;
+}
+
+.bg-secondary-dark-20 {
+  background-color: $color-secondary-darker-20;
+}
+.bg-secondary-dark-30 {
+  background-color: $color-secondary-darker-30;
+}
+////////////////////////
+.bg-tertiary {
+  background-color: $color-tertiary;
+}
+.bg-tertiary-dark-10 {
+  background-color: $color-tertiary-darker-10;
+}
+
+.bg-tertiary-dark-20 {
+  background-color: $color-tertiary-darker-20;
+}
+.bg-tertiary-dark-30 {
+  background-color: $color-tertiary-darker-30;
+}
+////////////////////////////////////////colors
+///
+.color-primary {
+  color: $color-primary;
+}
+.color-primary-light-10 {
+  color: $color-primary-lighter-10;
+}
+
+.color-primary-light-20 {
+  color: $color-primary-lighter-20;
+}
+.color-primary-light-30 {
+  color: $color-primary-lighter-30;
+}
+////////////////////////
+.color-secondary {
+  color: $color-secondary;
+}
+.color-secondary-light-10 {
+  color: $color-secondary-lighter-10;
+}
+
+.color-secondary-light-20 {
+  color: $color-secondary-lighter-20;
+}
+.color-secondary-light-30 {
+  color: $color-secondary-lighter-30;
+}
+////////////////////////
+.color-tertiary {
+  color: $color-tertiary;
+}
+.color-tertiary-light-10 {
+  color: $color-tertiary-lighter-10;
+}
+
+.color-tertiary-light-20 {
+  color: $color-tertiary-lighter-20;
+}
+.color-tertiary-light-30 {
+  color: $color-tertiary-lighter-30;
+}
+
+/////color dark
+///
+.color-primary {
+  color: $color-primary;
+}
+.color-primary-dark-10 {
+  color: $color-primary-darker-10;
+}
+
+.color-primary-dark-20 {
+  color: $color-primary-darker-20;
+}
+.color-primary-dark-30 {
+  color: $color-primary-darker-30;
+}
+////////////////////////
+.color-secondary {
+  color: $color-secondary;
+}
+.color-secondary-dark-10 {
+  color: $color-secondary-darker-10;
+}
+
+.color-secondary-dark-20 {
+  color: $color-secondary-darker-20;
+}
+.color-secondary-dark-30 {
+  color: $color-secondary-darker-30;
+}
+////////////////////////
+.color-tertiary {
+  color: $color-tertiary;
+}
+.color-tertiary-dark-10 {
+  color: $color-tertiary-darker-10;
+}
+
+.color-tertiary-dark-20 {
+  color: $color-tertiary-darker-20;
+}
+.color-tertiary-dark-30 {
+  color: $color-tertiary-darker-30;
+}
