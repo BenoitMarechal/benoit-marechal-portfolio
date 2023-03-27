@@ -3,7 +3,7 @@
   {
     "link": "/projets",
     "text": "Projets",
-    "type": "dropDown",
+    "type": "regular",
     "sublinks": [
       { "link": "/projets/openclassrooms", "text": "OpenClassRomms" },
       { "link": "/projets/autres", "text": "autres" }
