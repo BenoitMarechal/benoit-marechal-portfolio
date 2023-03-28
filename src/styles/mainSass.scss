@@ -42,3 +42,10 @@ a:visited {
   //color: $color-secondary;
   text-decoration: none;
 }
+
+.section {
+  border-radius: 50px;
+  padding: 0;
+  width: 100%;
+  margin-top: $headerHeigth;
+}

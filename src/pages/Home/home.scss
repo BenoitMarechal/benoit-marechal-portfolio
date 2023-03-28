@@ -13,35 +13,15 @@
 }
 
 .cv {
-  // width: 100%;
-  // display: flex;
-  // flex-direction: column;
-  // border-radius: 50px;
-  // padding: 2%;
-  // margin-top: 50px;
-  // background-image: url('../../assets/photos/codePhotos/01.bmp');
-  //width: 100%;
-  //padding: 2%;
-  margin-top: $headerHeigth;
-  display: flex;
-  flex-direction: column;
-  &__section {
-    border-radius: 50px;
-    // padding: 2%;
-    width: 100%;
-  }
   &__header {
-    margin-top: $headerHeigth;
-
     background-image: url('../../assets/photos/codePhotos/01.bmp');
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     &__portrait {
       margin: 2%;
-      width: 250px;
-      height: 250px;
+      width: 280px;
+      height: 280px;
       border-radius: 200px;
       object-fit: cover;
       border: 5px solid $color-primary-lighter-20;
