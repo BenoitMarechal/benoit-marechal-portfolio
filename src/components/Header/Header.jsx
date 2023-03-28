@@ -4,9 +4,6 @@ import MenuDropDown from '../NavLinks/MenuDropDown';
 import MenuItem from '../NavLinks/MenuItem';
 import './header.scss';
 const Header = () => {
-  // useEffect(() => {
-  //   console.log('re render header');
-  // }, []);
   return (
     <header className='bg-gradient'>
       <nav>

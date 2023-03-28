@@ -1,12 +1,9 @@
-@import '/src/pages/Home/home.scss';
 @import './variables.scss';
-//@import '../components/NavLinks/navlinks';
+@import '/src/pages/Home/home.scss';
 @import '../components/footer/footer.scss';
 @import '../components/ContactForm/contactForm.scss';
 body {
-  // background-color: $color-tertiary;
   color: $color-primary;
-  // border: 1px solid red;
   position: absolute;
   left: 0;
   right: 0;

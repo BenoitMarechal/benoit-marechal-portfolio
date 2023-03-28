@@ -1,0 +1,79 @@
+@import '../../styles/variables.scss';
+
+@mixin cvTitleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  // width: auto;
+  background-color: $color-primary-lighter-20;
+  border: 5px solid $color-primary-darker-20;
+  margin-bottom: 30px;
+  border-radius: 30px;
+  padding: 15px;
+}
+
+.cv {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 50px;
+  padding: 2%;
+  margin-top: 50px;
+  background-image: url('../../assets/photos/codePhotos/01.bmp');
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__portrait {
+      width: 250px;
+      height: 250px;
+      border-radius: 200px;
+      object-fit: cover;
+      border: 5px solid $color-primary-lighter-20;
+    }
+    &__txt {
+      //text-align: right;
+      // max-width: 50%;
+      //height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-end;
+      //flex-direction: column;
+      &__titles {
+        @include cvTitleBlock();
+        // width: auto;
+        //display: flex;
+
+        &__h1 {
+          margin: 0;
+          //max-width: 30%;
+        }
+        &__h2 {
+          margin: 0;
+          //max-width: 30%;
+        }
+      }
+      &__block {
+        @include cvTitleBlock();
+        // display: flex;
+        // flex-direction: column;
+        // align-items: flex-end;
+        // width: auto;
+        // background-color: $color-primary-lighter-20;
+        // border: 5px solid $color-primary-darker-20;
+        // margin-bottom: 30px;
+        // border-radius: 30px;
+        // padding: 15px;
+        max-width: 80%;
+        text-align: right;
+        font-size: 1rem;
+        font-weight: 500;
+
+        // &__p {
+        // }
+      }
+    }
+  }
+}

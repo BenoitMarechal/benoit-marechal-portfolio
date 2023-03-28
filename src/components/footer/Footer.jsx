@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Footer = () => {
-  // useState(() => {
-  //   console.log('footer');
-  // }, []);
   return (
     <footer className='footer bg-gradient'>
       <p> &copy; Benoit Maréchal, 2023</p>
