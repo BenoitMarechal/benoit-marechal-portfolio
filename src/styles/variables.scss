@@ -2,12 +2,15 @@
 $color-primary: rgb(40, 184, 167);
 //$color-primary: blue;
 $color-secondary: white;
-$color-tertiary: lightblue;
-
+$color-tertiary: rgb(211, 211, 211);
 $menuItem-height: 40px;
 $menuItem-width: 100px;
 
 $headerHeigth: 60px;
+///toolcards//
+$toolLogoDiameter: 40px;
+$toolCardWidth: 110px;
+$toolCardHeigth: 30px;
 
 $color-primary-darker-10: darken($color-primary, 10%);
 $color-primary-darker-20: darken($color-primary, 20%);

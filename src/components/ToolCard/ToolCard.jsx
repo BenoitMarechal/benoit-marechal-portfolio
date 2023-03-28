@@ -1,8 +1,11 @@
 import React from 'react';
-import './toolCard.scss';
 const ToolCard = (prop) => {
+  console.log(prop);
   return (
-    <div className='toolcard'>
+    <div
+      className='toolcard bg-tertiary'
+      style={prop.color ? { color: prop.color } : { color: 'black' }}
+    >
       <a
         href={prop.link}
         className='toolcard__link'
@@ -13,8 +16,8 @@ const ToolCard = (prop) => {
           <img
             src={prop.logo}
             alt={prop.name}
-            // {img.color?'':''
-            className='toolcard__link__logo color-primary bg-tertiary'
+            // style={prop.style ? prop.style : {}}
+            className='toolcard__link__logo'
           />
         ) : (
           ''
