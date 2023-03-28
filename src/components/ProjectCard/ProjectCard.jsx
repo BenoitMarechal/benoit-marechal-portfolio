@@ -19,23 +19,6 @@ const ProjectCard = (project) => {
             </a>
           ))
         : ''}
-
-      {/* LINK TO repo */}
-      {/* {project.repo ? (
-        <a href={project.repo} target='_blank' rel='noopener noreferrer'>
-          view on Github
-        </a>
-      ) : (
-        ''
-      )} */}
-      {/* LINK TO PAGE */}
-      {/* {project.page ? (
-        <a href={project.page} target='_blank' rel='noopener noreferrer'>
-          View Website
-        </a>
-      ) : (
-        ''
-      )} */}
     </div>
   );
 };
