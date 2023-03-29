@@ -5,7 +5,7 @@
     "text": "Projets",
     "type": "regular",
     "sublinks": [
-      { "link": "/projets/openclassrooms", "text": "OpenClassRomms" },
+      { "link": "/projets/openclassrooms", "text": "OpenClassRooms" },
       { "link": "/projets/autres", "text": "autres" }
     ]
   },

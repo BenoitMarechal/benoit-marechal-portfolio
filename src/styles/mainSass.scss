@@ -51,11 +51,16 @@ a:visited {
   border: $color-tertiary-darker-30 solid 1px;
   max-width: 100%;
   flex-wrap: wrap;
+  min-height: 100px;
 
   &__legend {
     font-size: 1.3rem;
     margin-left: 40px;
     padding: 25px 30px 0 20px;
+    cursor: pointer;
+    &__icon {
+      padding-top: 5px;
+    }
   }
   &__content {
     width: 100%;
