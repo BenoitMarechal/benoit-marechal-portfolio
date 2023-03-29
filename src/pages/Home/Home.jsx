@@ -8,6 +8,8 @@ import Header from '../../components/Header/Header';
 //import { toolsProps } from '../../assets/toolSectionContent';
 import ToolsSectionContent from '../../components/ToolsSectionContent/ToolsSectionContent';
 import SkillsContent from '../../components/SkillsContent/SkillsContent';
+import StudiesContent from '../../components/StudiesContent/StudiesContent';
+import JobsContent from '../../components/JobsContent/JobsContent';
 
 const Home = () => {
   let toolsSectionProps = {
@@ -23,7 +25,12 @@ const Home = () => {
   let studiesSectionProps = {
     title: 'Formation',
     class: 'cv-studies',
-    content: <SkillsContent />,
+    content: <StudiesContent />,
+  };
+  let jobsSectionProps = {
+    title: 'Expériences professionelles',
+    class: 'cv-jobs',
+    content: <JobsContent />,
   };
 
   return (
@@ -32,8 +39,9 @@ const Home = () => {
       <main className='cv'>
         <CvHeader></CvHeader>
         <FieldSection {...toolsSectionProps}></FieldSection>
-        <FieldSection {...studiesSectionProps}></FieldSection>
         <FieldSection {...skillsSectionProps}></FieldSection>
+        <FieldSection {...studiesSectionProps}></FieldSection>
+        <FieldSection {...jobsSectionProps}></FieldSection>
         <CvLink></CvLink>
       </main>
       <Footer></Footer>

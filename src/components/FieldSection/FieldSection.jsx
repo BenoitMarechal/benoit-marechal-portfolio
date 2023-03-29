@@ -4,21 +4,21 @@ import { VscTriangleDown, VscTriangleUp } from 'react-icons/vsc';
 // https://stackoverflow.com/questions/32553158/detect-click-outside-react-component
 
 const FieldSection = (props) => {
-  console.log('props fieldset');
-  console.log(props);
+  // console.log('props fieldset');
+  // console.log(props);
   const [open, setOpen] = useState(true);
   function toggleOpen() {
     setOpen(!open);
   }
-  useEffect(() => {
-    console.log();
-  });
+  // useEffect(() => {
+  //   console.log();
+  // });
   return (
     <fieldset
-      onClick={toggleOpen}
       className={'section bg-tertiary-light-10 ' + (props.class + '__section')}
     >
       <legend
+        onClick={toggleOpen}
         className={'section__legend ' + (props.class + '__section__legend')}
       >
         {props.title + ' '}
