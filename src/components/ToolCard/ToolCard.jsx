@@ -1,29 +1,28 @@
 import React from 'react';
-const ToolCard = (prop) => {
-  console.log(prop);
+const ToolCard = (props) => {
   return (
     <div
       className='toolcard bg-tertiary'
-      style={prop.color ? { color: prop.color } : { color: 'black' }}
+      style={props.color ? { color: props.color } : { color: 'black' }}
     >
       <a
-        href={prop.link}
+        href={props.link}
         className='toolcard__link'
         target='_blank'
         rel='noopener noreferrer'
       >
-        {prop.logo ? (
+        {props.logo ? (
           <img
-            src={prop.logo}
-            alt={prop.name}
-            // style={prop.style ? prop.style : {}}
+            src={props.logo}
+            alt={props.name}
+            // style={props.style ? props.style : {}}
             className='toolcard__link__logo'
           />
         ) : (
           ''
         )}
 
-        {prop.name}
+        {props.name}
       </a>
     </div>
   );

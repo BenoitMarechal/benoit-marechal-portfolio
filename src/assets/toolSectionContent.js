@@ -63,9 +63,9 @@ export const tools = [
     logo: reduxLogo,
   },
   {
-    name: '',
+    name: 'JSBench.me',
     link: 'https://jsbench.me/',
-    logo: jsBenchLogo,
+    // logo: jsBenchLogo,
     color: '#0B77B9',
   },
   {

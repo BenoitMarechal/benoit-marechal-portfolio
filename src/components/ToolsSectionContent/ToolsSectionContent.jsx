@@ -4,12 +4,11 @@ import ToolCard from '../ToolCard/ToolCard';
 
 const ToolsSectionContent = () => {
   return (
-    <fieldset className='section cv__tools bg-tertiary-light-10 '>
-      <legend className='section__legend'>Outils et technologies</legend>
+    <div className='section__content cv-tools__section__content'>
       {tools.map((item, index) => (
         <ToolCard {...item} key={index}></ToolCard>
       ))}
-    </fieldset>
+    </div>
   );
 };
 
