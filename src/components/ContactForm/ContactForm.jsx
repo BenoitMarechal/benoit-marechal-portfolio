@@ -50,20 +50,17 @@ const ContactForm = (props) => {
     {
       id: 3,
       name: 'email',
-      type: 'email',
+      type: 'text',
       placeholder: 'Adresse e-mail',
       errorMessage: "Merci d'entrer une adresse email valide",
-      pattern: '^[a-zA-Z]{2,}$',
+      pattern: '/^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/',
     },
     {
       id: 4,
       name: 'message',
       type: 'text',
       placeholder: 'message',
-      errorMessage: 'Merci de spécifier un message!',
-      pattern: '^[a-zA-Z]{2,}$',
-
-      required: true,
+      errorMessage: 'Merci de spécifier un message! (5 charactères mini)',
     },
   ];
 
