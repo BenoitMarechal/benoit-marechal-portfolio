@@ -15,11 +15,13 @@
 .cv {
   &__header {
     background-image: url('../../assets/photos/codePhotos/01.bmp');
-    display: none;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    border: 1px solid blue;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // width: 100%;
+    flex-wrap: nowrap !important;
+    // box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    //   rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset !important;
 
     &__portrait {
       margin: 2%;

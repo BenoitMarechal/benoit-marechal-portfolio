@@ -4,7 +4,7 @@ import portrait from '../../assets/photos/Benoit_Marechal_square_S.jpg';
 const CvHeader = () => {
   return (
     // <div className='cv bg-primary-light-30 color-primary-dark-30'>
-    <section className='cv__header section bg-primary-light-30 color-primary-dark-30'>
+    <section className='section cv__header  bg-primary-light-30 color-primary-dark-30'>
       <img className='cv__header__portrait' src={portrait} alt='portrait' />
       <div className='cv__header__txt'>
         <div className='cv__header__txt__titles'>
