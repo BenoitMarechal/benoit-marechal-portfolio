@@ -16,3 +16,12 @@
 .sendButton {
   margin-top: -5px;
 }
+
+.error {
+  color: red;
+  display: none;
+}
+
+.input:invalid ~ span.error {
+  display: block;
+}

@@ -1,66 +1,95 @@
-import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useState } from 'react';
+import ContactFormInput from './ContactFormInput/ContactFormInput';
+// import emailjs from '@emailjs/browser';
 
-const ContactForm = () => {
-  const form = useRef();
-  function submitContactForm(e) {
+const ContactForm = (props) => {
+  // console.log(props);
+  // function submitContactForm(e) {
+  //   e.preventDefault();
+  //   emailjs
+  //     .sendForm(
+  //       'service_9nf4118',
+  //       'template_f2zp07c',
+  //       form.current,
+  //       'Xsde_OUyQfujvS6T4'
+  //     )
+  //     .then(
+  //       (result) => {
+  //         console.log(result.text);
+  //       },
+  //       (error) => {
+  //         console.log(error.text);
+  //       }
+  //     );
+  // }
+  const [values, setValues] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: '',
+  });
+
+  const inputs = [
+    {
+      id: 1,
+      name: 'firstName',
+      type: 'text',
+      placeholder: 'Prénom',
+      errorMessage: "Merci d'entrer au moins deux caractères pour votre prénom",
+      pattern: '^[a-zA-Z]{2,}$',
+    },
+    {
+      id: 2,
+      name: 'lastName',
+      type: 'text',
+      placeholder: 'Nom de famille',
+      errorMessage:
+        "Merci d'entrer au moins deux caractères pour votre nom de famille",
+      pattern: '^[a-zA-Z]{2,}$',
+    },
+    {
+      id: 3,
+      name: 'email',
+      type: 'email',
+      placeholder: 'Adresse e-mail',
+      errorMessage: "Merci d'entrer une adresse email valide",
+      pattern: '^[a-zA-Z]{2,}$',
+    },
+    {
+      id: 4,
+      name: 'message',
+      type: 'text',
+      placeholder: 'message',
+      errorMessage: 'Merci de spécifier un message!',
+      pattern: '^[a-zA-Z]{2,}$',
+
+      required: true,
+    },
+  ];
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        'service_9nf4118',
-        'template_f2zp07c',
-        form.current,
-        'Xsde_OUyQfujvS6T4'
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  }
-  return (
-    <div className='contactForm__container'>
-      <form
-        ref={form}
-        className='contactForm__container__form'
-        onSubmit={submitContactForm}
-      >
-        <input
-          type='text'
-          placeholder='First Name'
-          name='firstName'
-          className='contactForm__container__form__input'
-        />
-        <input
-          type='text'
-          placeholder='Last Name'
-          name='lasstName'
-          className='contactForm__container__form__input'
-        />
-        <input
-          type='email'
-          placeholder='email'
-          name='email'
-          className='contactForm__container__form__input'
-        />
+    const data = new FormData(e.target);
+    console.log(Object.fromEntries(data));
+  };
 
-        <textarea
-          // type='text'
-          rows='4'
-          //cols='20'
-          placeholder='Your message'
-          name='message'
-          className='contactForm__container__form__input message'
-        />
-        <input
-          type='submit'
-          value='Send'
-          disabled={true}
-          className='contactForm__container__form__input sendButton'
-        />
+  const handleChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  return (
+    <div className='contactForm__container bg-tertiary color secondary'>
+      <form className='contactForm__container__form' onSubmit={handleSubmit}>
+        {inputs.map((input) => (
+          <ContactFormInput
+            key={input.id}
+            {...input}
+            value={values[input.name]}
+            onChange={handleChange}
+            required={true}
+          />
+        ))}
+        <button>SUBMIT</button>
       </form>
     </div>
   );
