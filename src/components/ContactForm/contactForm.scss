@@ -22,6 +22,10 @@
   display: none;
 }
 
-.input:invalid ~ span.error {
+.input:invalid[focused='true'] {
+  border: 2px solid red;
+}
+
+.input:invalid[focused='true'] ~ span.error {
   display: block;
 }

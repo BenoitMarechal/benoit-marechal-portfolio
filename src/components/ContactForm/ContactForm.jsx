@@ -1,6 +1,40 @@
 import React, { useState } from 'react';
+
 import ContactFormInput from './ContactFormInput/ContactFormInput';
 // import emailjs from '@emailjs/browser';
+const inputs = [
+  {
+    id: 1,
+    name: 'firstName',
+    type: 'text',
+    placeholder: 'Prénom',
+    errorMessage: "Merci d'entrer au moins deux caractères pour votre prénom",
+    pattern: '^[a-zA-Z]{2,}$',
+  },
+  {
+    id: 2,
+    name: 'lastName',
+    type: 'text',
+    placeholder: 'Nom de famille',
+    errorMessage:
+      "Merci d'entrer au moins deux caractères pour votre nom de famille",
+    pattern: '^[a-zA-Z]{2,}$',
+  },
+  {
+    id: 3,
+    name: 'email',
+    type: 'email',
+    placeholder: 'Adresse e-mail',
+    errorMessage: "Merci d'entrer une adresse email valide",
+  },
+  {
+    id: 4,
+    name: 'message',
+    type: 'text',
+    placeholder: 'message',
+    errorMessage: 'Merci de spécifier un message! (5 charactères mini)',
+  },
+];
 
 const ContactForm = (props) => {
   // console.log(props);
@@ -29,64 +63,54 @@ const ContactForm = (props) => {
     message: '',
   });
 
-  const inputs = [
-    {
-      id: 1,
-      name: 'firstName',
-      type: 'text',
-      placeholder: 'Prénom',
-      errorMessage: "Merci d'entrer au moins deux caractères pour votre prénom",
-      pattern: '^[a-zA-Z]{2,}$',
-    },
-    {
-      id: 2,
-      name: 'lastName',
-      type: 'text',
-      placeholder: 'Nom de famille',
-      errorMessage:
-        "Merci d'entrer au moins deux caractères pour votre nom de famille",
-      pattern: '^[a-zA-Z]{2,}$',
-    },
-    {
-      id: 3,
-      name: 'email',
-      type: 'text',
-      placeholder: 'Adresse e-mail',
-      errorMessage: "Merci d'entrer une adresse email valide",
-      pattern: '/^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/',
-    },
-    {
-      id: 4,
-      name: 'message',
-      type: 'text',
-      placeholder: 'message',
-      errorMessage: 'Merci de spécifier un message! (5 charactères mini)',
-    },
-  ];
+  const [globalValidity, setGlobalValidity] = useState(false);
+  const [count, setCount] = useState(0);
+  function emptyForm() {
+    setCount(count + 1);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = new FormData(e.target);
-    console.log(Object.fromEntries(data));
+    console.log(values);
+    emptyForm();
+  };
+
+  const checkGlobalValidity = () => {
+    setGlobalValidity(false);
+    let result = true;
+    for (let i = 0; i < inputs.length; i++) {
+      if (document.getElementById(i + 1).checkValidity() === false) {
+        result = false;
+      }
+    }
+    setGlobalValidity(result);
   };
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
+    checkGlobalValidity();
   };
-
   return (
     <div className='contactForm__container bg-tertiary color secondary'>
-      <form className='contactForm__container__form' onSubmit={handleSubmit}>
+      <form
+        className='contactForm__container__form kjh'
+        key={count}
+        id='form'
+        onSubmit={handleSubmit}
+        action='/contact'
+      >
         {inputs.map((input) => (
           <ContactFormInput
             key={input.id}
             {...input}
-            value={values[input.name]}
+            // value={values[input.name]}
             onChange={handleChange}
             required={true}
           />
         ))}
-        <button>SUBMIT</button>
+        <button onClick={handleSubmit} disabled={!globalValidity}>
+          ENVOYER
+        </button>
       </form>
     </div>
   );

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ContactFormInput = (props) => {
   const { label, onChange, errorMessage, ...inputProps } = props;
+  const [focused, setFocused] = useState(false);
 
+  const handleFocus = (e) => {
+    setFocused(true);
+  };
   return (
     <div>
       <label htmlFor={props.id}>{props.placeholder}</label>
@@ -10,13 +14,21 @@ const ContactFormInput = (props) => {
         <textarea
           {...inputProps}
           onChange={onChange}
+          onBlur={handleFocus}
+          focused={focused.toString()}
           className={'input'}
           cols='30'
           rows='10'
-          minlength={5}
+          minLength={5}
         ></textarea>
       ) : (
-        <input {...inputProps} onChange={onChange} className={'input'} />
+        <input
+          {...inputProps}
+          onChange={onChange}
+          onBlur={handleFocus}
+          focused={focused.toString()}
+          className={'input'}
+        />
       )}
       <span className='error'>{errorMessage}</span>
     </div>
