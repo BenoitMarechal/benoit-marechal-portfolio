@@ -6,7 +6,7 @@ const ToolsSectionContent = () => {
   return (
     <div className='section__content cv-tools__section__content'>
       {tools.map((item, index) => (
-        <ToolCard {...item} key={index}></ToolCard>
+        <ToolCard {...item} key={'tools-' + index}></ToolCard>
       ))}
     </div>
   );

@@ -7,7 +7,7 @@ const StudiesContent = () => {
   return (
     <div className='section__content cv__studies__section__content '>
       {studies.map((study, index) => (
-        <ExperienceCard {...study} key={index} />
+        <ExperienceCard {...study} key={'studies-' + index} />
       ))}
     </div>
   );

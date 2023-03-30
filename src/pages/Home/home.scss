@@ -15,10 +15,12 @@
 .cv {
   &__header {
     background-image: url('../../assets/photos/codePhotos/01.bmp');
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    border: 1px solid blue;
+
     &__portrait {
       margin: 2%;
       width: 280px;

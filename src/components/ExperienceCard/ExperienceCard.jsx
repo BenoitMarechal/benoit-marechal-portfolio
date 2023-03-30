@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ExperienceCard = (props) => {
-  console.log(props);
   return (
     <div className='xp__content'>
       <h3 className='xp__content__h3'>
@@ -13,7 +12,7 @@ const ExperienceCard = (props) => {
       {props.bulletPoints ? (
         <ul>
           {props.bulletPoints.map((point, index) => (
-            <li key={index}>{point}</li>
+            <li key={'point' + index}>{point}</li>
           ))}
         </ul>
       ) : (
@@ -26,14 +25,16 @@ const ExperienceCard = (props) => {
             link.type === 'a' ? (
               <a
                 href={link.link}
-                key={index}
+                key={'link' + index}
                 target='_blank'
                 rel='noopener noreferrer'
               >
                 {link.text}
               </a>
             ) : (
-              <Link to={link.link}>{link.text}</Link>
+              <Link key={'link' + index} to={link.link}>
+                {link.text}
+              </Link>
             )
           )}
         </ul>
