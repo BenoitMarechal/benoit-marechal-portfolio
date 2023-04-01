@@ -1,43 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { setLocale } from 'yup';
 import * as yup from 'yup';
-// const inputs = [
-//   {
-//     id: 1,
-//     name: 'firstName',
-//     type: 'text',
-//     placeholder: 'Prénom',
-//     errorMessage: "Merci d'entrer au moins deux caractères pour votre prénom",
-//     pattern: '^[a-zA-Z]{2,}$',
-//   },
-//   {
-//     id: 2,
-//     name: 'lastName',
-//     type: 'text',
-//     placeholder: 'Nom de famille',
-//     errorMessage:
-//       "Merci d'entrer au moins deux caractères pour votre nom de famille",
-//     pattern: '^[a-zA-Z]{2,}$',
-//   },
-//   {
-//     id: 3,
-//     name: 'email',
-//     type: 'email',
-//     placeholder: 'Adresse e-mail',
-//     errorMessage: "Merci d'entrer une adresse email valide",
-//   },
-//   {
-//     id: 4,
-//     name: 'message',
-//     type: 'text',
-//     placeholder: 'message',
-//     errorMessage: 'Merci de spécifier un message! (5 charactères mini)',
-//   },
-// ];
+import ModalBackGround from '../ModalBackGround/ModalBackGround';
 
 const HookForm = () => {
+  // DECLARING FOR FORM
   const schema = yup.object().shape({
     name: yup
       .string()
@@ -53,59 +21,108 @@ const HookForm = () => {
       .required(),
   });
 
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [open, setOpen] = useState(false);
+
+  function customToggleModal() {
+    setOpen(!open);
+  }
+
+  function resetModal() {
+    setName('');
+    setEmail('');
+  }
+
+  const defaultValues = {
+    name: '',
+    email: '',
+    message: '',
+  };
+
   const {
     register,
     handleSubmit,
+    formState,
     formState: { errors, isValid, isSubmitted },
-  } = useForm({ resolver: yupResolver(schema) });
+    reset,
+    getValues,
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: defaultValues,
+  });
 
   const onSubmit = (data) => {
+    console.log(getValues('name'));
     console.log(data);
-    console.log(errors);
+    setName(getValues('name'));
+    setEmail(getValues('email'));
+    customToggleModal();
   };
-  // console.log(isSubmitted);
-  console.log('render');
+
+  useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset();
+    }
+  }, [formState, reset]);
+
+  // DECLARING FOR MODAL
+  let modalProps = {
+    bodyBackGround: 'red',
+    headLineText: 'Merci ' + name + '!',
+    messageText:
+      'Votre message a bien été envoyé, je répondrai au plus vite à ' +
+      email +
+      ', à bientôt!',
+    openFunction: customToggleModal,
+    closeFunction: customToggleModal,
+    afterCloseFunction: resetModal,
+    open: open,
+  };
+
+  useEffect(() => {
+    console.log(open);
+  }, [open]);
 
   return (
     <form
+      id='contact-form'
       className='contactForm__container__form'
       onSubmit={handleSubmit(onSubmit)}
     >
       <label htmlFor='name'>Nom complet</label>
       <input
-        id={'name'}
+        id='name'
         type='text'
         placeholder='Prénom et nom'
         {...register('name')}
       />
-      {/* <p>Merci de renseigner un message (2 caractères minimum)</p> */}
       <p>{errors.name?.message}</p>
 
       <label htmlFor='email'>E-mail</label>
       <input
-        id={'email'}
+        id='email'
         type='text'
         placeholder='email'
         {...register('email')}
       />
-      {/* <p>Merci de renseigner une adresse email valide</p> */}
       <p>{errors.email?.message}</p>
+
       <label htmlFor='message'>Message</label>
       <textarea
-        id={'message'}
+        id='message'
         placeholder='Votre message...'
         {...register('message')}
-        cols='60'
         rows='10'
       ></textarea>
       <p>{errors.message?.message}</p>
-      {/* <p>Merci de renseigner un message (5 caractères minimum)</p> */}
 
       <button disabled={!isValid && isSubmitted}>
         {!isValid && isSubmitted
           ? "Veuillez remplir correctement les champs avant d'envoyer"
           : 'Envoyer'}
       </button>
+      <ModalBackGround {...modalProps}></ModalBackGround>
     </form>
   );
 };
