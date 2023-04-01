@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { setLocale } from 'yup';
 import * as yup from 'yup';
 // const inputs = [
 //   {
@@ -38,20 +39,32 @@ import * as yup from 'yup';
 
 const HookForm = () => {
   const schema = yup.object().shape({
-    name: yup.string().min(2).required('name nope'),
-    email: yup.string().email().required('emial nope'),
-    message: yup.string().min(5).required(' message nope'),
+    name: yup
+      .string()
+      .min(2, "Votre nom doit être composé d'au moins 2 caractères")
+      .required(),
+    email: yup
+      .string()
+      .email()
+      .required('Merci de renseigner une adresse email valide'),
+    message: yup
+      .string()
+      .min(5, "Votre message doit être composé d'au moins 5 caractères")
+      .required(),
   });
 
   const {
     register,
     handleSubmit,
-    formState: { isValid },
+    formState: { errors, isValid, isSubmitted },
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = (data) => {
     console.log(data);
+    console.log(errors);
   };
+  // console.log(isSubmitted);
+  console.log('render');
 
   return (
     <form
@@ -65,25 +78,34 @@ const HookForm = () => {
         placeholder='Prénom et nom'
         {...register('name')}
       />
-      <p>Merci de renseigner un message (2 caractères minimum)</p>
+      {/* <p>Merci de renseigner un message (2 caractères minimum)</p> */}
+      <p>{errors.name?.message}</p>
 
       <label htmlFor='email'>E-mail</label>
       <input
         id={'email'}
-        type='email'
+        type='text'
         placeholder='email'
         {...register('email')}
       />
-      <p>Merci de renseigner une adresse email valide</p>
-      <label htmlFor='message'>Nom complet</label>
+      {/* <p>Merci de renseigner une adresse email valide</p> */}
+      <p>{errors.email?.message}</p>
+      <label htmlFor='message'>Message</label>
       <textarea
         id={'message'}
         placeholder='Votre message...'
         {...register('message')}
+        cols='60'
+        rows='10'
       ></textarea>
-      <p>Merci de renseigner un message (5 caractères minimum)</p>
+      <p>{errors.message?.message}</p>
+      {/* <p>Merci de renseigner un message (5 caractères minimum)</p> */}
 
-      <button disabled={!isValid}>Envoyer</button>
+      <button disabled={!isValid && isSubmitted}>
+        {!isValid && isSubmitted
+          ? "Veuillez remplir correctement les champs avant d'envoyer"
+          : 'Envoyer'}
+      </button>
     </form>
   );
 };

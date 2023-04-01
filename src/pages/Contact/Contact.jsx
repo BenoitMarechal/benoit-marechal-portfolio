@@ -10,7 +10,7 @@ const Contact = () => {
       <Header></Header>
       <main>
         <h1>CONTACT</h1>
-        <ContactForm />
+        {/* <ContactForm /> */}
         <HookForm></HookForm>
       </main>
       <Footer></Footer>
