@@ -71,7 +71,11 @@ const ModalBackGround = (props) => {
       </div>
 
       {props.messageText ? (
-        <p className='modal-message-text'>{props.messageText}</p>
+        <div className='modal-message-text'>
+          {props.messageText.map((line, index) => (
+            <p key={'modalParaf' + index}>{line}</p>
+          ))}
+        </div>
       ) : (
         <div className='modal-message-text'>
           <p>
