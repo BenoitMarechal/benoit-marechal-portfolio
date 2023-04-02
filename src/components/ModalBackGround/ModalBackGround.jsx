@@ -3,8 +3,6 @@ import { useState } from 'react';
 import ModalBody from '../ModalBody/ModalBody';
 
 const ModalBackGround = (props) => {
-  console.log('props');
-  console.log(props);
   //declare openning parameter
   const [modalOpen, setModalOpen] = useState(props.open ? props.open : false);
   //declare modal toggle function
@@ -93,21 +91,19 @@ const ModalBackGround = (props) => {
   );
 
   let finalProps = { ...defaultProps, ...props };
-  console.log('finalProps');
-  console.log(finalProps);
 
   return (
     <div className='react-simple-modal-container'>
-      {/* <button
+      <button
         className={
-          props.openBtnClass
-            ? props.openBtnClass + ' bm-react-modal-open-btn '
+          finalProps.openBtnClass
+            ? finalProps.openBtnClass + ' bm-react-modal-open-btn '
             : ' bm-react-modal-open-btn '
         }
         onClick={finalProps.openFunction}
       >
         {finalProps.btnText}
-      </button> */}
+      </button>
       {finalProps.open ? <ModalBody {...finalProps}></ModalBody> : ''}
     </div>
   );
