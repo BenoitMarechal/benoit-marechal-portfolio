@@ -14,16 +14,14 @@ const ModalBackGround = (props) => {
     if (e !== undefined) {
       e.preventDefault();
     }
-
     if (props.beforeOpenFunction) {
-      props.beforeCloseFunction();
+      props.beforeOpenFunction();
     }
     toggleModal();
     if (props.afterOpenFunction) {
       props.afterOpenFunction();
     }
   }
-
   //declare modal closing function
   function closeFunction(e) {
     if (e !== undefined) {

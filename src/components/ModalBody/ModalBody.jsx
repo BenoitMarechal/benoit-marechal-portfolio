@@ -5,8 +5,6 @@ const ModalBody = (props) => {
   function handleKeyDown(e) {
     e.preventDefault();
     if (e.key === 'Escape' || e.key === 'Enter') {
-      console.log('props.closeFunction');
-      console.log(props.closeFunction);
       props.closeFunction(e);
     }
   }
