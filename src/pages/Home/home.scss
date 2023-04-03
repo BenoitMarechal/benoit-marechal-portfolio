@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  background-color: $color-primary-lighter-20;
-  border: 5px solid $color-primary-darker-20;
+  background-color: $color-primary-lighter-35;
+  border: 3px solid $color-primary-darker-20;
   //margin-bottom: 30px;
   margin: 0;
   border-radius: 30px;
@@ -16,8 +16,9 @@
   padding: 0px;
   // margin: 20px;
   display: flex;
-  border: $color-tertiary-darker-30 solid 1px;
+  //border: $color-tertiary-darker-30 solid 1px;
   //max-width: 100%;
+  border: none;
   flex-wrap: nowrap;
   align-items: stretch;
   min-height: 150px;
@@ -49,14 +50,8 @@
   align-items: flex-start;
   justify-content: space-between;
   margin-top: 80px;
-  // margin: auto;
-  //width: 100%;
-  //margin: 50px;
-  // padding: 50px;
-  //margin: auto;
-  //margin: 0px 25px;
   &__header {
-    background-image: url('../../assets/photos/codePhotos/01.bmp');
+    background-image: url('../../assets/photos/codePhotos/05.bmp');
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,6 +74,7 @@
       justify-content: center;
       flex-direction: column;
       align-items: flex-end;
+
       &__titles {
         @include cvTitleBlock();
         margin-bottom: 40px;
@@ -112,16 +108,26 @@
     font-size: 1.2rem;
     // width: 30%;
     display: flex;
-
-    // height: auto;
+    &__content {
+      height: 650px;
+    }
   }
   &-jobs__section {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
   &-studies__section {
-    width: 60%;
+    width: 68%;
     display: flex;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      height: 650px;
+      margin: 30px;
+      padding: 0;
+    }
   }
 
   #cv-container {
@@ -129,17 +135,5 @@
     width: 100%;
     justify-content: space-between;
     border: 1px solid red;
-  }
-  #container1 {
-    // display: flex;
-    // justify-content: center;
-    width: 30%;
-    border: 1px solid blue;
-  }
-
-  #container2 {
-    width: 65%;
-    border: 1px solid green;
-    // display: flex;
   }
 }

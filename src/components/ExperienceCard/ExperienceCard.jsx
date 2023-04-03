@@ -10,9 +10,14 @@ const ExperienceCard = (props) => {
       <div className='xp__content__place'>{props.place}</div>
 
       {props.bulletPoints ? (
-        <ul>
+        <ul className='xp__content__bulletPointsUl'>
           {props.bulletPoints.map((point, index) => (
-            <li key={'point' + index}>{point}</li>
+            <li
+              className='xp__content__bulletPointsUl__li'
+              key={'point' + index}
+            >
+              {point}
+            </li>
           ))}
         </ul>
       ) : (
@@ -20,10 +25,11 @@ const ExperienceCard = (props) => {
       )}
 
       {props.links ? (
-        <ul>
+        <div className='xp__content__linksContainer'>
           {props.links.map((link, index) =>
             link.type === 'a' ? (
               <a
+                className='xp__content__linksContainer__link'
                 href={link.link}
                 key={'link' + index}
                 target='_blank'
@@ -37,7 +43,7 @@ const ExperienceCard = (props) => {
               </Link>
             )
           )}
-        </ul>
+        </div>
       ) : (
         ''
       )}

@@ -93,7 +93,7 @@ const HookForm = () => {
       id: 'name',
       label: 'Nom Complet',
       type: 'text',
-      placeholder: 'Prénom et nom',
+      placeholder: 'Prénom et NOM',
     },
     {
       id: 'email',
