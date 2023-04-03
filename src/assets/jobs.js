@@ -25,22 +25,6 @@ export const jobs = [
     ],
   },
   {
-    title: 'Ingénieur programmtion AFP (mission courte)',
-    place: 'Avel Robotics, Lorient',
-    start: 'Fevrier',
-    end: 'Mars 2022',
-    bulletPoints: [
-      'Programmation AFP de foils pour un bateau de course au large (IMOCA 60 pieds)',
-    ],
-    links: [
-      {
-        link: 'https://www.avelrobotics.com/',
-        text: 'https://www.avelrobotics.com/',
-        type: 'a',
-      },
-    ],
-  },
-  {
     title: 'Ingénieur étude composites',
     place: 'Coriolis Composites, Quéven',
     start: '2009',
@@ -61,6 +45,23 @@ export const jobs = [
       },
     ],
   },
+  {
+    title: 'Ingénieur programmation AFP (mission courte)',
+    place: 'Avel Robotics, Lorient',
+    start: 'Fevrier',
+    end: 'Mars 2022',
+    bulletPoints: [
+      'Programmation AFP de foils pour un bateau de course au large (IMOCA 60 pieds)',
+    ],
+    links: [
+      {
+        link: 'https://www.avelrobotics.com/',
+        text: 'https://www.avelrobotics.com/',
+        type: 'a',
+      },
+    ],
+  },
+
   {
     title: 'Bénévole',
     place: "The Maui Water Lily Farm, Maui Hawai'i",

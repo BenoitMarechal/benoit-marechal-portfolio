@@ -1,8 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import ModalBody from '../ModalBody/ModalBody';
+import { ImCross } from 'react-icons/im';
 
 const ModalBackGround = (props) => {
+  //console.log(props);
   //declare openning parameter
   const [modalOpen, setModalOpen] = useState(props.open ? props.open : false);
   //declare modal toggle function
@@ -57,27 +59,34 @@ const ModalBackGround = (props) => {
     bodyBackGround: 'blue',
     textColor: 'white',
   };
+
   defaultProps.message = (
-    <div className='modal-message'>
-      <div className='modal-message-headline'>
-        <h2 className='modal-message-headline-h2'>
+    <div className='modal__bg__body__message'>
+      <div className='modal__bg__body__message__headline'>
+        <h2 className='modal__bg__body__message__headline__h2'>
           {props.headLineText
             ? props.headLineText
             : 'Customize your headline with headLineText property'}
         </h2>
-        <button className='modal-btn' onClick={props.closeFunction}>
-          Close <span>&#10005;</span>
-        </button>
+
+        <span
+          //role='button'
+          tabIndex='0'
+          className='modal__bg__body__message__headline__btn'
+          onClick={props.closeFunction}
+        >
+          <ImCross />
+        </span>
       </div>
 
       {props.messageText ? (
-        <div className='modal-message-text'>
+        <div className='modal__bg__body__message__text'>
           {props.messageText.map((line, index) => (
             <p key={'modalParaf' + index}>{line}</p>
           ))}
         </div>
       ) : (
-        <div className='modal-message-text'>
+        <div className='modal__bg__body__message__text'>
           <p>
             Customize your message with messageText property <br></br>
             <a
@@ -95,8 +104,8 @@ const ModalBackGround = (props) => {
   let finalProps = { ...defaultProps, ...props };
 
   return (
-    <div className='react-simple-modal-container'>
-      <button
+    <div className='modal'>
+      {/* <button
         className={
           finalProps.openBtnClass
             ? finalProps.openBtnClass + ' bm-react-modal-open-btn '
@@ -105,7 +114,7 @@ const ModalBackGround = (props) => {
         onClick={finalProps.openFunction}
       >
         {finalProps.btnText}
-      </button>
+      </button> */}
       {finalProps.open ? <ModalBody {...finalProps}></ModalBody> : ''}
     </div>
   );

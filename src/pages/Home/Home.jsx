@@ -41,6 +41,19 @@ const Home = () => {
         <FieldSection {...toolsSectionProps}></FieldSection>
         <FieldSection {...skillsSectionProps}></FieldSection>
         <FieldSection {...studiesSectionProps}></FieldSection>
+
+        {/* <div id='cv-container'>
+         
+        </div> */}
+
+        {/* <div id='cv-container'>
+          <div id='container1'>
+            <FieldSection {...skillsSectionProps}></FieldSection>
+          </div>
+          <div id='container2'>
+            
+          </div>
+        </div> */}
         <FieldSection {...jobsSectionProps}></FieldSection>
         <CvLink></CvLink>
       </main>

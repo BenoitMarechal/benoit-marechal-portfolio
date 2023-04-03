@@ -19,14 +19,14 @@ const ModalBody = (props) => {
   return (
     <FocusTrap active={props.open}>
       <div
-        className=' modal-bg'
+        className=' modal__bg'
         tabIndex='0'
         onKeyDown={handleKeyDown}
-        style={{ ...bgStyle, ...props.bgStyle }}
+        // style={{ ...bgStyle, ...props.bgStyle }}
       >
         <div
-          className='modal-body modal-body-style'
-          style={{ ...bodyStyle, ...props.bodyStyle }}
+          className='modal__bg__body modal__bg__body__style'
+          // style={{ ...bodyStyle, ...props.bodyStyle }}
         >
           {props.message}
         </div>

@@ -1,0 +1,56 @@
+.cv-skills__section__content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around !important;
+
+  &__sub {
+    background-color: black;
+    color: white;
+    border: 5px solid $color-primary;
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    &__h3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+    }
+
+    &__ul {
+      border-top: 5px solid white;
+      padding: 10px 0px 0px 0px;
+      margin: 0px 15px 20px 15px;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+
+      &__li {
+        //list-style: upper-roman;
+        //   list-style: '✓';
+        list-style: none;
+        //border: 1px solid white;
+        width: 48%;
+        padding: 0;
+        margin: 2px 0px 5px 0px;
+
+        //   display: flex;
+        //   justify-content: center;
+        //width: 45%;
+        // text-align: center;
+        &:before {
+          content: '✓ ';
+          //margin-right: 10px;
+        }
+      }
+    }
+  }
+}

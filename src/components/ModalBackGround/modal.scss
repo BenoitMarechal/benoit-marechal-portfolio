@@ -1,0 +1,56 @@
+.modal {
+  &__bg {
+    position: absolute;
+    border: 2px solid yellow;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    background-color: $color-modal-bg !important;
+
+    &__body {
+      //   max-width: 50%;
+      //   max-height: 50%;
+      border-radius: 25px;
+      padding: 20px;
+      background-color: $color-primary-darker-20 !important;
+      border: 3px solid $color-tertiary;
+
+      &__message {
+        &__headline {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 20px;
+
+          &__h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 500;
+          }
+          &__btn {
+            font-size: 1.2rem;
+            //font-weight: 900;
+            cursor: pointer;
+            border: 1x sollid wheat;
+            &:hover,
+            &:active {
+              transform: scale(1.2);
+              //transform: rotateZ(180deg);
+            }
+            // &:active {
+            //   transform: rotateZ(90deg);
+            // }
+          }
+        }
+        &__text {
+          border-top: 3px solid;
+        }
+      }
+    }
+  }
+}

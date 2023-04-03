@@ -1,31 +1,75 @@
-.contactForm__container {
+.contactForm {
   margin-bottom: 20px;
-  width: 60%;
-  &__form {
+  width: 40%;
+  border: 4px solid $color-primary-lighter-20;
+  padding: 20px;
+  border-radius: 35px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  &__h1 {
+    display: flex;
+  }
+  &__inputContainer {
+    // margin: 10px;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    min-width: 300px;
+    max-width: 400px;
+    flex-wrap: nowrap;
+    margin: 15px 10px;
+    &__label {
+      font-weight: 500;
+      margin: 5px 15px;
+    }
     &__input {
-      margin: 10px;
+      height: 50px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+      border: 3px solid $color-tertiary-darker-20;
+      padding: 10px;
+
+      &__textarea {
+        height: auto;
+      }
+    }
+
+    &__error {
+      font-weight: 700;
+      margin: 5px 15px 0px 15px;
     }
   }
-}
 
-.message {
-  height: 150px;
-}
-.sendButton {
-  margin-top: -5px;
-}
+  .error {
+    border: 3px solid red;
+  }
+  .error:focus {
+    border: none;
+  }
 
-.error {
-  color: red;
-  display: none;
-}
-
-.input:invalid[focused='true'] {
-  border: 2px solid red;
-}
-
-.input:invalid[focused='true'] ~ span.error {
-  display: block;
+  &__submitButton {
+    height: 50px;
+    border-radius: 15px;
+    border: 4px solid $color-primary-lighter-20;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 700;
+    color: $color-primary-darker-20;
+    width: 100%;
+    min-width: 300px;
+    max-width: 400px;
+  }
+  &__submitButton:disabled {
+    height: 50px;
+    border-radius: 15px;
+    border: 4px solid $color-primary;
+    cursor: default;
+  }
 }

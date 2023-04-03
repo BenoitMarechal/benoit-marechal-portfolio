@@ -4,8 +4,11 @@
 @import '../components/ContactForm/contactForm.scss';
 @import '../components/ToolCard/toolCard.scss';
 @import '../components/ExperienceCard/experienceCard.scss';
+@import '../components/ModalBackGround/modal.scss';
+@import '../components/SkillCard/skillCard.scss';
+
 body {
-  color: $color-primary;
+  color: $color-primary-darker-20;
   position: absolute;
   left: 0;
   right: 0;
@@ -42,34 +45,4 @@ a,
 a:active,
 a:visited {
   text-decoration: none;
-}
-
-.section {
-  border-radius: 30px;
-  padding: 0;
-  margin: $headerHeigth 0 0 0;
-  display: flex;
-  border: $color-tertiary-darker-30 solid 1px;
-  max-width: 100%;
-  flex-wrap: wrap;
-  min-height: 150px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-
-  &__legend {
-    font-size: 1.3rem;
-    margin-left: 40px;
-    padding: 25px 30px 0 20px;
-    cursor: pointer;
-    &__icon {
-      padding-top: 5px;
-    }
-  }
-  &__content {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 15px;
-  }
 }
