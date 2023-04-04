@@ -106,18 +106,23 @@
     }
   }
   &-skills__section {
-    width: 30%;
+    width: 25%;
     font-size: 1.2rem;
     display: flex;
+    justify-content: center;
+    margin-left: 100px;
+    margin-right: 0px;
+    min-height: 650px;
+    max-height: 1500px;
 
-    margin: 0;
+    //margin: 0;
     &__content {
       //height: 650px;
       display: flex;
       flex-direction: column;
       align-content: center;
-      min-height: 650px;
-      max-height: 1500px;
+      // min-height: 650px;
+      // max-height: 1500px;
       margin: 10px 20px;
       //margin: 30px;
       padding: 0;
@@ -127,16 +132,20 @@
   }
 
   &-studies__section {
-    width: 68%;
+    width: 58%;
     display: flex;
-    margin: 0;
+    justify-content: center;
+    min-height: 650px;
+    max-height: 1500px;
+    // margin: 0;
+    margin-right: 100px;
+    margin-left: 0px;
     &__content {
       display: flex;
       flex-direction: column;
       align-content: center;
-      //height: 650px;
-      // min-height: 650px;
-      // max-height: 1500px;
+      //height: 100%;
+
       margin: 10px 20px;
       padding: 0;
     }
@@ -153,12 +162,12 @@
     }
   }
 
-  #cv-container {
-    display: flex;
-    width: 100%;
-    margin: 20px 100px 0px 100px;
-    justify-content: space-between;
-    //border: 1px solid red;
-    //height: 1000px;
-  }
+  // #cv-container {
+  //   display: flex;
+  //   width: 100%;
+  //   margin: 20px 100px 0px 100px;
+  //   justify-content: space-between;
+  //   //border: 1px solid red;
+  //   //height: 1000px;
+  // }
 }
