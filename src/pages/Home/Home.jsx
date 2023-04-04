@@ -39,12 +39,11 @@ const Home = () => {
       <main className='cv'>
         <CvHeader></CvHeader>
         <FieldSection {...toolsSectionProps}></FieldSection>
-        <FieldSection {...skillsSectionProps}></FieldSection>
-        <FieldSection {...studiesSectionProps}></FieldSection>
 
-        {/* <div id='cv-container'>
-         
-        </div> */}
+        <div id='cv-container'>
+          <FieldSection {...skillsSectionProps}></FieldSection>
+          <FieldSection {...studiesSectionProps}></FieldSection>
+        </div>
 
         {/* <div id='cv-container'>
           <div id='container1'>

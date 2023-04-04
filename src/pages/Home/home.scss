@@ -14,7 +14,7 @@
 .section {
   border-radius: 30px;
   padding: 0px;
-  // margin: 20px;
+  margin: 20px 100px 0px 100px;
   display: flex;
   //border: $color-tertiary-darker-30 solid 1px;
   //max-width: 100%;
@@ -27,8 +27,9 @@
 
   &__legend {
     font-size: 1.3rem;
-    margin-left: 40px;
-    padding: 25px 30px 0 20px;
+    margin-left: 20px;
+
+    padding: 15px 30px 0 20px;
     cursor: pointer;
     &__icon {
       padding-top: 5px;
@@ -50,6 +51,7 @@
   align-items: flex-start;
   justify-content: space-between;
   margin-top: 80px;
+  width: 100%;
   &__header {
     background-image: url('../../assets/photos/codePhotos/05.bmp');
     display: flex;
@@ -57,8 +59,6 @@
     align-items: center;
     width: 100%;
     flex-wrap: nowrap !important;
-    // box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-    //   rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset !important;
 
     &__portrait {
       margin: 2%;
@@ -96,44 +96,70 @@
   }
   &-tools__section {
     width: 100%;
+
     &__content {
       display: grid !important;
       grid-template-columns: repeat(auto-fill, 250px);
       justify-content: space-between;
       //grid-gap: 0px 00px;
+      margin: 0;
     }
   }
   &-skills__section {
     width: 30%;
     font-size: 1.2rem;
-    // width: 30%;
     display: flex;
+
+    margin: 0;
     &__content {
-      height: 650px;
+      //height: 650px;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      min-height: 650px;
+      max-height: 1500px;
+      margin: 10px 20px;
+      //margin: 30px;
+      padding: 0;
+      //justify-content: space-around !important;
+      font-size: 1.1rem;
+    }
+  }
+
+  &-studies__section {
+    width: 68%;
+    display: flex;
+    margin: 0;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      //height: 650px;
+      min-height: 650px;
+      max-height: 1500px;
+      margin: 10px 20px;
+      padding: 0;
     }
   }
   &-jobs__section {
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
-  &-studies__section {
-    width: 68%;
-    display: flex;
+    align-items: center;
     &__content {
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      height: 650px;
-      margin: 30px;
-      padding: 0;
+      //width: 100%;
+      //background-color: blue;
+      //display: flex;
+      //flex-direction: column;
+      //padding: 0px 20px;
     }
   }
 
   #cv-container {
     display: flex;
     width: 100%;
+    margin: 20px 100px 0px 100px;
     justify-content: space-between;
-    border: 1px solid red;
+    //border: 1px solid red;
   }
 }

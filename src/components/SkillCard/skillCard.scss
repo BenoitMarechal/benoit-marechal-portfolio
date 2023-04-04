@@ -1,61 +1,51 @@
-.cv-skills__section__content {
+.cv-skills__section__content__sub {
+  background-color: $color-primary-darker-10;
+  color: white;
+  // border: 5px solid white;
+  width: 100%;
+  border-radius: 15px;
+  //margin: 15px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
-  align-content: center;
-  height: 650px;
-  margin: 30px;
-  padding: 0;
-  //justify-content: space-around !important;
-  font-size: 1.2rem;
+  align-items: center;
+  flex-wrap: nowrap;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-  &__sub {
-    background-color: $color-primary-darker-10;
-    color: white;
-    // border: 5px solid white;
-    width: 100%;
-    border-radius: 15px;
-    //margin: 15px;
-
+  &__h3 {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 10px;
+  }
 
-    &__h3 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 10px;
-    }
+  &__ul {
+    border-top: 5px solid white;
+    padding: 10px 0px 0px 0px;
+    margin: 0px 15px 20px 15px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
 
-    &__ul {
-      border-top: 5px solid white;
-      padding: 10px 0px 0px 0px;
-      margin: 0px 15px 20px 15px;
-      width: 90%;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      font-size: 0.9rem;
+    &__li {
+      //list-style: upper-roman;
+      //   list-style: '✓';
+      list-style: none;
+      //border: 1px solid white;
+      width: 48%;
+      padding: 0;
+      margin: 2px 0px 5px 0px;
+      font-size: 1.2rem;
 
-      &__li {
-        //list-style: upper-roman;
-        //   list-style: '✓';
-        list-style: none;
-        //border: 1px solid white;
-        width: 48%;
-        padding: 0;
-        margin: 2px 0px 5px 0px;
-        font-size: 1.2rem;
-
-        //   display: flex;
-        //   justify-content: center;
-        //width: 45%;
-        // text-align: center;
-        &:before {
-          content: '✓ ';
-          //margin-right: 10px;
-        }
+      //   display: flex;
+      //   justify-content: center;
+      //width: 45%;
+      // text-align: center;
+      &:before {
+        content: '✓ ';
+        //margin-right: 10px;
       }
     }
   }
