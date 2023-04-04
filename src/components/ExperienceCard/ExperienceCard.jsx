@@ -38,7 +38,11 @@ const ExperienceCard = (props) => {
                 {link.text}
               </a>
             ) : (
-              <Link key={'link' + index} to={link.link}>
+              <Link
+                className='xp__content__linksContainer__link'
+                key={'link' + index}
+                to={link.link}
+              >
                 {link.text}
               </Link>
             )

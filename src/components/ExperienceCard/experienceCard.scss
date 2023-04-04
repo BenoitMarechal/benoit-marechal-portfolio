@@ -18,6 +18,27 @@
   &__place {
     margin-left: 15px;
   }
+  &__linksContainer {
+    margin-left: 15px;
+    margin-bottom: 10px;
+    // width: 100%;
+    // display: flex;
+    // justify-content: space-between;
+
+    &__link {
+      margin-right: 15px;
+      margin-bottom: 15px;
+      background-color: white;
+      padding: 5px;
+      border-radius: 7px;
+      font-weight: 700;
+      border: 2px solid;
+      color: $color-primary-darker-20;
+      &:active {
+        color: $color-primary-darker-30;
+      }
+    }
+  }
 }
 .xp__content ul {
   margin-left: 15px;

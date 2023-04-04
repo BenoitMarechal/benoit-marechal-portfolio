@@ -16,7 +16,7 @@ const CvLink = () => {
         target='_blank'
         rel='noopener noreferrer'
       >
-        Accéder au pdf
+        Version pdf
       </a>
     </div>
   );
