@@ -16,8 +16,6 @@
   padding: 0px;
   margin: 20px 100px 0px 100px;
   display: flex;
-  //border: $color-tertiary-darker-30 solid 1px;
-  //max-width: 100%;
   border: none;
   flex-wrap: nowrap;
   align-items: stretch;
@@ -28,7 +26,6 @@
   &__legend {
     font-size: 1.3rem;
     margin-left: 20px;
-
     padding: 15px 30px 0 20px;
     cursor: pointer;
     &__icon {
@@ -59,7 +56,6 @@
     align-items: center;
     width: 100%;
     flex-wrap: nowrap !important;
-
     &__portrait {
       margin: 2%;
       width: 280px;
@@ -101,7 +97,6 @@
       display: grid !important;
       grid-template-columns: repeat(auto-fill, 250px);
       justify-content: space-between;
-      //grid-gap: 0px 00px;
       margin: 0;
     }
   }
@@ -114,19 +109,12 @@
     margin-right: 0px;
     min-height: 650px;
     max-height: 1500px;
-
-    //margin: 0;
     &__content {
-      //height: 650px;
       display: flex;
       flex-direction: column;
       align-content: center;
-      // min-height: 650px;
-      // max-height: 1500px;
       margin: 10px 20px;
-      //margin: 30px;
       padding: 0;
-      //justify-content: space-around !important;
       font-size: 1.1rem;
     }
   }
@@ -137,15 +125,12 @@
     justify-content: center;
     min-height: 650px;
     max-height: 1500px;
-    // margin: 0;
     margin-right: 100px;
     margin-left: 0px;
     &__content {
       display: flex;
       flex-direction: column;
       align-content: center;
-      //height: 100%;
-
       margin: 10px 20px;
       padding: 0;
     }
@@ -161,13 +146,4 @@
       margin: 5px;
     }
   }
-
-  // #cv-container {
-  //   display: flex;
-  //   width: 100%;
-  //   margin: 20px 100px 0px 100px;
-  //   justify-content: space-between;
-  //   //border: 1px solid red;
-  //   //height: 1000px;
-  // }
 }
