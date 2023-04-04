@@ -6,15 +6,19 @@
   align-items: flex-end;
   background-color: $color-primary-lighter-35;
   border: 3px solid $color-primary-darker-20;
-  //margin-bottom: 30px;
   margin: 0;
   border-radius: 30px;
   padding: 15px;
 }
 .section {
+  width: 100%;
   border-radius: 30px;
-  padding: 0px;
-  margin: 20px 100px 0px 100px;
+  margin: 0;
+  padding: 0;
+  //margin: 50px;
+  //padding: 50px;
+  //padding: 0px;
+  //margin: 20px 100px 0px 100px;
   display: flex;
   border: none;
   flex-wrap: nowrap;
@@ -34,27 +38,30 @@
   }
   &__content {
     width: 100%;
+    margin: 15px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    //display: flex;
+    //  flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
-    padding: 15px;
+    //  align-items: flex-start;
+    // padding: 15px;
   }
 }
 .cv {
-  display: flex;
+  // display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-  margin-top: 80px;
-  width: 100%;
+  // margin-top: 80px;
+  //  width: 100%;
   &__header {
     background-image: url('../../assets/photos/codePhotos/05.bmp');
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    // width: 100%;
     flex-wrap: nowrap !important;
     &__portrait {
       margin: 2%;
@@ -91,48 +98,51 @@
     }
   }
   &-tools__section {
-    width: 100%;
+    // width: 100%;
 
     &__content {
       display: grid !important;
       grid-template-columns: repeat(auto-fill, 250px);
       justify-content: space-between;
-      margin: 0;
+      //margin: 0;
     }
   }
   &-skills__section {
-    width: 25%;
+    width: 35%;
     font-size: 1.2rem;
     display: flex;
     justify-content: center;
-    margin-left: 100px;
-    margin-right: 0px;
-    min-height: 650px;
-    max-height: 1500px;
+
+    //margin-left: 100px;
+    // margin-right: 0px;
+    // min-height: 650px;
+    // max-height: 1500px;
     &__content {
       display: flex;
       flex-direction: column;
       align-content: center;
-      margin: 10px 20px;
-      padding: 0;
+      //margin: 10px 20px;
+      // padding: 0;
       font-size: 1.1rem;
+      height: 645px;
     }
   }
 
   &-studies__section {
-    width: 58%;
+    width: 63%;
     display: flex;
     justify-content: center;
-    min-height: 650px;
-    max-height: 1500px;
-    margin-right: 100px;
-    margin-left: 0px;
+    // min-height: 650px;
+    // max-height: 1500px;
+    //margin-right: 100px;
+    // margin-left: 0px;
     &__content {
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      margin: 10px 20px;
-      padding: 0;
+      // display: flex;
+      // flex-direction: column;
+      // align-content: center;
+      // margin: 10px 20px;
+      // padding: 0;
+      height: 645px;
     }
   }
   &-jobs__section {
@@ -140,10 +150,10 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: nowrap;
-    width: 100%;
+    // width: 100%;
 
     &__content {
-      margin: 5px;
+      //margin: 5px;
     }
   }
 }
