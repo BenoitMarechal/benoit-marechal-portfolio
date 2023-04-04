@@ -135,23 +135,21 @@
       flex-direction: column;
       align-content: center;
       //height: 650px;
-      min-height: 650px;
-      max-height: 1500px;
+      // min-height: 650px;
+      // max-height: 1500px;
       margin: 10px 20px;
       padding: 0;
     }
   }
   &-jobs__section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
     width: 100%;
-    align-items: center;
+
     &__content {
-      //width: 100%;
-      //background-color: blue;
-      //display: flex;
-      //flex-direction: column;
-      //padding: 0px 20px;
+      margin: 5px;
     }
   }
 
@@ -161,5 +159,6 @@
     margin: 20px 100px 0px 100px;
     justify-content: space-between;
     //border: 1px solid red;
+    //height: 1000px;
   }
 }
