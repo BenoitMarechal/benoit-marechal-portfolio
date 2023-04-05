@@ -50,6 +50,9 @@ main {
   margin-right: 100px;
   background-color: $color-primary-lighter-20;
   //min-height: 100%;
+  @include screen-800-max {
+    margin: 0;
+  }
 }
 a,
 a:active,

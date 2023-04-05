@@ -10,6 +10,14 @@
   justify-content: center;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  @include screen-800-max {
+    // background-color: red;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
 
   &__h1 {
     display: flex;

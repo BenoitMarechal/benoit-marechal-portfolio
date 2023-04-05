@@ -9,7 +9,7 @@
   display: flex;
   // padding-top: 10px;
   &__nav {
-    @include screen-800 {
+    @include screen-800-min {
       display: flex;
       align-items: center;
       justify-content: space-around;
@@ -18,7 +18,7 @@
     display: none;
   }
   &__mobileNav {
-    @include screen-800 {
+    @include screen-800-min {
       display: none;
     }
 
@@ -67,7 +67,7 @@
 @mixin navLinkStyle {
   color: $color-secondary;
   font-size: 3rem;
-  @include screen-800 {
+  @include screen-800-min {
     background-color: $color-primary-darker-10;
     text-decoration: none;
     font-size: 1rem;
@@ -84,14 +84,14 @@
 @mixin activeLink {
   text-decoration: underline;
   font-weight: 600;
-  @include screen-800 {
+  @include screen-800-min {
     font-weight: 700;
     background-color: $color-primary-darker-30;
   }
 }
 
 @mixin hoverLink {
-  @include screen-800 {
+  @include screen-800-min {
     font-weight: 700;
     transform: translateY(-2px);
     background-color: $color-primary-lighter-30;

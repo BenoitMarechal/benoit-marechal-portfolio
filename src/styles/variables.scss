@@ -224,8 +224,13 @@ $color-tertiary-lighter-30: lighten($color-tertiary, 30%);
   margin: 15px 0px;
 }
 
-@mixin screen-800 {
+@mixin screen-800-min {
   @media (min-width: 800px) {
+    @content;
+  }
+}
+@mixin screen-800-max {
+  @media (max-width: 800px) {
     @content;
   }
 }
