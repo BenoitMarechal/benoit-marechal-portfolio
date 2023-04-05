@@ -234,3 +234,9 @@ $color-tertiary-lighter-30: lighten($color-tertiary, 30%);
     @content;
   }
 }
+
+@mixin screen-950-max {
+  @media (max-width: 950px) {
+    @content;
+  }
+}

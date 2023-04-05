@@ -91,7 +91,7 @@ const HookForm = () => {
   const inputProps = [
     {
       id: 'name',
-      label: 'Nom Complet',
+      label: 'Nom complet',
       type: 'text',
       placeholder: 'Prénom et NOM',
     },

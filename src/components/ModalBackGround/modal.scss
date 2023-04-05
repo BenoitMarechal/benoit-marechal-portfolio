@@ -18,6 +18,9 @@
       padding: 20px;
       background-color: $color-primary !important;
       border: 3px solid $color-tertiary;
+      @include screen-950-max {
+        width: 80%;
+      }
 
       &__message {
         &__headline {
