@@ -158,6 +158,7 @@ const HookForm = () => {
           ? "Veuillez remplir correctement les champs avant d'envoyer"
           : 'Envoyer'}
       </button>
+      <button onClick={customToggleModal}>MODALE</button>
       <ModalBackGround {...modalProps}></ModalBackGround>
     </form>
   );
