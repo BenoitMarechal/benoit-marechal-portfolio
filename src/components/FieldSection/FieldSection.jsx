@@ -19,6 +19,7 @@ const FieldSection = (props) => {
     >
       <legend
         onClick={toggleOpen}
+        onTouchStart={toggleOpen}
         className={'section__legend ' + (props.class + '__section__legend')}
       >
         {props.title + ' '}
