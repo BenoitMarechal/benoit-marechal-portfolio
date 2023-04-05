@@ -18,17 +18,22 @@ const FieldSection = (props) => {
       className={'section bg-tertiary-light-10 ' + (props.class + '__section')}
     >
       <legend
-        role='button'
-        onClick={toggleOpen}
-        onTouchStart={toggleOpen}
-        className={'section__legend ' + (props.class + '__section__legend')}
+      // onClick={toggleOpen}
+      // onTouchStart={toggleOpen}
+      // className={'section__legend ' + (props.class + '__section__legend')}
       >
-        {props.title + ' '}
-        {open ? (
-          <VscTriangleUp className='section__legend__icon' />
-        ) : (
-          <VscTriangleDown className='section__legend__icon' />
-        )}
+        <button
+          onClick={toggleOpen}
+          onTouchStart={toggleOpen}
+          className={'section__legend ' + (props.class + '__section__legend')}
+        >
+          {props.title + ' '}
+          {open ? (
+            <VscTriangleUp className='section__legend__icon' />
+          ) : (
+            <VscTriangleDown className='section__legend__icon' />
+          )}{' '}
+        </button>
       </legend>{' '}
       {open ? props.content : ''}
     </fieldset>
