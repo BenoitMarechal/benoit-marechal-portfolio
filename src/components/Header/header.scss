@@ -1,6 +1,4 @@
-@import '../../styles/mainSass.scss';
-
-header {
+.header {
   background-color: $color-primary;
   min-height: $headerHeigth;
   //max-height: $headerHeigth;
@@ -10,37 +8,95 @@ header {
   right: 0;
   display: flex;
   // padding-top: 10px;
-}
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
+  &__nav {
+    @include screen-800 {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+    }
+    display: none;
+  }
+  &__mobileNav {
+    @include screen-800 {
+      display: none;
+    }
+
+    &__button {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      color: white;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 2.5rem;
+    }
+    &__background {
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      z-index: 3;
+      background-color: $color-modal-bg;
+      display: flex;
+      justify-content: center;
+      &__nav {
+        display: flex;
+
+        width: 80%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-top: 2px solid white;
+        margin-top: 100px;
+        position: relative;
+        justify-content: space-evenly;
+        &__closeBtn {
+          position: absolute;
+          top: 35px;
+          right: 35px;
+          color: $color-secondary;
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
 }
 @mixin navLinkStyle {
   color: $color-secondary;
-  background-color: $color-primary-darker-10;
-  text-decoration: none;
-  font-size: 1rem;
-  border: 3px solid $color-primary-darker-20;
-  border-radius: 30% 30% 30% 30% / 30% 30% 30% 30%;
-  min-width: $menuItem-width;
-  height: $menuItem-height;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  font-size: 3rem;
+  @include screen-800 {
+    background-color: $color-primary-darker-10;
+    text-decoration: none;
+    font-size: 1rem;
+    border: 3px solid $color-primary-darker-20;
+    border-radius: 30% 30% 30% 30% / 30% 30% 30% 30%;
+    min-width: $menuItem-width;
+    height: $menuItem-height;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
 }
 
 @mixin activeLink {
-  font-weight: 700;
-  background-color: $color-primary-darker-30;
+  text-decoration: underline;
+  font-weight: 600;
+  @include screen-800 {
+    font-weight: 700;
+    background-color: $color-primary-darker-30;
+  }
 }
 
 @mixin hoverLink {
-  font-weight: 700;
-  transform: translateY(-2px);
-  background-color: $color-primary-lighter-30;
-  border: 3px solid $color-primary-darker-20;
+  @include screen-800 {
+    font-weight: 700;
+    transform: translateY(-2px);
+    background-color: $color-primary-lighter-30;
+    border: 3px solid $color-primary-darker-20;
+  }
 }
 
 .navLink {
@@ -56,11 +112,7 @@ nav {
 }
 
 .navLink:hover {
-  @include hoverLink() // font-weight: 700;
-    // transform: translateY(-2px);
-    // background-color: $color-primary-lighter-30;
-    // border: 3px solid $color-primary-darker-20;
-;
+  @include hoverLink();
 }
 
 .menuDropDown {

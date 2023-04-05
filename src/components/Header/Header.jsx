@@ -1,20 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import navBarContent from '../../assets/navLinks.json';
 import MenuDropDown from '../NavLinks/MenuDropDown';
 import MenuItem from '../NavLinks/MenuItem';
-import './header.scss';
+import MobileNav from '../MobileNav/MobileNav';
+
 const Header = () => {
   return (
-    <header className='bg-gradient'>
-      <nav>
+    <header className='bg-gradient header'>
+      <nav className='header__nav'>
         {navBarContent.map((elt, index) => {
           return elt.type === 'regular' ? (
             <MenuItem {...elt} key={index}></MenuItem>
           ) : (
-            <MenuDropDown {...elt} key={index}></MenuDropDown>
+            <MenuDropDown
+              className='desktop'
+              {...elt}
+              key={index}
+            ></MenuDropDown>
           );
         })}
       </nav>
+      <MobileNav />
     </header>
   );
 };

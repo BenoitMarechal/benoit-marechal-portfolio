@@ -105,7 +105,7 @@ const ModalBackGround = (props) => {
 
   return (
     <div className='modal'>
-      {/* <button
+      <button
         className={
           finalProps.openBtnClass
             ? finalProps.openBtnClass + ' bm-react-modal-open-btn '
@@ -114,7 +114,7 @@ const ModalBackGround = (props) => {
         onClick={finalProps.openFunction}
       >
         {finalProps.btnText}
-      </button> */}
+      </button>
       {finalProps.open ? <ModalBody {...finalProps}></ModalBody> : ''}
     </div>
   );

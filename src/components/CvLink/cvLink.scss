@@ -10,6 +10,7 @@
   position: fixed;
   bottom: 250px;
   right: 40px;
+  z-index: 2;
   &__link {
     color: black;
     //background-color: blue;
@@ -20,6 +21,5 @@
   }
   &__logo {
     height: 20px;
-    //      width: 50px;
   }
 }

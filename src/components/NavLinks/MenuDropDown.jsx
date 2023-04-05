@@ -21,7 +21,10 @@ const MenuDropDown = (props) => {
   return (
     <div className='menuDropDown'>
       <div className='menuDropDown__topPannel'>
-        <NavLink className=' menuDropDown__topPannel__main ' to={props.link}>
+        <NavLink
+          className={' menuDropDown__topPannel__main ' + props.className}
+          to={props.link}
+        >
           {current}
         </NavLink>
         <i
