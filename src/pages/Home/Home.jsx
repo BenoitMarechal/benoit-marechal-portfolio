@@ -3,7 +3,7 @@ import CvHeader from '../../components/CvHeader/CvHeader';
 import CvLink from '../../components/CvLink/CvLink';
 import FieldSection from '../../components/FieldSection/FieldSection';
 //import CvSection from '../../components/CvSection/CvSection';
-import Footer from '../../components/footer/Footer';
+import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 //import { toolsProps } from '../../assets/toolSectionContent';
 import ToolsSectionContent from '../../components/ToolsSectionContent/ToolsSectionContent';

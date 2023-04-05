@@ -1,11 +1,12 @@
 @import './variables.scss';
 @import '/src/pages/Home/home.scss';
-@import '../components/footer/footer.scss';
+@import '../components/Footer/Footer.scss';
 @import '../components/ContactForm/contactForm.scss';
 @import '../components/ToolCard/toolCard.scss';
 @import '../components/ExperienceCard/experienceCard.scss';
 @import '../components/ModalBackGround/modal.scss';
 @import '../components/SkillCard/skillCard.scss';
+@import '../components/CvLink/cvLink.scss';
 
 body {
   color: $color-primary-darker-20;
@@ -39,9 +40,11 @@ main {
   margin-top: 80px;
   margin-left: 100px;
   margin-right: 100px;
+  //position: relative;
+  // bottom: 0px;
   //width: 80%;
   //border: 2px solid red;
-  //height: 100%;
+  //min-height: 100%;
   // margin-bottom: 50px;
   background-color: $color-primary-lighter-20;
 }

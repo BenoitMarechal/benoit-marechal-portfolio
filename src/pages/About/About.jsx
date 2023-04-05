@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '../../components/footer/Footer';
+import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 
 const About = () => {
@@ -9,7 +9,6 @@ const About = () => {
       <main>
         <h1>A PROPOS</h1>
       </main>
-
       <Footer></Footer>
     </div>
   );

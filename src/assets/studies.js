@@ -6,7 +6,7 @@ export const studies = [
     start: 'Mai 2021',
     end: 'Fevrier 2023',
     bulletPoints: [
-      "Diplôme reconnu par l'Etat, niveau 6 (Bac+3/4",
+      "Diplôme reconnu par l'Etat, niveau 6 (Bac+3/4)",
       "Travail en autonomie sur des missions calquées sur le monde de l'entreprise",
     ],
     links: [
@@ -15,7 +15,7 @@ export const studies = [
         text: 'Voir le programme complet',
         type: 'a',
       },
-      { link: diplome, text: 'Voir le diplôme', type: 'a' },
+      //{ link: diplome, text: 'Voir le diplôme', type: 'a' },
     ],
   },
   {
