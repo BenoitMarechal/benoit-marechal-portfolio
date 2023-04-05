@@ -13,12 +13,7 @@
 .section {
   width: 100%;
   border-radius: 30px;
-  margin: 0;
-  padding: 0;
-  //margin: 50px;
-  //padding: 50px;
-  //padding: 0px;
-  //margin: 20px 100px 0px 100px;
+  margin: 20px 0px;
   display: flex;
   border: none;
   flex-wrap: nowrap;
@@ -26,17 +21,16 @@
   min-height: 150px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 5px 10px 0px,
     rgba(60, 64, 67, 0.15) 0px 4px 6px 4px;
+  position: relative;
 
-  &__legend {
+  &__title {
     font-size: 1.3rem;
-    //margin-left: 20px;
-    padding: 0px 0px 0 0px;
-    margin: 34px 0px 0px 30px;
-    // padding: 0px 0px 0 0px;
-    // margin: 15px 0px 0px 30px;
     cursor: pointer;
-    color: $color-primary-darker-20;
-    background-color: transparent;
+    color: $color-primary;
+    //height: 20px;
+    position: absolute;
+    top: 0px;
+    left: 30px;
     border: none;
 
     &__icon {
@@ -45,7 +39,7 @@
   }
   &__content {
     width: 100%;
-    margin: 15px;
+    margin: 35px 15px 15px 15px;
     display: flex;
     flex-direction: column;
     //display: flex;
@@ -159,8 +153,8 @@
     flex-wrap: nowrap;
     // width: 100%;
 
-    &__content {
-      //margin: 5px;
-    }
+    // &__content {
+    //   //margin: 5px;
+    // }
   }
 }

@@ -5,7 +5,8 @@
   width: 100%;
   border-radius: 15px;
   //margin: 15px;
-  margin-bottom: 15px;
+  //margin: 15px 0px;
+  @include card-margin;
   display: flex;
   flex-direction: column;
   align-items: center;

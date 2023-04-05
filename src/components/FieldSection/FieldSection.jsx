@@ -10,33 +10,24 @@ const FieldSection = (props) => {
   function toggleOpen() {
     setOpen(!open);
   }
-  // useEffect(() => {
-  //   console.log();
-  // });
   return (
-    <fieldset
+    <div
       className={'section bg-tertiary-light-10 ' + (props.class + '__section')}
     >
-      <legend
-      // onClick={toggleOpen}
-      // onTouchStart={toggleOpen}
-      // className={'section__legend ' + (props.class + '__section__legend')}
+      <button
+        onClick={toggleOpen}
+        // onTouchStart={toggleOpen}
+        className={'section__title ' + (props.class + '__section__title')}
       >
-        <button
-          onClick={toggleOpen}
-          onTouchStart={toggleOpen}
-          className={'section__legend ' + (props.class + '__section__legend')}
-        >
-          {props.title + ' '}
-          {open ? (
-            <VscTriangleUp className='section__legend__icon' />
-          ) : (
-            <VscTriangleDown className='section__legend__icon' />
-          )}{' '}
-        </button>
-      </legend>{' '}
+        {props.title + ' '}
+        {open ? (
+          <VscTriangleUp className='section__title__icon' />
+        ) : (
+          <VscTriangleDown className='section__title__icon' />
+        )}{' '}
+      </button>
       {open ? props.content : ''}
-    </fieldset>
+    </div>
   );
 };
 
