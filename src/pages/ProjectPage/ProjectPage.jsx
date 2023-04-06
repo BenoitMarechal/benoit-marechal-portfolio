@@ -5,10 +5,8 @@ import projects from '../../assets/projects.json';
 import projectLabels from '../../assets/projectLabels.json';
 
 const ProjectPage = () => {
-  console.log(projects);
   let projectName = new URLSearchParams(window.location.search).get('name');
   let project = projects.find((elt) => elt.name === projectName);
-  console.log(project);
 
   return (
     <div className='app'>

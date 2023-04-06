@@ -8,6 +8,7 @@
 @import '../components/SkillCard/skillCard.scss';
 @import '../components/CvLink/cvLink.scss';
 @import '../components/Header/header.scss';
+@import '../components/ProjectSearchBar/projectSearchBar.scss';
 body {
   color: $color-primary-darker-20;
   position: absolute;
@@ -20,6 +21,10 @@ body {
   // height: 100%;
   // display: flex;
   // flex-direction: column;
+}
+
+.none {
+  display: none;
 }
 
 .app {
