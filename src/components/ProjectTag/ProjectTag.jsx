@@ -5,8 +5,8 @@ const ProjectTag = (props) => {
   function toggleActive() {
     setActive(!active);
   }
-  console.log('props du tag');
-  console.log(props);
+  // console.log('props du tag');
+  // console.log(props);
   function handleClick(string) {
     if (active === false) {
       props.onClick(props.tag);

@@ -84,6 +84,7 @@ const Projects = () => {
   }
   function test(string) {
     console.log(string);
+    searchProjects(string);
   }
   // new useEffect
   useEffect(() => {
