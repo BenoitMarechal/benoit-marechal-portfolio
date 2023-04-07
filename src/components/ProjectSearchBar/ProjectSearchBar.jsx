@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsSearch } from 'react-icons/bs';
 
-const ProjectSearchBar = () => {
+const ProjectSearchBar = (props) => {
   return (
     <div className='projects__main__search__searchBar'>
       <label
@@ -15,6 +15,7 @@ const ProjectSearchBar = () => {
         type='search'
         id='projectSearch'
         placeholder='rechercher parmis les projets...'
+        onChange={props.onSearch}
       ></input>
       <BsSearch className='projects__main__search__searchBar__icon' />
     </div>

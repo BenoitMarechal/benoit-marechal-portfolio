@@ -4,7 +4,8 @@
     "links": [
       { "link": "https://github.com/BenoitMarechal/Livrable2", "type": "repo" },
       { "link": "https://benoitmarechal.github.io/Livrable2/", "type": "page" }
-    ]
+    ],
+    "tags": "html css intégration sémantique responsive"
   },
   {
     "name": "Ohmyfood",
@@ -17,7 +18,8 @@
         "link": "https://benoitmarechal.github.io/BenoitMarechal_3_14062021/index.html",
         "type": "page"
       }
-    ]
+    ],
+    "tags": "html css animations sass intégration"
   },
   {
     "name": "GameOn",
@@ -30,7 +32,8 @@
         "link": "https://benoitmarechal.github.io/GameOn-website-FR/",
         "type": "page"
       }
-    ]
+    ],
+    "tags": "JavaScript validation"
   },
   {
     "name": "FishEye",
@@ -43,8 +46,10 @@
         "link": "https://benoitmarechal.github.io/BenoitMarechal_6_17092021/",
         "type": "page"
       }
-    ]
+    ],
+    "tags": "html css sass JavaScript intégration POO responsive"
   },
+
   {
     "name": "Les petits plats",
     "links": [
@@ -56,7 +61,8 @@
         "link": "https://benoitmarechal.github.io/BenoitMarechal_7_13122021/",
         "type": "page"
       }
-    ]
+    ],
+    "tags": "html css sass JavaScript intégration POO responsive bootstrap algorithmie"
   },
   {
     "name": "Billed",
@@ -65,20 +71,18 @@
         "link": "https://github.com/BenoitMarechal/Benoit_Marechal_9_05042022",
         "type": "repo"
       }
-    ]
+    ],
+    "tags": "test jest"
   },
   {
     "name": "Learn@home",
     "links": [
       {
         "link": "https://www.figma.com/file/H9MMnCpQ3snfXrzqPhR6gA/Learn%40Home?node-id=0-1",
-        "type": "repo"
-      },
-      {
-        "link": "https://www.figma.com/file/H9MMnCpQ3snfXrzqPhR6gA/Learn%40Home?node-id=0-1",
         "type": "figma"
       }
-    ]
+    ],
+    "tags": " user-stories kanban maquette"
   },
   {
     "name": "Kaza",
@@ -91,7 +95,8 @@
         "link": "https://kaza-p11-12072022.vercel.app/",
         "type": "page"
       }
-    ]
+    ],
+    "tags": "html css sass JavaScript React intégration responsive"
   },
   {
     "name": "SportSee",
@@ -100,7 +105,8 @@
         "link": "https://github.com/BenoitMarechal/-SportSee_P12_03082022",
         "type": "repo"
       }
-    ]
+    ],
+    "tags": "html css sass JavaScript React intégration responsive graphiques Recharts"
   },
   {
     "name": "ArgentBank",
@@ -109,7 +115,8 @@
         "link": "https://github.com/BenoitMarechal/13_ArgentBank_13092022",
         "type": "repo"
       }
-    ]
+    ],
+    "tags": " React API"
   },
   {
     "name": "HRNet",
@@ -123,6 +130,7 @@
         "link": "https://benoit-marechal-hr-net.netlify.app/",
         "type": "page"
       }
-    ]
+    ],
+    "tags": " React Vaildation algoritmie tailwind"
   }
 ]
