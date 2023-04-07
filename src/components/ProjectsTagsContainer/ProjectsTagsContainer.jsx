@@ -8,7 +8,7 @@ const ProjectsTagsContainer = (props) => {
     <div className='projects__main__search__tagsContainer'>
       {props.tagsList && props.tagsList.length !== 0
         ? props.tagsList.map((tag, index) => (
-            <ProjectTag key={index} tag={tag}></ProjectTag>
+            <ProjectTag key={index} tag={tag} {...props}></ProjectTag>
           ))
         : 'pas de tags'}
     </div>

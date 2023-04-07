@@ -19,45 +19,45 @@ const Projects = () => {
   }
 
   // original useEffect
-  useEffect(() => {
-    if (search.length > 2) {
-      let matches = [];
-      projects.map((project) => {
-        // search in links
-        project.links.map((link) => {
-          if (link.link.includes(search)) {
-            if (matches.includes(project) === false) {
-              matches.push(project);
-            }
-          }
-          return undefined;
-        });
-        // search in rest
-        for (const [key, value] of Object.entries(project)) {
-          if (
-            value !== undefined &&
-            value.toString().toLowerCase().includes(search)
-          ) {
-            if (matches.includes(project) === false) {
-              matches.push(project);
-            }
-          }
-        }
-        return undefined;
-      });
-      setvisibleProjects(matches);
-    } else {
-      resetSearch();
-    }
-  }, [search]);
+  // useEffect(() => {
+  //   if (search.length > 2) {
+  //     let matches = [];
+  //     projects.map((project) => {
+  //       // search in links
+  //       project.links.map((link) => {
+  //         if (link.link.includes(search)) {
+  //           if (matches.includes(project) === false) {
+  //             matches.push(project);
+  //           }
+  //         }
+  //         return undefined;
+  //       });
+  //       // search in rest
+  //       for (const [key, value] of Object.entries(project)) {
+  //         if (
+  //           value !== undefined &&
+  //           value.toString().toLowerCase().includes(search)
+  //         ) {
+  //           if (matches.includes(project) === false) {
+  //             matches.push(project);
+  //           }
+  //         }
+  //       }
+  //       return undefined;
+  //     });
+  //     setvisibleProjects(matches);
+  //   } else {
+  //     resetSearch();
+  //   }
+  // }, [search]);
   // original useEffect
   function searchProjects(string) {
-    if (search.length > 2) {
+    if (string.length > 2) {
       let matches = [];
-      projects.map((project) => {
+      visibleProjects.map((project) => {
         // search in links
         project.links.map((link) => {
-          if (link.link.includes(search)) {
+          if (link.link.includes(string)) {
             if (matches.includes(project) === false) {
               matches.push(project);
             }
@@ -68,7 +68,7 @@ const Projects = () => {
         for (const [key, value] of Object.entries(project)) {
           if (
             value !== undefined &&
-            value.toString().toLowerCase().includes(search)
+            value.toString().toLowerCase().includes(string)
           ) {
             if (matches.includes(project) === false) {
               matches.push(project);
@@ -82,6 +82,13 @@ const Projects = () => {
       resetSearch();
     }
   }
+  function test(string) {
+    console.log(string);
+  }
+  // new useEffect
+  useEffect(() => {
+    searchProjects(search);
+  }, [search]);
 
   /////////////////////TAGS SEARCH////////////////////////////////////
   // console.log('visibleProjects');
@@ -119,7 +126,7 @@ const Projects = () => {
         <h1 className='projects__main__h1'>PROJETS</h1>
         <div className='projects__main__search'>
           <ProjectSearchBar onSearch={onSearch} />
-          <ProjectsTagsContainer {...visibleTags} />
+          <ProjectsTagsContainer {...visibleTags} onClick={test} />
         </div>
         {visibleProjects.length !== 0 ? (
           visibleProjects.map((project) => (
