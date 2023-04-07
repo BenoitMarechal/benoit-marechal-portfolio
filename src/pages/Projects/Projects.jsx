@@ -49,19 +49,25 @@ const Projects = () => {
   /////////////////////TAGS SEARCH////////////////////////////////////
   console.log('visibleProjects');
   console.log(visibleProjects);
-  const [visibleTags, setVisibleTags] = useState([]);
+  const [visibleTags, setVisibleTags] = useState({
+    tagsList: [],
+    other: 'other',
+  });
 
   useEffect(() => {
-    let target = [];
+    let target = { tagsList: [] };
     visibleProjects.forEach((project) => {
       let projectTagsArray = project.tags.split(' ');
       projectTagsArray.forEach((tag) => {
-        if (!target.includes(tag)) {
-          target.push(tag);
+        if (!target.tagsList.includes(tag)) {
+          target.tagsList.push(tag);
         }
       });
     });
-    setVisibleTags(target);
+    setVisibleTags({
+      ...visibleTags,
+      tagsList: target.tagsList,
+    });
   }, [visibleProjects]);
 
   useEffect(() => {
@@ -76,7 +82,7 @@ const Projects = () => {
         <h1 className='projects__main__h1'>PROJETS</h1>
         <div className='projects__main__search'>
           <ProjectSearchBar onSearch={onSearch} />
-          <ProjectsTagsContainer />
+          <ProjectsTagsContainer {...visibleTags} />
         </div>
         {visibleProjects.length !== 0 ? (
           visibleProjects.map((project) => (
