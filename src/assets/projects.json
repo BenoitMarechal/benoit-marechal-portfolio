@@ -82,7 +82,7 @@
         "type": "figma"
       }
     ],
-    "tags": " user-stories kanban maquette"
+    "tags": "user-stories kanban maquette"
   },
   {
     "name": "Kaza",
@@ -116,7 +116,7 @@
         "type": "repo"
       }
     ],
-    "tags": " React API"
+    "tags": "React API"
   },
   {
     "name": "HRNet",
@@ -131,6 +131,6 @@
         "type": "page"
       }
     ],
-    "tags": " React Vaildation algoritmie tailwind"
+    "tags": "React Vaildation algoritmie tailwind"
   }
 ]

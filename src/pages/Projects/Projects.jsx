@@ -8,33 +8,15 @@ import ProjectsTagsContainer from '../../components/ProjectsTagsContainer/Projec
 import ProjectTag from '../../components/ProjectTag/ProjectTag';
 
 const Projects = () => {
-  const [allTags, setAllTags] = useState([]);
-  projects.map((project) => {
-    let lineOfTags = project.tags.split(' ');
-    for (let i = 0; i < lineOfTags.length; i++) {
-      if (allTags.includes(lineOfTags[i]) === false) {
-        setAllTags([...allTags, lineOfTags[i]]);
-      }
-    }
-  });
-  //console.log(allTags);
-  const [currentTags, setCurrentTags] = useState(allTags);
-  useEffect(() => {
-    setCurrentTags(allTags);
-  }, [allTags]);
-  //setCurrentTags(allTags);
-  console.log(currentTags);
-  const [tagSearch, setTagSearch] = useState({});
-  //console.log(tagSearch);
+  //text search
   const [search, setSearch] = useState('');
-  const [projectList, setProjectList] = useState(projects);
+  const [visibleProjects, setvisibleProjects] = useState(projects);
   function onSearch(e) {
     setSearch(e.target.value.toLowerCase());
   }
-  useEffect(() => {
-    console.log(currentTags);
-  }, [currentTags]);
-
+  function resetSearch() {
+    setvisibleProjects(projects);
+  }
   useEffect(() => {
     if (search.length > 2) {
       let matches = [];
@@ -59,11 +41,33 @@ const Projects = () => {
         }
         return undefined;
       });
-      setProjectList(matches);
+      setvisibleProjects(matches);
     } else {
-      setProjectList(projects);
+      resetSearch();
     }
   }, [search]);
+  /////////////////////TAGS SEARCH////////////////////////////////////
+  console.log('visibleProjects');
+  console.log(visibleProjects);
+  const [visibleTags, setVisibleTags] = useState([]);
+
+  useEffect(() => {
+    let target = [];
+    visibleProjects.forEach((project) => {
+      let projectTagsArray = project.tags.split(' ');
+      projectTagsArray.forEach((tag) => {
+        if (!target.includes(tag)) {
+          target.push(tag);
+        }
+      });
+    });
+    setVisibleTags(target);
+  }, [visibleProjects]);
+
+  useEffect(() => {
+    console.log('visibleTags');
+    console.log(visibleTags);
+  }, [visibleTags]);
 
   return (
     <div className='app'>
@@ -72,11 +76,10 @@ const Projects = () => {
         <h1 className='projects__main__h1'>PROJETS</h1>
         <div className='projects__main__search'>
           <ProjectSearchBar onSearch={onSearch} />
-          <ProjectsTagsContainer {...tagSearch} />
-          <ProjectTag />
+          <ProjectsTagsContainer />
         </div>
-        {projectList.length !== 0 ? (
-          projectList.map((project) => (
+        {visibleProjects.length !== 0 ? (
+          visibleProjects.map((project) => (
             <ProjectCard {...project} key={project.name}></ProjectCard>
           ))
         ) : (
