@@ -5,7 +5,7 @@ import projects from '../../assets/projects.json';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import ProjectSearchBar from '../../components/ProjectSearchBar/ProjectSearchBar';
 import ProjectsTagsContainer from '../../components/ProjectsTagsContainer/ProjectsTagsContainer';
-import ProjectTag from '../../components/ProjectTag/ProjectTag';
+//import ProjectTag from '../../components/ProjectTag/ProjectTag';
 
 const Projects = () => {
   //text search
@@ -17,10 +17,13 @@ const Projects = () => {
   function resetSearch() {
     setvisibleProjects(projects);
   }
+
+  // original useEffect
   useEffect(() => {
     if (search.length > 2) {
       let matches = [];
       projects.map((project) => {
+        // search in links
         project.links.map((link) => {
           if (link.link.includes(search)) {
             if (matches.includes(project) === false) {
@@ -29,6 +32,7 @@ const Projects = () => {
           }
           return undefined;
         });
+        // search in rest
         for (const [key, value] of Object.entries(project)) {
           if (
             value !== undefined &&
@@ -46,9 +50,42 @@ const Projects = () => {
       resetSearch();
     }
   }, [search]);
+  // original useEffect
+  function searchProjects(string) {
+    if (search.length > 2) {
+      let matches = [];
+      projects.map((project) => {
+        // search in links
+        project.links.map((link) => {
+          if (link.link.includes(search)) {
+            if (matches.includes(project) === false) {
+              matches.push(project);
+            }
+          }
+          return undefined;
+        });
+        // search in rest
+        for (const [key, value] of Object.entries(project)) {
+          if (
+            value !== undefined &&
+            value.toString().toLowerCase().includes(search)
+          ) {
+            if (matches.includes(project) === false) {
+              matches.push(project);
+            }
+          }
+        }
+        return undefined;
+      });
+      setvisibleProjects(matches);
+    } else {
+      resetSearch();
+    }
+  }
+
   /////////////////////TAGS SEARCH////////////////////////////////////
-  console.log('visibleProjects');
-  console.log(visibleProjects);
+  // console.log('visibleProjects');
+  // console.log(visibleProjects);
   const [visibleTags, setVisibleTags] = useState({
     tagsList: [],
     other: 'other',
@@ -71,8 +108,8 @@ const Projects = () => {
   }, [visibleProjects]);
 
   useEffect(() => {
-    console.log('visibleTags');
-    console.log(visibleTags);
+    // console.log('visibleTags');
+    // console.log(visibleTags);
   }, [visibleTags]);
 
   return (
