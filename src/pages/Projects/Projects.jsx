@@ -14,7 +14,8 @@ const Projects = () => {
   const [allProjects, setAllProjects] = useState([]);
   useEffect(() => {
     const all = projects.map((item) => {
-      return { ...item, visible: true };
+      //let hop = true;
+      return { ...item, visible: 'true' };
     });
     setAllProjects(all);
   }, [projects]);
@@ -77,8 +78,8 @@ const Projects = () => {
     // console.log(allProjects);
   }, [allProjects]);
   useEffect(() => {
-    console.log('allTags');
-    console.log(allTags);
+    //console.log('allTags');
+    // console.log(allTags);
   }, [allTags]);
   useEffect(() => {
     //  console.log('search');
@@ -93,6 +94,7 @@ const Projects = () => {
         {/* //////////////////////////////RECHERCHE///////////////////////////////// */}
         <div className='projects__main__search'>
           <ProjectSearchBar onSearch={handleSearch} />
+          {/* AFFICHAGE DES TAGS */}
           <div className='projects__main__search__tagsContainer'>
             {allTags.map((tag, index) =>
               tag.visible === true ? (
@@ -108,13 +110,14 @@ const Projects = () => {
             )}
           </div>
           <div>
-            {/* {allProjects.map((project, index) =>
-              project.visibleProject ? (
+            {/* AFFICHAGE DES PROJETS */}
+            {allProjects.map((project, index) =>
+              project.visible === 'true' ? (
                 <ProjectCard {...project} key={index} />
               ) : (
                 ''
               )
-            )} */}
+            )}
           </div>
 
           {/* <ProjectsTagsContainer
@@ -127,7 +130,7 @@ const Projects = () => {
         {/* //////////////////////////////AFFICHAGE DES PROJECTS///////////////////////////////// */}
         {/* prob visible */}
         {allProjects.map((project, index) => (
-          <ProjectCard {...project} key={index} visible={project.visible} />
+          <ProjectCard {...project} key={index} />
         ))}
         {/* prob visible */}
       </main>
