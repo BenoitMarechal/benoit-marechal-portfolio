@@ -3,6 +3,7 @@ import projectLabels from '../../assets/projectLabels.json';
 import { Link } from 'react-router-dom';
 
 const ProjectCard = (project) => {
+  console.log(project);
   return (
     // <div className={project.visible === 'true' ? 'projectCard' : 'none'}>
     <div className='projectCard'>

@@ -95,7 +95,7 @@ const Projects = () => {
           <ProjectSearchBar onSearch={handleSearch} />
           <div className='projects__main__search__tagsContainer'>
             {allTags.map((tag, index) =>
-              tag.visible ? (
+              tag.visible === true ? (
                 <ProjectTag
                   {...tag}
                   activeFunction={toggleActiveTag}
@@ -108,9 +108,13 @@ const Projects = () => {
             )}
           </div>
           <div>
-            {allProjects.map((project, index) =>
-              project.visible ? <ProjectCard {...project} key={index} /> : ''
-            )}
+            {/* {allProjects.map((project, index) =>
+              project.visibleProject ? (
+                <ProjectCard {...project} key={index} />
+              ) : (
+                ''
+              )
+            )} */}
           </div>
 
           {/* <ProjectsTagsContainer
@@ -122,9 +126,9 @@ const Projects = () => {
 
         {/* //////////////////////////////AFFICHAGE DES PROJECTS///////////////////////////////// */}
         {/* prob visible */}
-        {/* {allProjects.map((project, index) => (
-          <ProjectCard {...project} key={index} />
-        ))} */}
+        {allProjects.map((project, index) => (
+          <ProjectCard {...project} key={index} visible={project.visible} />
+        ))}
         {/* prob visible */}
       </main>
       <Footer></Footer>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 const ProjectTag = (props) => {
-  // console.log('props du tag');
-  // console.log(props);
+  console.log('props du tag');
+  console.log(props);
   // const [active, setActive] = useState(false);
   // function toggleActive() {
   //   setActive(!active);
