@@ -30,7 +30,7 @@ const Projects = () => {
         }
         return undefined;
       });
-      // search in rest
+      // search in all the rest
       for (const [key, value] of Object.entries(project)) {
         if (
           value !== undefined &&
@@ -46,7 +46,7 @@ const Projects = () => {
     setvisibleProjects(matches);
   }
 
-  // new useEffect
+  // useEffect for text search
   useEffect(() => {
     if (search.length > 2) {
       searchProjects(search);
@@ -56,31 +56,69 @@ const Projects = () => {
   }, [search]);
 
   /////////////////////TAGS SEARCH////////////////////////////////////
-  const [visibleTags, setVisibleTags] = useState({
-    tagsList: [],
-    other: 'other',
-  });
-
+  // declare All tags
+  const [allTags, setAllTags] = useState([]);
+  // get All tags
   useEffect(() => {
-    let target = { tagsList: [] };
-    visibleProjects.forEach((project) => {
+    // let target = { tagsList: [] };
+    let target = [];
+    projects.forEach((project) => {
       let projectTagsArray = project.tags.split(' ');
       projectTagsArray.forEach((tag) => {
-        if (!target.tagsList.includes(tag)) {
-          target.tagsList.push(tag);
+        if (!target.includes(tag)) {
+          target.push(tag);
         }
       });
     });
-    setVisibleTags({
-      ...visibleTags,
-      tagsList: target.tagsList,
-    });
-  }, [visibleProjects]);
+    setAllTags([
+      ...allTags,
+      ...target.map((tag) => {
+        return { tag: tag, active: false };
+      }),
+    ]);
+  }, [projects]);
+  //check get all tags
 
-  function test(string) {
-    console.log(string);
-    searchProjects(string);
-  }
+  //toggle tags function
+  const toggleTag = (tag) => {
+    let target = [...allTags];
+    for (let i = 0; i < target.length; i++) {
+      // console.log(allTags[i].tag === tag);
+      if (target[i].tag === tag) {
+        target[i].active = !target[i].active;
+      }
+    }
+    setAllTags(target);
+  };
+  const test = () => {
+    console.log('click');
+    toggleTag('css');
+  };
+  // const [visibleTags, setVisibleTags] = useState({
+  //   tagsList: [],
+  //   other: 'other',
+  // });
+
+  // useEffect(() => {
+  //   let target = { tagsList: [] };
+  //   visibleProjects.forEach((project) => {
+  //     let projectTagsArray = project.tags.split(' ');
+  //     projectTagsArray.forEach((tag) => {
+  //       if (!target.tagsList.includes(tag)) {
+  //         target.tagsList.push(tag);
+  //       }
+  //     });
+  //   });
+  //   setVisibleTags({
+  //     ...visibleTags,
+  //     tagsList: target.tagsList,
+  //   });
+  // }, [visibleProjects]);
+
+  // function test(string) {
+  //   console.log(string);
+  //   searchProjects(string);
+  // }
 
   ///////////////////////////// ARRAY SEARCH/////////////////////////////////
   const [searchArray, setSearchArray] = useState([]);
@@ -93,26 +131,34 @@ const Projects = () => {
       }
     }
   }
+  /////////////////////////////////////////////////////////////////////////////////////
+  // useEffect(() => {
+  //   // let target = visibleTags.map((tag) => {tag});
+  //   setSearchArray([search, ...visibleTags.tagsList]);
+  // }, [search, visibleTags.tagsList]);
 
+  //monitoring search Array (debug)
   useEffect(() => {
-    // let target = visibleTags.map((tag) => {tag});
-    setSearchArray([search, ...visibleTags.tagsList]);
-  }, [search, visibleTags.tagsList]);
-
-  //monitoring
-  useEffect(() => {
-    console.log('searchArray');
-    console.log(searchArray);
+    // console.log('searchArray');
+    //  console.log(searchArray);
   }, [searchArray]);
+
+  useEffect(() => {
+    console.log(allTags);
+  }, [allTags]);
 
   return (
     <div className='app'>
       <Header></Header>
       <main className='projects__main'>
-        <h1 className='projects__main__h1'>PROJETS</h1>
+        <h1 className='projects__main__h1' onClick={test}>
+          PROJETS{' '}
+        </h1>
+        <div>
+          {allTags.map((tag) => tag.tag + ' ' + tag.active.toString()) + '/ /'}{' '}
+        </div>
         <div className='projects__main__search'>
           <ProjectSearchBar onSearch={onSearch} />
-          <ProjectsTagsContainer {...visibleTags} onClick={test} />
         </div>
         {visibleProjects.length !== 0 ? (
           visibleProjects.map((project) => (
