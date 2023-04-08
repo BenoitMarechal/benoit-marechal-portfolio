@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 const ProjectCard = (project) => {
   return (
-    <div className={project.visible === 'true' ? 'projectCard' : 'none'}>
+    // <div className={project.visible === 'true' ? 'projectCard' : 'none'}>
+    <div className='projectCard'>
       <Link to={'/project/?name=' + project.name} {...project}>
         <h2 className='projectCard__h2'>{project.name}</h2>
       </Link>

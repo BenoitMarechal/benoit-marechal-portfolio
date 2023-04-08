@@ -14,7 +14,7 @@ const Projects = () => {
   const [allProjects, setAllProjects] = useState([]);
   useEffect(() => {
     const all = projects.map((item) => {
-      return { ...item, visible: 'true' };
+      return { ...item, visible: true };
     });
     setAllProjects(all);
   }, [projects]);
@@ -43,13 +43,32 @@ const Projects = () => {
     setAllTags(full);
   }, [allProjects]);
   ///declare tags togle function
-  function toggleActiveTag() {}
-  function toggleVisibleTag() {}
+  //toggle tags functions
+  const toggleActiveTag = (tag) => {
+    let target = [...allTags];
+    for (let i = 0; i < target.length; i++) {
+      if (target[i].tag === tag) {
+        target[i].active = !target[i].active;
+      }
+    }
+    setAllTags(target);
+  };
+  const toggleVisibleTag = (tag) => {
+    let target = [...allTags];
+    for (let i = 0; i < target.length; i++) {
+      if (target[i].tag === tag) {
+        target[i].visible = !target[i].visible;
+      }
+    }
+    setAllTags(target);
+  };
 
   ///////////////////get Search value
   const [search, setSearch] = useState();
   function handleSearch(e) {
-    setSearch(e.target.value);
+    if (e.target.value.length > 2) {
+      setSearch(e.target.value);
+    }
   }
 
   ////////////////////////////////CHECKS////////////////////////////////////////////
@@ -58,12 +77,12 @@ const Projects = () => {
     // console.log(allProjects);
   }, [allProjects]);
   useEffect(() => {
-    //   console.log('allTags');
-    //   console.log(allTags);
+    console.log('allTags');
+    console.log(allTags);
   }, [allTags]);
   useEffect(() => {
-    console.log('search');
-    console.log(search);
+    //  console.log('search');
+    //  console.log(search);
   }, [search]);
 
   return (
@@ -75,7 +94,6 @@ const Projects = () => {
         <div className='projects__main__search'>
           <ProjectSearchBar onSearch={handleSearch} />
           <div className='projects__main__search__tagsContainer'>
-            coucou
             {allTags.map((tag, index) =>
               tag.visible ? (
                 <ProjectTag
@@ -89,6 +107,12 @@ const Projects = () => {
               )
             )}
           </div>
+          <div>
+            {allProjects.map((project, index) =>
+              project.visible ? <ProjectCard {...project} key={index} /> : ''
+            )}
+          </div>
+
           {/* <ProjectsTagsContainer
             tags={allTags}
             activeFunction={toggleActiveTag}
@@ -97,9 +121,11 @@ const Projects = () => {
         </div>
 
         {/* //////////////////////////////AFFICHAGE DES PROJECTS///////////////////////////////// */}
-        {allProjects.map((project, index) => (
+        {/* prob visible */}
+        {/* {allProjects.map((project, index) => (
           <ProjectCard {...project} key={index} />
-        ))}
+        ))} */}
+        {/* prob visible */}
       </main>
       <Footer></Footer>
     </div>
