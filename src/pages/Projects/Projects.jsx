@@ -20,32 +20,51 @@ const Projects = () => {
   }, [projects]);
 
   /// get All tags
-
   const [allTags, setAllTags] = useState([]);
   useEffect(() => {
     let result = [];
     allProjects.map((project) => {
-      console.log(project);
+      // console.log(project);
       let line = project.tags.split(' ');
       for (let i = 0; i < line.length; i++) {
-        console.log(line[i]);
+        // console.log(line[i]);
         if (!result.includes(line[i])) {
+          //  console.log(line[i]);
           result.push(line[i]);
         }
       }
     });
-    setAllTags(result);
+    let full = result.map((tag) => ({
+      tag: tag,
+      visible: true,
+      active: false,
+    }));
+
+    setAllTags(full);
   }, [allProjects]);
+  ///declare tags togle function
+  function toggleActiveTag() {}
+  function toggleVisibleTag() {}
+
+  ///////////////////get Search value
+  const [search, setSearch] = useState();
+  function handleSearch(e) {
+    setSearch(e.target.value);
+  }
 
   ////////////////////////////////CHECKS////////////////////////////////////////////
   useEffect(() => {
-    console.log('allProjects');
-    console.log(allProjects);
+    // console.log('allProjects');
+    // console.log(allProjects);
   }, [allProjects]);
   useEffect(() => {
-    console.log('allTags');
-    console.log(allTags);
+    //   console.log('allTags');
+    //   console.log(allTags);
   }, [allTags]);
+  useEffect(() => {
+    console.log('search');
+    console.log(search);
+  }, [search]);
 
   return (
     <div className='app'>
@@ -54,10 +73,10 @@ const Projects = () => {
         <h1 className='projects__main__h1'>PROJETS </h1>
         {/* //////////////////////////////RECHERCHE///////////////////////////////// */}
         <div className='projects__main__search'>
-          {/* <ProjectSearchBar onSearch={onSearch} /> */}
+          <ProjectSearchBar onSearch={handleSearch} />
           <div className='projects__main__search__tagsContainer'>
             coucou
-            {/* {allTags.map((tag, index) =>
+            {allTags.map((tag, index) =>
               tag.visible ? (
                 <ProjectTag
                   {...tag}
@@ -68,7 +87,7 @@ const Projects = () => {
               ) : (
                 ''
               )
-            )} */}
+            )}
           </div>
           {/* <ProjectsTagsContainer
             tags={allTags}
