@@ -11,25 +11,47 @@ import ProjectTag from '../../components/ProjectTag/ProjectTag';
 const Projects = () => {
   //get All projects
   // adding visible propety to eachproject
-
   const [allProjects, setAllProjects] = useState([]);
-
   const mapProjects = useCallback(() => {
     const all = projects.map((item) => {
-      return { ...item, visible: true };
+      return { ...item, visible: 'true' };
     });
     setAllProjects(all);
   }, []);
-
   useEffect(() => {
     mapProjects();
   }, [mapProjects]);
+
+  /// get All tags
+
+  const [allTags, setAllTags] = useState([]);
+  const mapTags = useCallback(() => {
+    let result = [];
+    allProjects.map((project) => {
+      console.log(project);
+      let line = project.tags.split(' ');
+      for (let i = 0; i < line.length; i++) {
+        console.log(line[i]);
+        if (!result.includes(line[i])) {
+          result.push(line[i]);
+        }
+      }
+    });
+    setAllTags(result);
+  }, []);
+  useEffect(() => {
+    mapTags();
+  }, [mapTags, allProjects]);
 
   ////////////////////////////////CHECKS////////////////////////////////////////////
   useEffect(() => {
     console.log('allProjects');
     console.log(allProjects);
   }, [allProjects]);
+  useEffect(() => {
+    console.log('allTags');
+    console.log(allTags);
+  }, [allTags]);
 
   return (
     <div className='app'>
