@@ -4,12 +4,10 @@ import Header from '../../components/Header/Header';
 import projects from '../../assets/projects.json';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import ProjectSearchBar from '../../components/ProjectSearchBar/ProjectSearchBar';
-import ProjectsTagsContainer from '../../components/ProjectsTagsContainer/ProjectsTagsContainer';
+//import ProjectsTagsContainer from '../../components/ProjectsTagsContainer/ProjectsTagsContainer';
 import ProjectTag from '../../components/ProjectTag/ProjectTag';
 //import ProjectTag from '../../components/ProjectTag/ProjectTag';
 const allP = projects.map((item) => {
-  //let hop = true;
-  //imposisble de passer un boolean???
   return { ...item, visible: 'true' };
 });
 //console.log(allP);
@@ -152,33 +150,93 @@ const Projects = () => {
   //     showAllProjects();
   //   }
   // }, [search]);
+  function multipleSearch() {
+    //console.log('hey');
+    let target = [...allProjects];
+    console.log(target);
+    console.log(searchArray);
+    //loop projets
+    for (let i = 0; i < target.length; i++) {
+      let count = 0;
+      let goal = searchArray.length;
+      // goal = goal + 15;
+      //loop mots recherche
+      for (let a = 0; a < searchArray.length; a++) {
+        if (searchArray[a] !== undefined) {
+          for (const [key, value] of Object.entries(target[i])) {
+            if (
+              typeof value === 'string' &&
+              value !== 'true' &&
+              value !== 'false'
+            ) {
+              console.log('looking for ' + searchArray[a]);
+              console.log('in ' + value);
+              console.log(value.includes(searchArray[a]));
+              if (value.includes(searchArray[a])) {
+                count++;
+                // if (a === 0) {
+                //   target[i].visible = 'true';
+                //   console.log(target[i].name);
+                // } else {
+                //   if (
+                //     value.includes(searchArray[a]) &&
+                //     target[i].visible === 'true'
+                //   ) {
+                //   }
+                // }
+              }
+            }
+          }
+          for (let b = 0; b < target[i].links.length; b++) {
+            if (target[i].links[b].link.includes(searchArray[a])) {
+              count++;
+              // target[i].visible = 'true';
+              // console.log(target[i].name);
+            }
+          }
+        } else {
+          goal--;
+        }
+      }
+      console.log(target[i].name);
+      console.log(count);
+      console.log(goal);
+      if (count === goal) {
+        target[i].visible = 'true';
+      }
+    }
+  }
 
   //recherche multiple
   useEffect(() => {
     // console.log('searchArray');
     // console.log(searchArray);
+
     hideAllProjects();
-    console.log(searchArray.length);
+    //console.log(searchArray.length);
     if (
       searchArray === undefined ||
       (searchArray.length === 1 && searchArray[0] === undefined)
     ) {
-      console.log('toutou');
+      //console.log('toutou');
       showAllProjects();
+    } else {
+      multipleSearch();
     }
-    //if (searchArray !== undefined) {
-    for (let i = 0; i < searchArray.length; i++) {
-      if (searchArray[i] !== undefined) {
-        console.log('cherche');
-        console.log(searchArray[i]);
-        searchString(searchArray[i]);
-      }
-      //else {
-      // console.log('pas def');
-      //  showAllProjects();
-      //}
-      // }
-    }
+    // //if (searchArray !== undefined) {
+    // for (let i = 0; i < searchArray.length; i++) {
+    //   if (searchArray[i] !== undefined) {
+    //     // console.log('cherche');
+    //     //console.log(searchArray[i]);
+    //     searchString(searchArray[i]);
+    //   }
+    // multipleSearch();
+    //else {
+    // console.log('pas def');
+    //  showAllProjects();
+    //}
+    // }
+    //}
 
     //console.log('Array pas undefined');
 
@@ -198,10 +256,10 @@ const Projects = () => {
   //    console.log('search');
   //    console.log(search);
   // }, [search]);
-  useEffect(() => {
-    console.log('searchArray');
-    console.log(searchArray);
-  }, [searchArray]);
+  // useEffect(() => {
+  //   console.log('searchArray');
+  //   console.log(searchArray);
+  // }, [searchArray]);
 
   return (
     <div className='app'>
