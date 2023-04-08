@@ -98,10 +98,6 @@ const Projects = () => {
     setAllTags(target);
   };
 
-  const test = () => {
-    toggleActiveTag('css');
-    toggleVisibleTag('html');
-  };
   // const [visibleTags, setVisibleTags] = useState({
   //   tagsList: [],
   //   other: 'other',
@@ -152,6 +148,7 @@ const Projects = () => {
   }, [searchArray]);
 
   useEffect(() => {
+    console.log('allTags');
     console.log(allTags);
   }, [allTags]);
 
@@ -159,23 +156,18 @@ const Projects = () => {
     <div className='app'>
       <Header></Header>
       <main className='projects__main'>
-        <h1 className='projects__main__h1' onClick={test}>
-          PROJETS{' '}
-        </h1>
-        <div>
-          {allTags.map(
-            (tag) =>
-              tag.tag +
-              ' active: ' +
-              tag.active.toString() +
-              ' visible: ' +
-              tag.visible.toString() +
-              '/ /'
-          )}{' '}
-        </div>
+        <h1 className='projects__main__h1'>PROJETS </h1>
+        {/* //////////////////////////////RECHERCHE///////////////////////////////// */}
         <div className='projects__main__search'>
           <ProjectSearchBar onSearch={onSearch} />
+          <ProjectsTagsContainer
+            tags={allTags}
+            activeFunction={toggleActiveTag}
+            visibleFunction={toggleVisibleTag}
+          />
         </div>
+
+        {/* //////////////////////////////AFFICHAGE DES PROJECTS///////////////////////////////// */}
         {visibleProjects.length !== 0 ? (
           visibleProjects.map((project) => (
             <ProjectCard {...project} key={project.name}></ProjectCard>

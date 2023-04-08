@@ -6,11 +6,13 @@ const ProjectsTagsContainer = (props) => {
   // console.log(props);
   return (
     <div className='projects__main__search__tagsContainer'>
-      {props.tagsList && props.tagsList.length !== 0
-        ? props.tagsList.map((tag, index) => (
-            <ProjectTag key={index} tag={tag} {...props}></ProjectTag>
-          ))
-        : 'pas de tags'}
+      {props.tags.map((tag, index) =>
+        tag.visible ? (
+          <ProjectTag key={index} {...tag} {...props}></ProjectTag>
+        ) : (
+          ''
+        )
+      )}
     </div>
   );
 };
