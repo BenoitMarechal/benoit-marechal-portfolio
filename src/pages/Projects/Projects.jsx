@@ -60,7 +60,6 @@ const Projects = () => {
   const [allTags, setAllTags] = useState([]);
   // get All tags
   useEffect(() => {
-    // let target = { tagsList: [] };
     let target = [];
     projects.forEach((project) => {
       let projectTagsArray = project.tags.split(' ');
@@ -73,26 +72,35 @@ const Projects = () => {
     setAllTags([
       ...allTags,
       ...target.map((tag) => {
-        return { tag: tag, active: false };
+        return { tag: tag, active: false, visible: true };
       }),
     ]);
   }, [projects]);
   //check get all tags
 
   //toggle tags function
-  const toggleTag = (tag) => {
+  const toggleActiveTag = (tag) => {
     let target = [...allTags];
     for (let i = 0; i < target.length; i++) {
-      // console.log(allTags[i].tag === tag);
       if (target[i].tag === tag) {
         target[i].active = !target[i].active;
       }
     }
     setAllTags(target);
   };
+  const toggleVisibleTag = (tag) => {
+    let target = [...allTags];
+    for (let i = 0; i < target.length; i++) {
+      if (target[i].tag === tag) {
+        target[i].visible = !target[i].visible;
+      }
+    }
+    setAllTags(target);
+  };
+
   const test = () => {
-    console.log('click');
-    toggleTag('css');
+    toggleActiveTag('css');
+    toggleVisibleTag('html');
   };
   // const [visibleTags, setVisibleTags] = useState({
   //   tagsList: [],
@@ -155,7 +163,15 @@ const Projects = () => {
           PROJETS{' '}
         </h1>
         <div>
-          {allTags.map((tag) => tag.tag + ' ' + tag.active.toString()) + '/ /'}{' '}
+          {allTags.map(
+            (tag) =>
+              tag.tag +
+              ' active: ' +
+              tag.active.toString() +
+              ' visible: ' +
+              tag.visible.toString() +
+              '/ /'
+          )}{' '}
         </div>
         <div className='projects__main__search'>
           <ProjectSearchBar onSearch={onSearch} />
