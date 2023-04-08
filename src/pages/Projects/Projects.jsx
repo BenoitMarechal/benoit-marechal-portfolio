@@ -12,20 +12,17 @@ const Projects = () => {
   //get All projects
   // adding visible propety to eachproject
   const [allProjects, setAllProjects] = useState([]);
-  const mapProjects = useCallback(() => {
+  useEffect(() => {
     const all = projects.map((item) => {
       return { ...item, visible: 'true' };
     });
     setAllProjects(all);
-  }, []);
-  useEffect(() => {
-    mapProjects();
-  }, [mapProjects]);
+  }, [projects]);
 
   /// get All tags
 
   const [allTags, setAllTags] = useState([]);
-  const mapTags = useCallback(() => {
+  useEffect(() => {
     let result = [];
     allProjects.map((project) => {
       console.log(project);
@@ -38,10 +35,7 @@ const Projects = () => {
       }
     });
     setAllTags(result);
-  }, []);
-  useEffect(() => {
-    mapTags();
-  }, [mapTags, allProjects]);
+  }, [allProjects]);
 
   ////////////////////////////////CHECKS////////////////////////////////////////////
   useEffect(() => {
