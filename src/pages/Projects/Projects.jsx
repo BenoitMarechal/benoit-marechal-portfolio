@@ -7,45 +7,38 @@ import ProjectSearchBar from '../../components/ProjectSearchBar/ProjectSearchBar
 import ProjectsTagsContainer from '../../components/ProjectsTagsContainer/ProjectsTagsContainer';
 import ProjectTag from '../../components/ProjectTag/ProjectTag';
 //import ProjectTag from '../../components/ProjectTag/ProjectTag';
+const allP = projects.map((item) => {
+  //let hop = true;
+  //imposisble de passer un boolean???
+  return { ...item, visible: 'true' };
+});
+//console.log(allP);
+let result = [];
+let allTagStrings = allP.map((project) => {
+  let line = project.tags.split(' ');
+  for (let i = 0; i < line.length; i++) {
+    if (!result.includes(line[i])) {
+      result.push(line[i]);
+    }
+  }
+  return undefined;
+});
+let allTagObjects = result.map((tag) => ({
+  tag: tag,
+  visible: true,
+  active: false,
+}));
+// console.log('allTagObjects');
+// console.log(allTagObjects);
+//console.log(full);
 
 const Projects = () => {
   //get All projects
   // adding visible propety to eachproject
-  const [allProjects, setAllProjects] = useState([]);
-  useEffect(() => {
-    const all = projects.map((item) => {
-      //let hop = true;
-      //imposisble de passer un boolean???
-      return { ...item, visible: 'true' };
-    });
-    setAllProjects(all);
-  }, [projects]);
-
+  const [allProjects, setAllProjects] = useState(allP);
   /// get All tags
-  const [allTags, setAllTags] = useState([]);
-  useEffect(() => {
-    let result = [];
-    allProjects.map((project) => {
-      // console.log(project);
-      let line = project.tags.split(' ');
-      for (let i = 0; i < line.length; i++) {
-        // console.log(line[i]);
-        if (!result.includes(line[i])) {
-          //  console.log(line[i]);
-          result.push(line[i]);
-        }
-      }
-    });
-    let full = result.map((tag) => ({
-      tag: tag,
-      visible: true,
-      active: false,
-    }));
-
-    setAllTags(full);
-  }, [allProjects]);
-  ///declare tags togle function
-  //toggle tags functions
+  const [allTags, setAllTags] = useState(allTagObjects);
+  ///declare tags toggle function
   const toggleActiveTag = (tag) => {
     let target = [...allTags];
     for (let i = 0; i < target.length; i++) {
@@ -64,9 +57,9 @@ const Projects = () => {
     }
     setAllTags(target);
   };
-
-  ///////////////////get Search value
+  ///////////////////declare Search value
   const [search, setSearch] = useState();
+  ///////////////////get Search value
   function handleSearch(e) {
     if (e.target.value.length > 2) {
       setSearch(e.target.value);
@@ -74,7 +67,6 @@ const Projects = () => {
       setSearch(undefined);
     }
   }
-
   //construction d'un tableau de recherche
   const [searchArray, setSearchArray] = useState([]);
   useEffect(() => {
@@ -89,31 +81,126 @@ const Projects = () => {
   }, [search, allTags]);
 
   ///////fonction(s) de recherche
-  //recherche d'un string
+
+  //recherche d'un string pour afficher le porjet
   function searchString(string) {
-    for (let i = 0; i < allProjects.length; i++) {}
+    string = string.toLowerCase();
+    let matches = [...allProjects];
+    allProjects.map((project) => {
+      // search in links
+      project.links.map((link) => {
+        if (link.link.includes(string)) {
+          if (matches.includes(project) === false) {
+            project.visible = 'true';
+          }
+        }
+        //return undefined;
+      });
+      // search in all the rest
+      for (const [key, value] of Object.entries(project)) {
+        if (
+          value !== undefined &&
+          value.toString().toLowerCase().includes(string)
+        ) {
+          project.visible = 'true';
+        }
+      }
+      //return undefined;
+    });
+    //console.log('matches');
+    //console.log(matches);
+    //return matches;
+
+    //setvisibleProjects(matches);
+  }
+  //cacher tous les projets
+  function hideAllProjects() {
+    let result = [...allProjects];
+    result.map((project) => {
+      project.visible = 'false';
+    });
+    setAllProjects(result);
+  }
+  //Afficher tous les projets
+  function showAllProjects() {
+    let result = [...allProjects];
+    result.map((project) => {
+      project.visible = 'true';
+    });
+    setAllProjects(result);
+  }
+  //chercher tous les strings
+  function searchProjects() {
+    hideAllProjects();
+    console.log('coucou');
+    for (let i = 0; i < searchArray.length; i++) {
+      if (searchArray[i] !== undefined && searchArray[i].length < 2) {
+        console.log('cherche' + searchArray[i]);
+        //   searchString(array[i]);
+        // }
+      }
+    }
   }
 
-  function searchProjects(array) {
-    for (let i = 0; i < array.length; i++) {}
-  }
+  //////////lancement de la recherche
+  ///simple frappe
+  // useEffect(() => {
+  //   if (search !== undefined) {
+  //     searchString(search);
+  //   }
+  //   if (search === undefined || search.length < 2) {
+  //     showAllProjects();
+  //   }
+  // }, [search]);
 
-  ////////////////////////////////CHECKS////////////////////////////////////////////
-  useEffect(() => {
-    // console.log('allProjects');
-    // console.log(allProjects);
-  }, [allProjects]);
-  useEffect(() => {
-    //console.log('allTags');
-    // console.log(allTags);
-  }, [allTags]);
-  useEffect(() => {
-    //  console.log('search');
-    //  console.log(search);
-  }, [search]);
+  //recherche multiple
   useEffect(() => {
     // console.log('searchArray');
     // console.log(searchArray);
+    hideAllProjects();
+    console.log(searchArray.length);
+    if (
+      searchArray === undefined ||
+      (searchArray.length === 1 && searchArray[0] === undefined)
+    ) {
+      console.log('toutou');
+      showAllProjects();
+    }
+    //if (searchArray !== undefined) {
+    for (let i = 0; i < searchArray.length; i++) {
+      if (searchArray[i] !== undefined) {
+        console.log('cherche');
+        console.log(searchArray[i]);
+        searchString(searchArray[i]);
+      }
+      //else {
+      // console.log('pas def');
+      //  showAllProjects();
+      //}
+      // }
+    }
+
+    //console.log('Array pas undefined');
+
+    //else {showAllProjects()};
+  }, [searchArray]);
+
+  ////////////////////////////////CHECKS////////////////////////////////////////////
+  // useEffect(() => {
+  //   console.log('allProjects');
+  //   console.log(allProjects);
+  // }, [allProjects]);
+  // useEffect(() => {
+  //console.log('allTags');
+  // console.log(allTags);
+  //}, [allTags]);
+  // useEffect(() => {
+  //    console.log('search');
+  //    console.log(search);
+  // }, [search]);
+  useEffect(() => {
+    console.log('searchArray');
+    console.log(searchArray);
   }, [searchArray]);
 
   return (
@@ -139,8 +226,8 @@ const Projects = () => {
               )
             )}
           </div>
-          <div>
-            {/* AFFICHAGE DES PROJETS */}
+          {/* <div>
+            
             {allProjects.map((project, index) =>
               project.visible === 'true' ? (
                 <ProjectCard {...project} key={index} />
@@ -148,7 +235,7 @@ const Projects = () => {
                 ''
               )
             )}
-          </div>
+          </div> */}
 
           {/* <ProjectsTagsContainer
             tags={allTags}
