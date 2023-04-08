@@ -85,8 +85,7 @@ const Projects = () => {
         activeTags.push(allTags[i].tag);
       }
     }
-
-    console.log([search, ...activeTags]);
+    setSearchArray([search, ...activeTags]);
   }, [search, allTags]);
 
   ////////////////////////////////CHECKS////////////////////////////////////////////
@@ -102,6 +101,10 @@ const Projects = () => {
     //  console.log('search');
     //  console.log(search);
   }, [search]);
+  useEffect(() => {
+    console.log('searchArray');
+    console.log(searchArray);
+  }, [searchArray]);
 
   return (
     <div className='app'>

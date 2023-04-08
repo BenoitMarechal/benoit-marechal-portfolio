@@ -3,7 +3,7 @@ import projectLabels from '../../assets/projectLabels.json';
 import { Link } from 'react-router-dom';
 
 const ProjectCard = (props) => {
-  console.log(props);
+  //console.log(props);
   return (
     <div
       className={props.visible === 'true' ? 'propsCard ' : ' propsCard  none'}
