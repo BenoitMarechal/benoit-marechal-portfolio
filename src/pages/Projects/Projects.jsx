@@ -88,6 +88,16 @@ const Projects = () => {
     setSearchArray([search, ...activeTags]);
   }, [search, allTags]);
 
+  ///////fonction(s) de recherche
+  //recherche d'un string
+  function searchString(string) {
+    for (let i = 0; i < allProjects.length; i++) {}
+  }
+
+  function searchProjects(array) {
+    for (let i = 0; i < array.length; i++) {}
+  }
+
   ////////////////////////////////CHECKS////////////////////////////////////////////
   useEffect(() => {
     // console.log('allProjects');
@@ -102,8 +112,8 @@ const Projects = () => {
     //  console.log(search);
   }, [search]);
   useEffect(() => {
-    console.log('searchArray');
-    console.log(searchArray);
+    // console.log('searchArray');
+    // console.log(searchArray);
   }, [searchArray]);
 
   return (
