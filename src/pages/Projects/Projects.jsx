@@ -15,6 +15,7 @@ const Projects = () => {
   useEffect(() => {
     const all = projects.map((item) => {
       //let hop = true;
+      //imposisble de passer un boolean???
       return { ...item, visible: 'true' };
     });
     setAllProjects(all);
@@ -69,8 +70,24 @@ const Projects = () => {
   function handleSearch(e) {
     if (e.target.value.length > 2) {
       setSearch(e.target.value);
+    } else {
+      setSearch(undefined);
     }
   }
+
+  //construction d'un tableau de recherche
+  const [searchArray, setSearchArray] = useState([]);
+  useEffect(() => {
+    //let target = [search];
+    let activeTags = [];
+    for (let i = 0; i < allTags.length; i++) {
+      if (allTags[i].active === true) {
+        activeTags.push(allTags[i].tag);
+      }
+    }
+
+    console.log([search, ...activeTags]);
+  }, [search, allTags]);
 
   ////////////////////////////////CHECKS////////////////////////////////////////////
   useEffect(() => {
