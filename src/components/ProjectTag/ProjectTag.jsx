@@ -21,7 +21,9 @@ const ProjectTag = (props) => {
   return (
     <button
       onClick={handleClick}
-      className={props.active === true ? 'projectTag tagActive' : 'projectTag'}
+      className={
+        props.active === 'true' ? 'projectTag tagActive' : 'projectTag'
+      }
     >
       {'#' + props.tag}
     </button>

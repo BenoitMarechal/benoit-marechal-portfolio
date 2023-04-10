@@ -1,45 +1,60 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import projects from '../../assets/projects.json';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import ProjectSearchBar from '../../components/ProjectSearchBar/ProjectSearchBar';
 import ProjectTag from '../../components/ProjectTag/ProjectTag';
+// adding visible property to eachproject
 const allP = projects.map((item) => {
   return { ...item, visible: 'true' };
 });
-//console.log(allP);
-let result = [];
-let allTagStrings = allP.map((project) => {
-  let line = project.tags.split(' ');
-  for (let i = 0; i < line.length; i++) {
-    if (!result.includes(line[i])) {
-      result.push(line[i]);
+
+// gather every tag wihtout duplicates
+function collectTags(array) {
+  let result = [];
+  array.map((project) => {
+    let line = project.tags.split(' ');
+    for (let i = 0; i < line.length; i++) {
+      if (!result.includes(line[i])) {
+        result.push(line[i]);
+      }
     }
-  }
-  return undefined;
-});
-let allTagObjects = result.map((tag) => ({
-  tag: tag,
-  visible: true,
-  active: false,
-}));
+    return undefined;
+  });
+  return result;
+}
+
+//turn tags strings into object with active and visble proprties
+function tagsStringToObj(array) {
+  return array.map((tag) => ({
+    tag: tag,
+    visible: 'true',
+    active: 'false',
+  }));
+}
 
 const Projects = () => {
   //get All projects
-  // adding visible propety to eachproject
   const [allProjects, setAllProjects] = useState(allP);
   /// get All tags
-  const [allTags, setAllTags] = useState(allTagObjects);
+  const [allTags, setAllTags] = useState(tagsStringToObj(collectTags(allP)));
   ///declare tags toggle function
   const toggleActiveTag = (tag) => {
     let target = [...allTags];
     for (let i = 0; i < target.length; i++) {
       if (target[i].tag === tag) {
-        target[i].active = !target[i].active;
+        console.log(target[i].tag);
+        if (target[i].active === 'true') {
+          target[i].active = 'false';
+        } else {
+          target[i].active = 'true';
+        }
+        //target[i].active = !target[i].active;
       }
     }
     setAllTags(target);
+    //buildSearchArray();
   };
   const toggleVisibleTag = (tag) => {
     let target = [...allTags];
@@ -62,16 +77,27 @@ const Projects = () => {
   }
   //construction d'un tableau de recherche
   const [searchArray, setSearchArray] = useState([]);
-  useEffect(() => {
-    //let target = [search];
+  function buildSearchArray() {
     let activeTags = [];
     for (let i = 0; i < allTags.length; i++) {
-      if (allTags[i].active === true) {
+      if (allTags[i].active === 'true') {
         activeTags.push(allTags[i].tag);
       }
     }
     setSearchArray([search, ...activeTags]);
-  }, [search, allTags]);
+  }
+
+  useEffect(() => {
+    buildSearchArray();
+    //let target = [search];
+    // let activeTags = [];
+    // for (let i = 0; i < allTags.length; i++) {
+    //   if (allTags[i].active === true) {
+    //     activeTags.push(allTags[i].tag);
+    //   }
+    // }
+    // setSearchArray([search, ...activeTags]);
+  }, [search]);
 
   ///////fonction(s) de recherche
   //cacher tous les projets
@@ -80,6 +106,7 @@ const Projects = () => {
     let result = [...allProjects];
     result.map((project) => {
       project.visible = 'false';
+      return undefined;
     });
     setAllProjects(result);
   }
@@ -89,8 +116,29 @@ const Projects = () => {
     let result = [...allProjects];
     result.map((project) => {
       project.visible = 'true';
+      return undefined;
     });
     setAllProjects(result);
+  }
+  //cacher tous les tags
+  function hideAllTags() {
+    console.log('hide All tags');
+    let result = [...allTags];
+    result.map((tag) => {
+      tag.visible = 'false';
+      return undefined;
+    });
+    setAllTags(result);
+  }
+  //Afficher tous les tags
+  function showAllTags() {
+    console.log('show All tags');
+    let result = [...allTags];
+    result.map((tag) => {
+      tag.visible = 'true';
+      return undefined;
+    });
+    setAllTags(result);
   }
   //chercher tous les strings du tableau searchArray
   function multipleSearch() {
@@ -98,11 +146,7 @@ const Projects = () => {
     // console.log(searchArray);
     hideAllProjects();
     let target = [...allProjects];
-    // target.map((project) => {
-    //   project.visible = 'false';
-    // });
-
-    //loop though projets
+    //loop though projects
     for (let i = 0; i < target.length; i++) {
       let count = 0;
       let goal = searchArray.length;
@@ -140,7 +184,6 @@ const Projects = () => {
     }
     setAllProjects(target);
   }
-
   //recherche multiple
   useEffect(() => {
     if (
@@ -154,15 +197,43 @@ const Projects = () => {
     }
   }, [searchArray]);
 
+  //////////////////////////////hide show tags/////////////////////////////
+  useEffect(() => {
+    //gather visible projects(array of objects)
+    let visibleProjects = allProjects.filter((project) => {
+      if (project.visible === 'true') {
+        return project;
+      }
+      return undefined;
+    });
+    //console.log(visibleProjects);
+    //gather list of visible tags without duplicates (strings)
+    let visibleTags = collectTags(visibleProjects);
+    console.log(visibleTags.length);
+    console.log(allTags.length);
+    console.log(visibleTags.length === allTags.length);
+    if (visibleTags.length !== allTags.length) {
+      hideAllTags();
+    } else {
+      showAllTags();
+    }
+
+    // loop through allTags and change visible porperty
+    //console.log(visbleTags);
+    //loop through allTags
+
+    //hide or show tags
+  }, [search]);
+
   ////////////////////////////////CHECKS////////////////////////////////////////////
   // useEffect(() => {
   //   console.log('allProjects');
   //   console.log(allProjects);
   // }, [allProjects]);
-  // useEffect(() => {
-  //console.log('allTags');
-  // console.log(allTags);
-  //}, [allTags]);
+  useEffect(() => {
+    console.log('allTags');
+    console.log(allTags);
+  }, [allTags]);
   // useEffect(() => {
   //    console.log('search');
   //    console.log(search);
@@ -183,7 +254,7 @@ const Projects = () => {
           {/* AFFICHAGE DES TAGS */}
           <div className='projects__main__search__tagsContainer'>
             {allTags.map((tag, index) =>
-              tag.visible === true ? (
+              tag.visible === 'true' ? (
                 <ProjectTag
                   {...tag}
                   activeFunction={toggleActiveTag}
