@@ -5,6 +5,7 @@ import projects from '../../assets/projects.json';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import ProjectSearchBar from '../../components/ProjectSearchBar/ProjectSearchBar';
 import ProjectTag from '../../components/ProjectTag/ProjectTag';
+import ResetSearchButton from '../../components/ResetSearchButton/ResetSearchButton';
 // adding visible property to eachproject
 const allP = projects.map((item) => {
   return { ...item, visible: 'true' };
@@ -206,11 +207,20 @@ const Projects = () => {
     } else {
       multipleSearch();
     }
-    manageVisibleTags();
+    manageTags();
   }, [searchArray]);
 
   //////////////////////////////hide show tags/////////////////////////////
-  function manageVisibleTags() {
+  function getVisibleProjects() {
+    return allProjects.filter((project) => {
+      if (project.visible === 'true') {
+        return project;
+      }
+      return undefined;
+    });
+  }
+
+  function manageTags() {
     let visibleProjects = allProjects.filter((project) => {
       if (project.visible === 'true') {
         return project;
@@ -219,7 +229,7 @@ const Projects = () => {
     });
     //console.log(visibleProjects);
     //gather list of visible tags without duplicates (strings)
-    let visibleTags = collectTags(visibleProjects);
+    let visibleTags = collectTags(getVisibleProjects());
     let target = [...allTags];
     console.log(visibleTags);
     if (visibleTags.length === allTags.length) {
@@ -237,7 +247,11 @@ const Projects = () => {
     }
     setAllTags(target);
   }
-
+  ////////reset search
+  function resetSearch() {
+    setAllProjects(allP);
+    setAllTags(tagsStringToObj(collectTags(allP)));
+  }
   ////////////////////////////////CHECKS////////////////////////////////////////////
   // useEffect(() => {
   //   console.log('allProjects');
@@ -279,13 +293,19 @@ const Projects = () => {
               )
             )}
           </div>
+          <ResetSearchButton onClick={resetSearch} />
         </div>
 
         {/* //////////////////////////////AFFICHAGE DES PROJECTS///////////////////////////////// */}
         {/* prob visible */}
-        {allProjects.map((project, index) => (
+        {getVisibleProjects().length === 0
+          ? "Il n'y a pas (encore) de projet correspondant à votre séléction"
+          : allProjects.map((project, index) => (
+              <ProjectCard {...project} key={index} />
+            ))}
+        {/* {allProjects.map((project, index) => (
           <ProjectCard {...project} key={index} />
-        ))}
+        ))} */}
         {/* prob visible */}
       </main>
       <Footer></Footer>
