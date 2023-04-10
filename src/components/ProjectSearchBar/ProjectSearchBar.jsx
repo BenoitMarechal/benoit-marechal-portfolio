@@ -13,6 +13,7 @@ const ProjectSearchBar = (props) => {
       <input
         className='projects__main__search__searchBar__input'
         type='search'
+        ref={props.barRef}
         id='projectSearch'
         placeholder='rechercher parmis les projets...'
         onChange={props.onSearch}

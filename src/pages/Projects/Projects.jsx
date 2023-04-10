@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import projects from '../../assets/projects.json';
@@ -40,6 +40,8 @@ const Projects = () => {
   const [allProjects, setAllProjects] = useState(allP);
   /// get All tags
   const [allTags, setAllTags] = useState(tagsStringToObj(collectTags(allP)));
+  //////declare serachBar ref
+  const bar = useRef();
   ///declare tags toggle function
   const toggleActiveTag = (tag) => {
     let target = [...allTags];
@@ -133,7 +135,7 @@ const Projects = () => {
   }
   //Afficher tous les tags
   function showAllTags() {
-    console.log('show All tags');
+    // console.log('show All tags');
     let result = [...allTags];
     result.map((tag) => {
       tag.visible = 'true';
@@ -231,7 +233,7 @@ const Projects = () => {
     //gather list of visible tags without duplicates (strings)
     let visibleTags = collectTags(getVisibleProjects());
     let target = [...allTags];
-    console.log(visibleTags);
+    //console.log(visibleTags);
     if (visibleTags.length === allTags.length) {
       showAllTags();
     } else {
@@ -251,6 +253,9 @@ const Projects = () => {
   function resetSearch() {
     setAllProjects(allP);
     setAllTags(tagsStringToObj(collectTags(allP)));
+    setSearchArray([]);
+    bar.current.value = '';
+    // console.log(searchArray);
   }
   ////////////////////////////////CHECKS////////////////////////////////////////////
   // useEffect(() => {
@@ -265,10 +270,10 @@ const Projects = () => {
   //    console.log('search');
   //    console.log(search);
   // }, [search]);
-  // useEffect(() => {
-  //   console.log('searchArray');
-  //   console.log(searchArray);
-  // }, [searchArray]);
+  useEffect(() => {
+    console.log('searchArray');
+    console.log(searchArray);
+  }, [searchArray]);
 
   return (
     <div className='app'>
@@ -277,7 +282,7 @@ const Projects = () => {
         <h1 className='projects__main__h1'>PROJETS</h1>
         {/* //////////////////////////////RECHERCHE///////////////////////////////// */}
         <div className='projects__main__search'>
-          <ProjectSearchBar onSearch={handleSearch} />
+          <ProjectSearchBar onSearch={handleSearch} barRef={bar} />
           {/* AFFICHAGE DES TAGS */}
           <div className='projects__main__search__tagsContainer'>
             {allTags.map((tag, index) =>
