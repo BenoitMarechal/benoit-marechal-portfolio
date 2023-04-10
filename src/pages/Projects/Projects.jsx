@@ -155,7 +155,7 @@ const Projects = () => {
     let target = [...allProjects];
     console.log(target);
     console.log(searchArray);
-    //loop projets
+    //loop though projets
     for (let i = 0; i < target.length; i++) {
       let count = 0;
       let goal = searchArray.length;
@@ -174,24 +174,18 @@ const Projects = () => {
               console.log(value.includes(searchArray[a]));
               if (value.includes(searchArray[a])) {
                 count++;
-                // if (a === 0) {
-                //   target[i].visible = 'true';
-                //   console.log(target[i].name);
-                // } else {
-                //   if (
-                //     value.includes(searchArray[a]) &&
-                //     target[i].visible === 'true'
-                //   ) {
-                //   }
-                // }
+                //exit loop to avoid counting possible multiple matches
+                break;
               }
             }
           }
           for (let b = 0; b < target[i].links.length; b++) {
+            console.log('in ' + target[a].links[b].link);
+            console.log(target[i].links[b].link.includes(searchArray[a]));
             if (target[i].links[b].link.includes(searchArray[a])) {
               count++;
-              // target[i].visible = 'true';
-              // console.log(target[i].name);
+              //exit loop to avoid counting possible multiple matches
+              b = target[i].links.length;
             }
           }
         } else {
