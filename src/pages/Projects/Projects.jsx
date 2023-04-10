@@ -54,7 +54,7 @@ const Projects = () => {
       }
     }
     setAllTags(target);
-    //buildSearchArray();
+    buildSearchArray();
   };
   const toggleVisibleTag = (tag) => {
     let target = [...allTags];
@@ -153,21 +153,32 @@ const Projects = () => {
       //loop throught reasearched words
       for (let a = 0; a < searchArray.length; a++) {
         if (searchArray[a] !== undefined) {
+          console.log('looking for ' + searchArray[a]);
           for (const [key, value] of Object.entries(target[i])) {
+            console.log('in' + value);
             if (
               typeof value === 'string' &&
               value !== 'true' &&
               value !== 'false'
             ) {
-              if (value.includes(searchArray[a])) {
+              if (value.toLowerCase().includes(searchArray[a].toLowerCase())) {
+                console.log('found');
                 count++;
+
                 //exit loop to avoid counting possible multiple matches
                 break;
               }
             }
           }
+          //loop through links
           for (let b = 0; b < target[i].links.length; b++) {
-            if (target[i].links[b].link.includes(searchArray[a])) {
+            console.log('in ' + target[i].links[b].link);
+            if (
+              target[i].links[b].link
+                .toLowerCase()
+                .includes(searchArray[a].toLowerCase())
+            ) {
+              console.log('found');
               count++;
               //exit loop to avoid counting possible multiple matches
               b = target[i].links.length;
@@ -206,17 +217,17 @@ const Projects = () => {
       }
       return undefined;
     });
-    //console.log(visibleProjects);
+    console.log(visibleProjects);
     //gather list of visible tags without duplicates (strings)
     let visibleTags = collectTags(visibleProjects);
-    console.log(visibleTags.length);
-    console.log(allTags.length);
-    console.log(visibleTags.length === allTags.length);
-    if (visibleTags.length !== allTags.length) {
-      hideAllTags();
-    } else {
-      showAllTags();
-    }
+    console.log(visibleTags);
+    //console.log(allTags.length);
+    //console.log(visibleTags.length === allTags.length);
+    // if (visibleTags.length !== allTags.length) {
+    //   hideAllTags();
+    // } else {
+    //   showAllTags();
+    // }
 
     // loop through allTags and change visible porperty
     //console.log(visbleTags);
@@ -230,18 +241,18 @@ const Projects = () => {
   //   console.log('allProjects');
   //   console.log(allProjects);
   // }, [allProjects]);
-  useEffect(() => {
-    console.log('allTags');
-    console.log(allTags);
-  }, [allTags]);
+  // useEffect(() => {
+  //   console.log('allTags');
+  //   console.log(allTags);
+  // }, [allTags]);
   // useEffect(() => {
   //    console.log('search');
   //    console.log(search);
   // }, [search]);
-  // useEffect(() => {
-  //   console.log('searchArray');
-  //   console.log(searchArray);
-  // }, [searchArray]);
+  useEffect(() => {
+    console.log('searchArray');
+    console.log(searchArray);
+  }, [searchArray]);
 
   return (
     <div className='app'>
