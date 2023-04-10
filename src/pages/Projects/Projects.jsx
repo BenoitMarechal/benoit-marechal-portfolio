@@ -153,16 +153,16 @@ const Projects = () => {
       //loop throught reasearched words
       for (let a = 0; a < searchArray.length; a++) {
         if (searchArray[a] !== undefined) {
-          console.log('looking for ' + searchArray[a]);
+          //console.log('looking for ' + searchArray[a]);
           for (const [key, value] of Object.entries(target[i])) {
-            console.log('in' + value);
+            // console.log('in' + value);
             if (
               typeof value === 'string' &&
               value !== 'true' &&
               value !== 'false'
             ) {
               if (value.toLowerCase().includes(searchArray[a].toLowerCase())) {
-                console.log('found');
+                //console.log('found');
                 count++;
 
                 //exit loop to avoid counting possible multiple matches
@@ -172,13 +172,13 @@ const Projects = () => {
           }
           //loop through links
           for (let b = 0; b < target[i].links.length; b++) {
-            console.log('in ' + target[i].links[b].link);
+            //console.log('in ' + target[i].links[b].link);
             if (
               target[i].links[b].link
                 .toLowerCase()
                 .includes(searchArray[a].toLowerCase())
             ) {
-              console.log('found');
+              //console.log('found');
               count++;
               //exit loop to avoid counting possible multiple matches
               b = target[i].links.length;
@@ -206,35 +206,37 @@ const Projects = () => {
     } else {
       multipleSearch();
     }
+    manageVisibleTags();
   }, [searchArray]);
 
   //////////////////////////////hide show tags/////////////////////////////
-  useEffect(() => {
-    //gather visible projects(array of objects)
+  function manageVisibleTags() {
     let visibleProjects = allProjects.filter((project) => {
       if (project.visible === 'true') {
         return project;
       }
       return undefined;
     });
-    console.log(visibleProjects);
+    //console.log(visibleProjects);
     //gather list of visible tags without duplicates (strings)
     let visibleTags = collectTags(visibleProjects);
+    let target = [...allTags];
     console.log(visibleTags);
-    //console.log(allTags.length);
-    //console.log(visibleTags.length === allTags.length);
-    // if (visibleTags.length !== allTags.length) {
-    //   hideAllTags();
-    // } else {
-    //   showAllTags();
-    // }
-
-    // loop through allTags and change visible porperty
-    //console.log(visbleTags);
-    //loop through allTags
-
-    //hide or show tags
-  }, [search]);
+    if (visibleTags.length === allTags.length) {
+      showAllTags();
+    } else {
+      hideAllTags();
+      for (let a = 0; a < visibleTags.length; a++) {
+        for (let b = 0; b < target.length; b++) {
+          if (visibleTags[a] === target[b].tag) {
+            console.log(target[b].visible);
+            target[b].visible = 'true';
+          }
+        }
+      }
+    }
+    setAllTags(target);
+  }
 
   ////////////////////////////////CHECKS////////////////////////////////////////////
   // useEffect(() => {
@@ -249,10 +251,10 @@ const Projects = () => {
   //    console.log('search');
   //    console.log(search);
   // }, [search]);
-  useEffect(() => {
-    console.log('searchArray');
-    console.log(searchArray);
-  }, [searchArray]);
+  // useEffect(() => {
+  //   console.log('searchArray');
+  //   console.log(searchArray);
+  // }, [searchArray]);
 
   return (
     <div className='app'>
