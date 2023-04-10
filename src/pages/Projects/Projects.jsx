@@ -4,9 +4,7 @@ import Header from '../../components/Header/Header';
 import projects from '../../assets/projects.json';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import ProjectSearchBar from '../../components/ProjectSearchBar/ProjectSearchBar';
-//import ProjectsTagsContainer from '../../components/ProjectsTagsContainer/ProjectsTagsContainer';
 import ProjectTag from '../../components/ProjectTag/ProjectTag';
-//import ProjectTag from '../../components/ProjectTag/ProjectTag';
 const allP = projects.map((item) => {
   return { ...item, visible: 'true' };
 });
@@ -26,9 +24,6 @@ let allTagObjects = result.map((tag) => ({
   visible: true,
   active: false,
 }));
-// console.log('allTagObjects');
-// console.log(allTagObjects);
-//console.log(full);
 
 const Projects = () => {
   //get All projects
@@ -79,40 +74,9 @@ const Projects = () => {
   }, [search, allTags]);
 
   ///////fonction(s) de recherche
-
-  //recherche d'un string pour afficher le porjet
-  function searchString(string) {
-    string = string.toLowerCase();
-    let matches = [...allProjects];
-    allProjects.map((project) => {
-      // search in links
-      project.links.map((link) => {
-        if (link.link.includes(string)) {
-          if (matches.includes(project) === false) {
-            project.visible = 'true';
-          }
-        }
-        //return undefined;
-      });
-      // search in all the rest
-      for (const [key, value] of Object.entries(project)) {
-        if (
-          value !== undefined &&
-          value.toString().toLowerCase().includes(string)
-        ) {
-          project.visible = 'true';
-        }
-      }
-      //return undefined;
-    });
-    //console.log('matches');
-    //console.log(matches);
-    //return matches;
-
-    //setvisibleProjects(matches);
-  }
   //cacher tous les projets
   function hideAllProjects() {
+    //console.log('hide All');
     let result = [...allProjects];
     result.map((project) => {
       project.visible = 'false';
@@ -121,46 +85,28 @@ const Projects = () => {
   }
   //Afficher tous les projets
   function showAllProjects() {
+    // console.log('show all');
     let result = [...allProjects];
     result.map((project) => {
       project.visible = 'true';
     });
     setAllProjects(result);
   }
-  //chercher tous les strings
-  function searchProjects() {
-    hideAllProjects();
-    console.log('coucou');
-    for (let i = 0; i < searchArray.length; i++) {
-      if (searchArray[i] !== undefined && searchArray[i].length < 2) {
-        console.log('cherche' + searchArray[i]);
-        //   searchString(array[i]);
-        // }
-      }
-    }
-  }
-
-  //////////lancement de la recherche
-  ///simple frappe
-  // useEffect(() => {
-  //   if (search !== undefined) {
-  //     searchString(search);
-  //   }
-  //   if (search === undefined || search.length < 2) {
-  //     showAllProjects();
-  //   }
-  // }, [search]);
+  //chercher tous les strings du tableau searchArray
   function multipleSearch() {
-    //console.log('hey');
+    // console.log('multipleSearch');
+    // console.log(searchArray);
+    hideAllProjects();
     let target = [...allProjects];
-    console.log(target);
-    console.log(searchArray);
+    // target.map((project) => {
+    //   project.visible = 'false';
+    // });
+
     //loop though projets
     for (let i = 0; i < target.length; i++) {
       let count = 0;
       let goal = searchArray.length;
-      // goal = goal + 15;
-      //loop mots recherche
+      //loop throught reasearched words
       for (let a = 0; a < searchArray.length; a++) {
         if (searchArray[a] !== undefined) {
           for (const [key, value] of Object.entries(target[i])) {
@@ -169,9 +115,6 @@ const Projects = () => {
               value !== 'true' &&
               value !== 'false'
             ) {
-              console.log('looking for ' + searchArray[a]);
-              console.log('in ' + value);
-              console.log(value.includes(searchArray[a]));
               if (value.includes(searchArray[a])) {
                 count++;
                 //exit loop to avoid counting possible multiple matches
@@ -180,8 +123,6 @@ const Projects = () => {
             }
           }
           for (let b = 0; b < target[i].links.length; b++) {
-            console.log('in ' + target[a].links[b].link);
-            console.log(target[i].links[b].link.includes(searchArray[a]));
             if (target[i].links[b].link.includes(searchArray[a])) {
               count++;
               //exit loop to avoid counting possible multiple matches
@@ -189,52 +130,28 @@ const Projects = () => {
             }
           }
         } else {
+          //adjust the goal if an item of the array is not searched (empty searchBar)
           goal--;
         }
       }
-      console.log(target[i].name);
-      console.log(count);
-      console.log(goal);
       if (count === goal) {
         target[i].visible = 'true';
       }
     }
+    setAllProjects(target);
   }
 
   //recherche multiple
   useEffect(() => {
-    // console.log('searchArray');
-    // console.log(searchArray);
-
-    hideAllProjects();
-    //console.log(searchArray.length);
     if (
       searchArray === undefined ||
-      (searchArray.length === 1 && searchArray[0] === undefined)
+      searchArray === [] ||
+      (searchArray.length < 2 && searchArray[0] === undefined)
     ) {
-      //console.log('toutou');
       showAllProjects();
     } else {
       multipleSearch();
     }
-    // //if (searchArray !== undefined) {
-    // for (let i = 0; i < searchArray.length; i++) {
-    //   if (searchArray[i] !== undefined) {
-    //     // console.log('cherche');
-    //     //console.log(searchArray[i]);
-    //     searchString(searchArray[i]);
-    //   }
-    // multipleSearch();
-    //else {
-    // console.log('pas def');
-    //  showAllProjects();
-    //}
-    // }
-    //}
-
-    //console.log('Array pas undefined');
-
-    //else {showAllProjects()};
   }, [searchArray]);
 
   ////////////////////////////////CHECKS////////////////////////////////////////////
@@ -259,7 +176,7 @@ const Projects = () => {
     <div className='app'>
       <Header></Header>
       <main className='projects__main'>
-        <h1 className='projects__main__h1'>PROJETS </h1>
+        <h1 className='projects__main__h1'>PROJETS</h1>
         {/* //////////////////////////////RECHERCHE///////////////////////////////// */}
         <div className='projects__main__search'>
           <ProjectSearchBar onSearch={handleSearch} />
@@ -278,22 +195,6 @@ const Projects = () => {
               )
             )}
           </div>
-          {/* <div>
-            
-            {allProjects.map((project, index) =>
-              project.visible === 'true' ? (
-                <ProjectCard {...project} key={index} />
-              ) : (
-                ''
-              )
-            )}
-          </div> */}
-
-          {/* <ProjectsTagsContainer
-            tags={allTags}
-            activeFunction={toggleActiveTag}
-            visibleFunction={toggleVisibleTag}
-          /> */}
         </div>
 
         {/* //////////////////////////////AFFICHAGE DES PROJECTS///////////////////////////////// */}
