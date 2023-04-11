@@ -223,12 +223,12 @@ const Projects = () => {
   }
 
   function manageTags() {
-    let visibleProjects = allProjects.filter((project) => {
-      if (project.visible === 'true') {
-        return project;
-      }
-      return undefined;
-    });
+    // let visibleProjects = allProjects.filter((project) => {
+    //   if (project.visible === 'true') {
+    //     return project;
+    //   }
+    //   return undefined;
+    // });
     //console.log(visibleProjects);
     //gather list of visible tags without duplicates (strings)
     let visibleTags = collectTags(getVisibleProjects());
@@ -251,12 +251,22 @@ const Projects = () => {
   }
   ////////reset search
   function resetSearch() {
-    setAllProjects(allP);
+    // setAllProjects(allP);
     setAllTags(tagsStringToObj(collectTags(allP)));
-    setSearchArray([]);
+    // console.log(allP);
+    // console.log(collectTags(allP));
+    // console.log(tagsStringToObj(collectTags(allP)));
+    // console.log(allTags);
+    setSearch(undefined);
     bar.current.value = '';
-    // console.log(searchArray);
+
+    setSearchArray();
+
+    // multipleSearch();
+    console.log(searchArray);
   }
+  ///////////monitoring lenght
+
   ////////////////////////////////CHECKS////////////////////////////////////////////
   // useEffect(() => {
   //   console.log('allProjects');
@@ -274,6 +284,12 @@ const Projects = () => {
     console.log('searchArray');
     console.log(searchArray);
   }, [searchArray]);
+  const [numberOfVisibleProjects, setNumberOfVisibleProjects] = useState(
+    getVisibleProjects().length
+  );
+  useEffect(() => {
+    setNumberOfVisibleProjects(getVisibleProjects().length);
+  }, [allProjects]);
 
   return (
     <div className='app'>
@@ -299,6 +315,11 @@ const Projects = () => {
             )}
           </div>
           <ResetSearchButton onClick={resetSearch} />
+          <div>
+            {numberOfVisibleProjects < 2
+              ? numberOfVisibleProjects + ' projet affiché'
+              : numberOfVisibleProjects + ' projets affichés'}
+          </div>
         </div>
 
         {/* //////////////////////////////AFFICHAGE DES PROJECTS///////////////////////////////// */}
