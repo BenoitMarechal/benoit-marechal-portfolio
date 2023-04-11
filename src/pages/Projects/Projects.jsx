@@ -48,7 +48,7 @@ const Projects = () => {
     let target = [...allTags];
     for (let i = 0; i < target.length; i++) {
       if (target[i].tag === tag) {
-        console.log(target[i].tag);
+        // console.log(target[i].tag);
         if (target[i].active === 'true') {
           target[i].active = 'false';
         } else {
@@ -126,7 +126,6 @@ const Projects = () => {
   }
   //cacher tous les tags
   function hideAllTags() {
-    console.log('hide All tags');
     let result = [...allTags];
     result.map((tag) => {
       tag.visible = 'false';
@@ -234,7 +233,6 @@ const Projects = () => {
       for (let a = 0; a < visibleTags.length; a++) {
         for (let b = 0; b < target.length; b++) {
           if (visibleTags[a] === target[b].tag) {
-            console.log(target[b].visible);
             target[b].visible = 'true';
           }
         }
@@ -248,7 +246,6 @@ const Projects = () => {
     setSearch(undefined);
     bar.current.value = '';
     setSearchArray();
-    console.log(searchArray);
   }
   ///////////monitoring results
   const [numberOfVisibleProjects, setNumberOfVisibleProjects] = useState(
@@ -278,7 +275,6 @@ const Projects = () => {
   }, [allProjects]);
   useEffect(() => {
     if (numberOfVisibleProjects === 1) {
-      console.log('youhou');
       let target = [...allTags];
       target.map((elt) => {
         if (elt.active === 'false') {
@@ -288,7 +284,6 @@ const Projects = () => {
       });
       setAllTags(target);
     } else {
-      console.log('yup');
       enableAllTags();
     }
   }, [numberOfVisibleProjects]);
@@ -306,10 +301,10 @@ const Projects = () => {
   //    console.log('search');
   //    console.log(search);
   // }, [search]);
-  // useEffect(() => {
-  //   console.log('searchArray');
-  //   console.log(searchArray);
-  // }, [searchArray]);
+  useEffect(() => {
+    console.log('searchArray');
+    console.log(searchArray);
+  }, [searchArray]);
 
   return (
     <div className='app'>
@@ -334,11 +329,22 @@ const Projects = () => {
               )
             )}
           </div>
-          <ResetSearchButton onClick={resetSearch} />
+          {searchArray === undefined ||
+          searchArray.length === 0 ||
+          (searchArray.length === 1 &&
+            (search === undefined || search === '')) ? (
+            ''
+          ) : (
+            <ResetSearchButton onClick={resetSearch} />
+          )}
+
           <div>
             {numberOfVisibleProjects < 2
-              ? numberOfVisibleProjects + ' projet affiché'
-              : numberOfVisibleProjects + ' projets affichés'}
+              ? numberOfVisibleProjects + '/' + allP.length + ' projet affiché'
+              : numberOfVisibleProjects +
+                '/' +
+                allP.length +
+                ' projets affichés'}
           </div>
         </div>
 

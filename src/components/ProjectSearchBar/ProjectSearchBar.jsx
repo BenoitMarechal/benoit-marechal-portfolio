@@ -15,7 +15,7 @@ const ProjectSearchBar = (props) => {
         type='search'
         ref={props.barRef}
         id='projectSearch'
-        placeholder='rechercher parmis les projets...'
+        placeholder='rechercher parmi les projets...'
         onChange={props.onSearch}
       ></input>
       <BsSearch className='projects__main__search__searchBar__icon' />
