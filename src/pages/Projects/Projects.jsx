@@ -301,10 +301,10 @@ const Projects = () => {
   //    console.log('search');
   //    console.log(search);
   // }, [search]);
-  useEffect(() => {
-    console.log('searchArray');
-    console.log(searchArray);
-  }, [searchArray]);
+  // useEffect(() => {
+  //   console.log('searchArray');
+  //   console.log(searchArray);
+  // }, [searchArray]);
 
   return (
     <div className='app'>
