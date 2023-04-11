@@ -6,7 +6,7 @@ const ResetSearchButton = (props) => {
   }
   return (
     <button onClick={handleClick} className='resetSearchButton'>
-      Effacer la sélection
+      Enlever la sélection
     </button>
   );
 };

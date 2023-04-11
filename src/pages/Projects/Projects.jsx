@@ -32,6 +32,7 @@ function tagsStringToObj(array) {
     tag: tag,
     visible: 'true',
     active: 'false',
+    disabled: false,
   }));
 }
 
@@ -209,7 +210,7 @@ const Projects = () => {
     } else {
       multipleSearch();
     }
-    manageTags();
+    manageVisibleTags();
   }, [searchArray]);
 
   //////////////////////////////hide show tags/////////////////////////////
@@ -222,15 +223,7 @@ const Projects = () => {
     });
   }
 
-  function manageTags() {
-    // let visibleProjects = allProjects.filter((project) => {
-    //   if (project.visible === 'true') {
-    //     return project;
-    //   }
-    //   return undefined;
-    // });
-    //console.log(visibleProjects);
-    //gather list of visible tags without duplicates (strings)
+  function manageVisibleTags() {
     let visibleTags = collectTags(getVisibleProjects());
     let target = [...allTags];
     //console.log(visibleTags);
@@ -251,21 +244,54 @@ const Projects = () => {
   }
   ////////reset search
   function resetSearch() {
-    // setAllProjects(allP);
     setAllTags(tagsStringToObj(collectTags(allP)));
-    // console.log(allP);
-    // console.log(collectTags(allP));
-    // console.log(tagsStringToObj(collectTags(allP)));
-    // console.log(allTags);
     setSearch(undefined);
     bar.current.value = '';
-
     setSearchArray();
-
-    // multipleSearch();
     console.log(searchArray);
   }
-  ///////////monitoring lenght
+  ///////////monitoring results
+  const [numberOfVisibleProjects, setNumberOfVisibleProjects] = useState(
+    getVisibleProjects().length
+  );
+
+  function disableTag(string) {
+    let target = [...allTags];
+    target.map((elt) => {
+      if (elt.tag === string) {
+        elt.disabled = true;
+      }
+      return undefined;
+    });
+    setAllTags(target);
+  }
+  function enableAllTags() {
+    let target = [...allTags];
+    target.map((elt) => {
+      elt.disabled = false;
+      return undefined;
+    });
+    setAllTags(target);
+  }
+  useEffect(() => {
+    setNumberOfVisibleProjects(getVisibleProjects().length);
+  }, [allProjects]);
+  useEffect(() => {
+    if (numberOfVisibleProjects === 1) {
+      console.log('youhou');
+      let target = [...allTags];
+      target.map((elt) => {
+        if (elt.active === 'false') {
+          disableTag(elt.tag);
+        }
+        return undefined;
+      });
+      setAllTags(target);
+    } else {
+      console.log('yup');
+      enableAllTags();
+    }
+  }, [numberOfVisibleProjects]);
 
   ////////////////////////////////CHECKS////////////////////////////////////////////
   // useEffect(() => {
@@ -280,16 +306,10 @@ const Projects = () => {
   //    console.log('search');
   //    console.log(search);
   // }, [search]);
-  useEffect(() => {
-    console.log('searchArray');
-    console.log(searchArray);
-  }, [searchArray]);
-  const [numberOfVisibleProjects, setNumberOfVisibleProjects] = useState(
-    getVisibleProjects().length
-  );
-  useEffect(() => {
-    setNumberOfVisibleProjects(getVisibleProjects().length);
-  }, [allProjects]);
+  // useEffect(() => {
+  //   console.log('searchArray');
+  //   console.log(searchArray);
+  // }, [searchArray]);
 
   return (
     <div className='app'>
