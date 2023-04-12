@@ -196,7 +196,7 @@ const Projects = () => {
       }
       console.log(count);
       console.log(goal);
-      if (count === goal) {
+      if (count >= goal) {
         target[i].visible = 'true';
       }
     }
