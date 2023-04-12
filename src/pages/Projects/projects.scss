@@ -37,10 +37,15 @@
     }
   }
   &__projectsContainer {
+    margin-top: 50px;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    // display: flex;
+    // flex-wrap: wrap;
+    //justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
   }
 }
 

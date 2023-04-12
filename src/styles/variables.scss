@@ -240,3 +240,7 @@ $color-tertiary-lighter-30: lighten($color-tertiary, 30%);
     @content;
   }
 }
+
+@mixin projectCard-radius {
+  border-radius: 15px 15px 0px 0px;
+}
