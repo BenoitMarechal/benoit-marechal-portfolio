@@ -156,35 +156,37 @@ const Projects = () => {
       //loop throught reasearched words
       for (let a = 0; a < searchArray.length; a++) {
         if (searchArray[a] !== undefined) {
-          //console.log('looking for ' + searchArray[a]);
+          console.log('looking for ' + searchArray[a]);
           for (const [key, value] of Object.entries(target[i])) {
-            // console.log('in' + value);
+            console.log('in' + value);
+            console.log(typeof value);
             if (
               typeof value === 'string' &&
               value !== 'true' &&
               value !== 'false'
             ) {
               if (value.toLowerCase().includes(searchArray[a].toLowerCase())) {
-                //console.log('found');
+                console.log('found');
                 count++;
-
                 //exit loop to avoid counting possible multiple matches
+
                 break;
               }
             }
           }
           //loop through links
           for (let b = 0; b < target[i].links.length; b++) {
-            //console.log('in ' + target[i].links[b].link);
+            console.log('in ' + target[i].links[b].link);
             if (
               target[i].links[b].link
                 .toLowerCase()
                 .includes(searchArray[a].toLowerCase())
             ) {
-              //console.log('found');
+              console.log('found');
               count++;
               //exit loop to avoid counting possible multiple matches
               b = target[i].links.length;
+              break;
             }
           }
         } else {
@@ -192,6 +194,8 @@ const Projects = () => {
           goal--;
         }
       }
+      console.log(count);
+      console.log(goal);
       if (count === goal) {
         target[i].visible = 'true';
       }

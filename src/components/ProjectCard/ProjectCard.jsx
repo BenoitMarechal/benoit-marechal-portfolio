@@ -9,7 +9,7 @@ const ProjectCard = (props) => {
   function toggleProjectModal() {
     setModalOpen(!modalOpen);
   }
-  console.log(props);
+  //console.log(props);
   let folderName = props.name.toLowerCase().replace(/\s/g, '');
   let overViewPath = './projectImages/' + folderName + '/overview.png';
 
