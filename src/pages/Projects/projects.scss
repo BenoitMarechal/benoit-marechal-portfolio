@@ -1,4 +1,5 @@
 .projects__main {
+  border: 1px solid red;
   &__h1 {
   }
   &__search {
@@ -43,7 +44,7 @@
     // flex-wrap: wrap;
     //justify-content: space-between;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     column-gap: 30px;
     row-gap: 30px;
   }
