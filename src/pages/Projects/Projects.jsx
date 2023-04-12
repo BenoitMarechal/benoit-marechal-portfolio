@@ -349,16 +349,13 @@ const Projects = () => {
         </div>
 
         {/* //////////////////////////////AFFICHAGE DES PROJECTS///////////////////////////////// */}
-        {/* prob visible */}
-        {getVisibleProjects().length === 0
-          ? "Il n'y a pas (encore) de projet correspondant à votre séléction"
-          : allProjects.map((project, index) => (
-              <ProjectCard {...project} key={index} />
-            ))}
-        {/* {allProjects.map((project, index) => (
-          <ProjectCard {...project} key={index} />
-        ))} */}
-        {/* prob visible */}
+        <div className='projects__main__projectsContainer'>
+          {getVisibleProjects().length === 0
+            ? "Il n'y a pas (encore) de projet correspondant à votre séléction"
+            : allProjects.map((project, index) => (
+                <ProjectCard {...project} key={index} />
+              ))}
+        </div>
       </main>
       <Footer></Footer>
     </div>

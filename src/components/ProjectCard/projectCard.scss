@@ -1,0 +1,58 @@
+.projectCard {
+  background-color: $color-secondary;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  width: 31%;
+  margin: 15px;
+
+  &__modalContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &__title {
+      background-color: $color-secondary-darker-10;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px 15px 0px 0px;
+      color: $color-primary-lighter-10;
+      margin: 0px 0px;
+      padding: 10px 0px;
+    }
+    &__overview {
+      height: 250px;
+      object-fit: cover;
+    }
+    &__modal {
+      background-color: $color-modal-bg;
+      color: $color-secondary;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &__linkContainer {
+    background-color: $color-secondary-darker-10;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //border: 1px solid red;
+
+    &__link {
+      margin: 15px 50px;
+      display: flex;
+      height: 100%;
+      align-items: center;
+      color: $color-primary-lighter-10;
+    }
+  }
+}

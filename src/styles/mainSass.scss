@@ -8,9 +8,10 @@
 @import '../components/SkillCard/skillCard.scss';
 @import '../components/CvLink/cvLink.scss';
 @import '../components/Header/header.scss';
-@import '../components/ProjectSearchBar/projectSearchBar.scss';
 @import '../components/ProjectTag/projectTag.scss';
 @import '../components/ResetSearchButton/resetSearchButton.scss';
+@import '../pages/Projects/projects.scss';
+@import '../components/ProjectCard/projectCard.scss';
 body {
   color: $color-primary-darker-20;
   position: absolute;
