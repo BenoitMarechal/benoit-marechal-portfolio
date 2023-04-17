@@ -30,10 +30,18 @@ const ProjectCard = (props) => {
           className='projectCard__modalContainer__overview'
           src={overViewPath}
           alt={'logo'}
+          onClick={() => {
+            setModalOpen(true);
+          }}
         />
         {modalOpen ? (
-          <div className='projectCard__modalContainer__modal bg-secondary-dark-30'>
-            COUCOU
+          <div
+            className='projectCard__modalContainer__modal bg-secondary-dark-30'
+            onClick={() => {
+              setModalOpen(false);
+            }}
+          >
+            {props.abstract}
             <Link
               className='projectCard__modalContainer__modal__link'
               to={'/project/?name=' + props.name}
@@ -41,6 +49,7 @@ const ProjectCard = (props) => {
               {' '}
               <BsPlusCircleFill />
             </Link>
+            <ul></ul>
           </div>
         ) : (
           ''

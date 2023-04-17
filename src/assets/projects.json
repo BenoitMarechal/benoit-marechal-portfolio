@@ -5,7 +5,8 @@
       { "link": "https://github.com/BenoitMarechal/Livrable2", "type": "repo" },
       { "link": "https://benoitmarechal.github.io/Livrable2/", "type": "page" }
     ],
-    "tags": "html css intégration sémantique responsive"
+    "tags": "html css intégration sémantique responsive",
+    "abstract": "Premier projet OpenClassRooms, l’idée est de faire l’intégration d’une maquette (desktop + responsive) en pur html + css. Personne ne code comme ça, mais il faut bien commencer quelque part! L’occasion également de découvrir l’importance de la sémantique html, nécessaire pour le référencement et l'accessibilité des pages."
   },
   {
     "name": "Ohmyfood",
