@@ -38,8 +38,10 @@
       left: 0;
       right: 0;
       @include projectCard-radius;
-      &__link {
-        color: $color-secondary;
+      &__abstract {
+        &__plus {
+          color: $color-secondary;
+        }
       }
     }
   }

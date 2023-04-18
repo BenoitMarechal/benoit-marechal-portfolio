@@ -41,13 +41,14 @@ const ProjectCard = (props) => {
               setModalOpen(false);
             }}
           >
+            <div className='projectCard__modalContainer__modal__abstract'></div>
             {props.abstract}
             <Link
-              className='projectCard__modalContainer__modal__link'
+              className='projectCard__modalContainer__modal__abstract__plus'
               to={'/project/?name=' + props.name}
             >
               {' '}
-              <BsPlusCircleFill />
+              {/* <BsPlusCircleFill /> */}...plus
             </Link>
             <ul></ul>
           </div>

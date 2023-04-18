@@ -20,7 +20,8 @@
         "type": "page"
       }
     ],
-    "tags": "html css animations sass intégration"
+    "tags": "html css animations sass intégration",
+    "abstract": "Introduction à Sass et aux animations css sur une site de restauration. Carte blanche pour le loader de 3s au chargement de la page principale, puis reproduction imposée par le cahier des charges pour l’apparition progressive des menus et leur animation au survol de la souris. "
   },
   {
     "name": "GameOn",
@@ -34,7 +35,8 @@
         "type": "page"
       }
     ],
-    "tags": "JavaScript Validation"
+    "tags": "JavaScript Validation",
+    "abstract": "Initiation à JavaScript (vanilla) pour la validation et la gestion des messages d’erreur."
   },
   {
     "name": "FishEye",
@@ -48,7 +50,8 @@
         "type": "page"
       }
     ],
-    "tags": "html css sass JavaScript intégration POO responsive"
+    "tags": "html css sass JavaScript intégration POO responsive",
+    "abstract": "Programmation en JavaScript orienté objet d’une plateforme de photographes accessible aux personnes en situation de handicap. La navigation est possible au clavier et le site doit être compatible avec les lecteurs d’écran type NVDA. Un système de hashtags est implémenté afin de trier les photographes et leurs photos ou vidéos par thèmes. Un factory design pattern permet de traiter différemment les photos et les vidéos."
   },
 
   {
