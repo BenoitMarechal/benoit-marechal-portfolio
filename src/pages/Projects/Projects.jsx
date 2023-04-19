@@ -341,15 +341,21 @@ const Projects = () => {
           ) : (
             <ResetSearchButton onClick={resetSearch} />
           )}
-
-          <div>
-            {numberOfVisibleProjects < 2
-              ? numberOfVisibleProjects + '/' + allP.length + ' projet affiché'
-              : numberOfVisibleProjects +
-                '/' +
-                allP.length +
-                ' projets affichés'}
-          </div>
+          {numberOfVisibleProjects === 0 ? (
+            ''
+          ) : (
+            <div>
+              {numberOfVisibleProjects < 2
+                ? numberOfVisibleProjects +
+                  '/' +
+                  allP.length +
+                  ' projet affiché'
+                : numberOfVisibleProjects +
+                  '/' +
+                  allP.length +
+                  ' projets affichés'}
+            </div>
+          )}
         </div>
 
         {/* //////////////////////////////AFFICHAGE DES PROJECTS///////////////////////////////// */}

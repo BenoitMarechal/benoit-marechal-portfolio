@@ -66,7 +66,8 @@
         "type": "page"
       }
     ],
-    "tags": "html css sass JavaScript intégration POO responsive bootstrap algorithmie"
+    "tags": "html css sass JavaScript intégration POO responsive bootstrap algorithmie",
+    "abstract": "Intégration maquette sur bootstrap + JavaScript orienté objet. ‘Les petits plats’ est un site de recettes avec une section de recherche par frappe clavier et/ou par clic sur des mots-clés de différentes catégories (ingrédient, ustensile, appareil). Pour l’exercice, deux algorithmes de recherches différents (chacun sur une branche gitHub) ont été développés, puis leurs performances respectives ont été comparées sur JsBench."
   },
   {
     "name": "Billed",
@@ -76,7 +77,9 @@
         "type": "repo"
       }
     ],
-    "tags": "test jest"
+
+    "tags": "test jest",
+    "abstract": "Sur une appli de gestion de note de frais, le but du projet est de débugger une liste de tickets et d'implémenter des tests Jest pour obtenir un taux de couverture de 100%."
   },
   {
     "name": "Learn@home",
@@ -86,7 +89,8 @@
         "type": "figma"
       }
     ],
-    "tags": "user-stories kanban maquette"
+    "tags": "user-stories kanban maquette",
+    "abstract": "Confection de maquettes desktop et mobile sur Figma pour une appli de soutien scolaire. Rédaction des user stories, de diagrammes de cas d'usage et dun tableau kanban."
   },
   {
     "name": "Kaza",
@@ -100,7 +104,8 @@
         "type": "page"
       }
     ],
-    "tags": "html css sass JavaScript React intégration responsive"
+    "tags": "html css sass JavaScript React intégration responsive",
+    "abstract": "Intégration sous React et React Router d’une appli de recherche d’appartements."
   },
   {
     "name": "SportSee",
@@ -110,7 +115,8 @@
         "type": "repo"
       }
     ],
-    "tags": "html css sass JavaScript React intégration responsive graphiques Recharts"
+    "tags": "html css sass JavaScript React intégration responsive graphiques Recharts",
+    "abstract": "Création sur React d’une appli dédiée au sport et à l’archivage des performances des utilisateurs. Utilisation de Recharts pour les nombreux graphiques. La récupération des données peut se faire soit par des données mockées, soit par des calls API ( option non disponible en ligne pour l’instant, le back-end n’étant pas hébérgé)"
   },
   {
     "name": "ArgentBank",
@@ -120,7 +126,8 @@
         "type": "repo"
       }
     ],
-    "tags": "React API"
+    "tags": "React API",
+    "abstract": "Gestion des calls API sur une app bancaire (React et Redux): Authentification, LogIn/LogOut, Gestion du ‘remember me’, Modification du profil utilisateur. Documentation de l’API (Swagger/yaml)"
   },
   {
     "name": "HRNet",
@@ -135,6 +142,7 @@
         "type": "page"
       }
     ],
-    "tags": "React Validation algoritmie tailwind"
+    "tags": "React Validation algoritmie tailwind",
+    "abstract": "Refonte d’une App Jquery en React+Redux, Validation de formulaire, publication d’un composant React sur npmjs. Mesure de la performances des deux versions sur Google LightHouse. PS: Non disponble sur mobile"
   }
 ]

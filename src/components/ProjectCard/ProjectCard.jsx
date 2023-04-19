@@ -41,16 +41,16 @@ const ProjectCard = (props) => {
               setModalOpen(false);
             }}
           >
-            <div className='projectCard__modalContainer__modal__abstract'></div>
-            {props.abstract}
-            <Link
+            <div className='projectCard__modalContainer__modal__abstract'>
+              {props.abstract}
+            </div>
+
+            {/* <Link
               className='projectCard__modalContainer__modal__abstract__plus'
               to={'/project/?name=' + props.name}
             >
-              {' '}
-              {/* <BsPlusCircleFill /> */}...plus
-            </Link>
-            <ul></ul>
+              ...plus
+            </Link> */}
           </div>
         ) : (
           ''
@@ -59,8 +59,9 @@ const ProjectCard = (props) => {
 
       <div className='projectCard__linkContainer'>
         {props.links
-          ? props.links.map((link, index) =>
-              index < 2 ? (
+          ? props.links.map(
+              (link, index) => (
+                // index < 2 ? (
                 <a
                   key={props.name + index}
                   href={link.link}
@@ -71,18 +72,19 @@ const ProjectCard = (props) => {
                 >
                   {projectLabels[link.type]}
                 </a>
-              ) : (
-                ''
               )
+              //) : (
+              //  ''
+              // )
             )
           : ''}
-        <Link
+        {/* <Link
           className='projectCard__linkContainer__link projectCard__linkContainer__link__plus'
           to={'/project/?name=' + props.name}
         >
           {' '}
           <BsPlusCircleFill />
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

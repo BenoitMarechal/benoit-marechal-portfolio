@@ -18,7 +18,9 @@ const ProjectSearchBar = (props) => {
         placeholder='rechercher parmi les projets...'
         onChange={props.onSearch}
       ></input>
-      <BsSearch className='projects__main__search__searchBar__icon' />
+      <div className='projects__main__search__searchBar__iconContainer'>
+        <BsSearch className='projects__main__search__searchBar__iconContainer__icon' />
+      </div>
     </div>
   );
 };

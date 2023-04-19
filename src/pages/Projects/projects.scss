@@ -1,5 +1,4 @@
 .projects__main {
-  border: 1px solid red;
   &__h1 {
   }
   &__search {
@@ -11,13 +10,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 60%;
-      //width: 500px;
+      width: 100%;
       flex-grow: 1;
-      border: 1px solid red;
       height: 50px;
-      background-color: $color-secondary-darker-30;
+      //background-color: $color-secondary-darker-30;
       font-size: 1.5rem;
+      //border-radius: 17px;
+      // border: 2px solid $color-primary;
 
       &__label {
         display: none;
@@ -25,11 +24,46 @@
       &__input {
         display: flex;
         width: 100%;
-        height: 100%;
+        //height: 100%;
+        height: 50px;
+        padding: 0;
+        padding-left: 10px;
+        border: none;
+        border-radius: 10px 0px 0px 10px;
+        border-left: 2px solid $color-primary-darker-10;
+        border-top: 2px solid $color-primary-darker-10;
+        border-bottom: 2px solid $color-primary-darker-10;
+
+        &:focus {
+          outline: none;
+          // border: none;
+        }
+        &:active {
+          //outline: none;
+          //  border: none;
+        }
+        &:hover {
+          // outline: none;
+          // border: none;
+          // transform: none;
+        }
       }
-      &__icon {
+      &__iconContainer {
         display: flex;
+        justify-content: center;
+        align-items: center;
         width: 50px;
+        margin: -2px;
+        height: 100%;
+        background-color: $color-secondary-darker-30;
+        border: none;
+        border-radius: 0px 10px 10px 0px;
+        border-right: 2px solid $color-primary-darker-10;
+        border-top: 2px solid $color-primary-darker-10;
+        border-bottom: 2px solid $color-primary-darker-10;
+
+        &__icon {
+        }
       }
     }
     &__empty {
@@ -40,9 +74,6 @@
   &__projectsContainer {
     margin-top: 50px;
     width: 100%;
-    // display: flex;
-    // flex-wrap: wrap;
-    //justify-content: space-between;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 30px;

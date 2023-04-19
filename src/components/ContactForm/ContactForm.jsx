@@ -142,6 +142,7 @@ const HookForm = () => {
       ref={form}
     >
       <h1 className='contactForm__h1'>CONTACT</h1>
+      <h2 className='contactForm__h2'>Envoyez-moi un mail!</h2>
       {inputProps.map((input, index) => (
         <ContactInput
           key={'input' + index}
