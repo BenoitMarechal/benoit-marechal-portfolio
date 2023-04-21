@@ -90,7 +90,7 @@
       }
     ],
     "tags": "user-stories kanban maquette",
-    "abstract": "Confection de maquettes desktop et mobile sur Figma pour une appli de soutien scolaire. Rédaction des user stories, de diagrammes de cas d'usage et dun tableau kanban."
+    "abstract": "Confection de maquettes desktop et mobile sur Figma pour une appli de soutien scolaire. Rédaction des user stories, de diagrammes de cas d'usage et d'un tableau kanban."
   },
   {
     "name": "Kaza",
@@ -116,7 +116,7 @@
       }
     ],
     "tags": "html css sass JavaScript React intégration responsive graphiques Recharts",
-    "abstract": "Création sur React d’une appli dédiée au sport et à l’archivage des performances des utilisateurs. Utilisation de Recharts pour les nombreux graphiques. La récupération des données peut se faire soit par des données mockées, soit par des calls API ( option non disponible en ligne pour l’instant, le back-end n’étant pas hébérgé)"
+    "abstract": "Création sur React d’une appli dédiée au sport et à l’archivage des performances des utilisateurs. Utilisation de Recharts pour les nombreux graphiques. La récupération des données peut se faire soit par des données mockées, soit par des calls API."
   },
   {
     "name": "ArgentBank",

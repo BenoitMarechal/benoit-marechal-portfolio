@@ -41,16 +41,14 @@
       left: 0;
       right: 0;
       @include projectCard-radius;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       &__abstract {
-        display: flex;
-        height: 100%;
-        align-items: center;
-        justify-content: space-between;
-        margin: 0px 20px;
-        //padding: 15px;
-        &__plus {
-          color: $color-secondary;
-        }
+        //margin: 0px 20px;
+      }
+      &__tagList {
       }
     }
   }

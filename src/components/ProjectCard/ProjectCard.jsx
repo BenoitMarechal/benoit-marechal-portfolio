@@ -6,6 +6,8 @@ import { BsPlusCircleFill } from 'react-icons/bs';
 
 const ProjectCard = (props) => {
   const [modalOpen, setModalOpen] = useState(false);
+  let tagsList = props.tags.split(' ');
+
   function toggleProjectModal() {
     setModalOpen(!modalOpen);
   }
@@ -44,13 +46,12 @@ const ProjectCard = (props) => {
             <div className='projectCard__modalContainer__modal__abstract'>
               {props.abstract}
             </div>
-
-            {/* <Link
-              className='projectCard__modalContainer__modal__abstract__plus'
-              to={'/project/?name=' + props.name}
-            >
-              ...plus
-            </Link> */}
+            <div className='projectCard__modalContainer__modal__tagList'>
+              Mots-clés:{' '}
+              {tagsList.map((tag, index) =>
+                index === tagsList.length - 1 ? tag + '.' : tag + ', '
+              )}
+            </div>
           </div>
         ) : (
           ''
