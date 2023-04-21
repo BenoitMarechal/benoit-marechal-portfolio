@@ -143,6 +143,6 @@
       }
     ],
     "tags": "React Validation algoritmie tailwind",
-    "abstract": "Refonte d’une App Jquery en React+Redux, Validation de formulaire, publication d’un composant React sur npmjs. Mesure de la performances des deux versions sur Google LightHouse. PS: Non disponble sur mobile"
+    "abstract": "Refonte d’une App Jquery en React+Redux, Validation de formulaire, publication d’un composant React sur npmjs. Ajout d'un mode 'dev' caché en haut à droite pour pré-remplir le formulaire et vider la base de données. Mesure de la performances des deux versions sur Google LightHouse. PS: Non disponble sur mobile"
   }
 ]
