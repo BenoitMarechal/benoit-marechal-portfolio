@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import projectLabels from '../../assets/projectLabels.json';
-import { Link } from 'react-router-dom';
-import { BsPlusCircleFill } from 'react-icons/bs';
+
 //import logo from '../../../public/projectImages/argentbank/overview.png';
 
 const ProjectCard = (props) => {
+  console.log(props);
   const [modalOpen, setModalOpen] = useState(false);
   let tagsList = props.tags.split(' ');
 
@@ -60,32 +60,19 @@ const ProjectCard = (props) => {
 
       <div className='projectCard__linkContainer'>
         {props.links
-          ? props.links.map(
-              (link, index) => (
-                // index < 2 ? (
-                <a
-                  key={props.name + index}
-                  href={link.link}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='projectCard__linkContainer__link'
-                  style={{ order: { index } }}
-                >
-                  {projectLabels[link.type]}
-                </a>
-              )
-              //) : (
-              //  ''
-              // )
-            )
+          ? props.links.map((link, index) => (
+              <a
+                key={props.name + index}
+                href={link.link}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='projectCard__linkContainer__link'
+                style={{ order: { index } }}
+              >
+                {projectLabels[link.type]}
+              </a>
+            ))
           : ''}
-        {/* <Link
-          className='projectCard__linkContainer__link projectCard__linkContainer__link__plus'
-          to={'/project/?name=' + props.name}
-        >
-          {' '}
-          <BsPlusCircleFill />
-        </Link> */}
       </div>
     </div>
   );
