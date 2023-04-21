@@ -54,14 +54,17 @@ main {
   align-items: center;
   justify-content: center;
   flex-grow: 1;
-  margin-top: 80px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin: 80px 100px 50px 100px;
   background-color: $color-primary-lighter-20;
   //min-height: 100%;
-  @include screen-950-max {
-    margin: 0px 0px 0px 0px;
+  @include screen-1400-max {
+    margin: 80px 40px 50px 40px;
   }
+
+  // @include screen-950-max {
+  //   margin: 0px 0px 0px 0px;
+  //   padding-top: 60px;
+  // }
 }
 a,
 a:active,

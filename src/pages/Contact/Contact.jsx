@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <div className='app'>
       <Header></Header>
-      <main>
+      <main className='contact'>
         <ContactForm></ContactForm>
       </main>
       <Footer></Footer>

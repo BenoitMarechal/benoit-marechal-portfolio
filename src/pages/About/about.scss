@@ -22,11 +22,26 @@
 
 .videoContainer {
   margin: 20px 0px;
-
   width: 60%;
   height: 550px;
   display: flex;
   justify-content: center;
+  @include screen-1200-max {
+    width: 100%;
+  }
+  @include screen-950-max {
+    height: 400px;
+  }
+  @include screen-800-max {
+    height: 300px;
+  }
+  @include screen-600-max {
+    height: 250px;
+  }
+
+  @include screen-400-max {
+    height: 180px;
+  }
 
   &__player {
     display: flex;

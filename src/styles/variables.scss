@@ -224,6 +224,18 @@ $color-tertiary-lighter-30: lighten($color-tertiary, 30%);
   margin: 15px 0px;
 }
 
+@mixin screen-400-max {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+
+@mixin screen-600-max {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
 @mixin screen-800-min {
   @media (min-width: 800px) {
     @content;
@@ -231,6 +243,17 @@ $color-tertiary-lighter-30: lighten($color-tertiary, 30%);
 }
 @mixin screen-800-max {
   @media (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin screen-1200-max {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin screen-1400-max {
+  @media (max-width: 1400px) {
     @content;
   }
 }

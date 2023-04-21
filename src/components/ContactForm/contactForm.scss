@@ -1,3 +1,10 @@
+.contact {
+  @include screen-950-max {
+    margin: 0px 0px 0px 0px;
+    padding-top: 60px;
+  }
+}
+
 .contactForm {
   margin-bottom: 20px;
   width: 40%;
@@ -14,7 +21,8 @@
     // background-color: red;
     //height: 100%;
     width: 100%;
-    margin: $headerHeigth 0px 0px 0px;
+    //margin: $headerHeigth 0px 0px 0px;
+    margin: 0px;
     border-radius: 0;
     padding: 0;
   }
