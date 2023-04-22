@@ -4,8 +4,7 @@ import projectLabels from '../../assets/projectLabels.json';
 //import logo from '../../../public/projectImages/argentbank/overview.png';
 
 const ProjectCard = (props) => {
-  console.log(props);
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
   let tagsList = props.tags.split(' ');
   //console.log(props);
   let folderName = props.name.toLowerCase().replace(/\s/g, '');

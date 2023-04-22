@@ -75,15 +75,24 @@
       color: $color-secondary;
       font-size: 1.5rem;
     }
+    &__tagsContainer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
   }
   &__projectsContainer {
     margin-top: 50px;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     column-gap: 30px;
     row-gap: 30px;
     min-height: 357px;
+    @include screen-1200-max {
+      grid-template-columns: 1fr;
+      row-gap: 60px;
+    }
   }
 }
 

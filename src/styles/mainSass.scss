@@ -57,8 +57,11 @@ main {
   margin: 80px 100px 50px 100px;
   background-color: $color-primary-lighter-20;
   //min-height: 100%;
-  @include screen-1400-max {
+  @include screen-1500-max {
     margin: 80px 40px 50px 40px;
+  }
+  @include screen-600-max {
+    margin: 80px 15px 50px 15px;
   }
 
   // @include screen-950-max {

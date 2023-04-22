@@ -13,6 +13,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+
     &__title {
       background-color: $color-secondary-darker-10;
       width: 100%;
@@ -25,10 +26,25 @@
       padding: 10px 0px;
     }
     &__overview {
-      height: 250px;
+      height: 350px;
       width: 100%;
       object-fit: contain;
       @include screen-1200-max {
+        height: 450px;
+        @include screen-950-max {
+          height: 400px;
+        }
+      }
+      @include screen-800-max {
+        height: 350px;
+      }
+      @include screen-700-max {
+        height: 300px;
+      }
+      @include screen-600-max {
+        height: 250px;
+      }
+      @include screen-450-max {
         height: 200px;
       }
     }
@@ -41,14 +57,34 @@
       left: 0;
       right: 0;
       @include projectCard-radius;
-      padding: 20px;
+      padding: 20px 5px 20px 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      @include screen-600-max {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+      }
+
       &__abstract {
-        //margin: 0px 20px;
+        overflow-y: auto;
+        //margin: 0px 10px;
+        height: 85%;
+        padding-right: 20px;
+        margin-bottom: 10px;
+        @include screen-600-max {
+          display: flex;
+          align-items: center;
+          //justify-content: center;
+        }
       }
       &__tagList {
+        height: 15%;
+        border-top: 1px solid white;
       }
     }
   }

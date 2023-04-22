@@ -229,9 +229,19 @@ $color-tertiary-lighter-30: lighten($color-tertiary, 30%);
     @content;
   }
 }
+@mixin screen-450-max {
+  @media (max-width: 450px) {
+    @content;
+  }
+}
 
 @mixin screen-600-max {
   @media (max-width: 600px) {
+    @content;
+  }
+}
+@mixin screen-700-max {
+  @media (max-width: 700px) {
     @content;
   }
 }
@@ -254,6 +264,16 @@ $color-tertiary-lighter-30: lighten($color-tertiary, 30%);
 }
 @mixin screen-1400-max {
   @media (max-width: 1400px) {
+    @content;
+  }
+}
+@mixin screen-1300-max {
+  @media (max-width: 1300px) {
+    @content;
+  }
+}
+@mixin screen-1500-max {
+  @media (max-width: 1500px) {
     @content;
   }
 }

@@ -26,7 +26,8 @@
     ],
     "tags": "html css animations sass intégration",
     "abstract": [
-      "Introduction à Sass et aux animations css sur un site de restauration. Carte blanche pour le loader de 3s au chargement de la page principale, puis reproduction imposée par le cahier des charges pour l’apparition progressive des menus et leur animation au survol de la souris. "
+      "Introduction à Sass et aux animations css sur un site de restauration.",
+      " Carte blanche pour le loader de 3s au chargement de la page principale, puis reproduction imposée par le cahier des charges pour l’apparition progressive des menus et leur animation au survol de la souris. "
     ]
   },
   {
@@ -60,7 +61,10 @@
     ],
     "tags": "html css sass JavaScript intégration POO responsive",
     "abstract": [
-      "Programmation en JavaScript orienté objet d’une plateforme de photographes accessible aux personnes en situation de handicap. La navigation est possible au clavier et le site est compatible avec les lecteurs d’écran type NVDA. Un système de hashtags permet de trier les photographes et leurs photos ou vidéos par thèmes. Les photos et les vidéos sont traitées de manières différentes grâce à un factory design pattern."
+      "Programmation en JavaScript orienté objet d’une plateforme de photographes accessible aux personnes en situation de handicap. ",
+      "La navigation est possible au clavier et le site est compatible avec les lecteurs d’écran type NVDA.",
+      " Un système de hashtags permet de trier les photographes et leurs photos ou vidéos par thèmes.",
+      " Les photos et les vidéos sont traitées de manières différentes grâce à un factory design pattern."
     ]
   },
 
@@ -78,7 +82,9 @@
     ],
     "tags": "html css sass JavaScript intégration POO responsive bootstrap algorithmie",
     "abstract": [
-      "Intégration maquette sur bootstrap + JavaScript orienté objet. ‘Les petits plats’ est un site de recettes avec une section de recherche par frappe clavier et/ou par clic sur des mots-clés de différentes catégories (ingrédient, ustensile, appareil). Pour l’exercice, deux algorithmes de recherches différents (chacun sur une branche gitHub) ont été développés, puis leurs performances respectives ont été comparées sur JsBench."
+      "Intégration maquette sur bootstrap + JavaScript orienté objet.",
+      " ‘Les petits plats’ est un site de recettes avec une section de recherche par frappe clavier et/ou par clic sur des mots-clés de différentes catégories (ingrédient, ustensile, appareil).",
+      " Pour l’exercice, deux algorithmes de recherches différents (chacun sur une branche gitHub) ont été développés, puis leurs performances respectives ont été comparées sur JsBench."
     ]
   },
   {
@@ -105,7 +111,8 @@
     ],
     "tags": "user-stories kanban maquette",
     "abstract": [
-      "Confection de maquettes desktop et mobile sur Figma pour une appli de soutien scolaire. Rédaction des user stories, de diagrammes de cas d'usage et d'un tableau kanban."
+      "Confection de maquettes desktop et mobile sur Figma pour une appli de soutien scolaire.",
+      " Rédaction des user stories, de diagrammes de cas d'usage et d'un tableau kanban."
     ]
   },
   {
@@ -135,7 +142,8 @@
     ],
     "tags": "html css sass JavaScript React intégration responsive graphiques Recharts",
     "abstract": [
-      "Création sur React d’une appli dédiée au sport et à l’archivage des performances des utilisateurs. Utilisation de Recharts pour les nombreux graphiques. La récupération des données peut se faire soit par des données mockées, soit par des calls API."
+      "Création sur React d’une appli dédiée au sport et à l’archivage des performances des utilisateurs. ",
+      "Utilisation de Recharts pour les nombreux graphiques. La récupération des données peut se faire soit par des données mockées, soit par des calls API."
     ]
   },
   {
@@ -146,9 +154,10 @@
         "type": "repo"
       }
     ],
-    "tags": "React API",
+    "tags": "React API rest",
     "abstract": [
-      "Gestion des calls API sur une app bancaire (React et Redux): Authentification, LogIn/LogOut, Gestion du ‘remember me’, Modification du profil utilisateur. Documentation de l’API (Swagger/yaml)"
+      "Sur une app bancaire codée avec React et Redux, développement des fonctions et des calls API permettant l'authentification,  le LogIn/LogOut avec gestion du ‘remember me’ ainsi que la modification du profil utilisateur.",
+      " Documentation de l’API (Swagger/yaml)."
     ]
   },
   {
@@ -166,7 +175,10 @@
     ],
     "tags": "React Validation algoritmie tailwind",
     "abstract": [
-      "Refonte d’une App Jquery en React+Redux, Validation de formulaire, publication d’un composant React sur npmjs. Ajout d'un mode 'dev' caché en haut à droite pour pré-remplir le formulaire et vider la base de données. Mesure de la performances des deux versions sur Google LightHouse. PS: Non disponble sur mobile"
+      "Refonte d’une App Jquery en React+Redux, Validation de formulaire, publication d’un composant React sur npmjs.",
+      " Ajout d'un mode 'dev' caché en haut à droite pour pré-remplir le formulaire et vider la base de données.",
+      " Mesure de la performances des deux versions sur Google LightHouse.",
+      " PS: Non disponble sur mobile."
     ]
   }
 ]
