@@ -1,11 +1,8 @@
 .cv-skills__section__content__sub {
   background-color: $color-primary-darker-10;
   color: white;
-  // border: 5px solid white;
   width: 100%;
   border-radius: 15px;
-  //margin: 15px;
-  //margin: 15px 0px;
   @include card-margin;
   display: flex;
   flex-direction: column;
@@ -25,20 +22,35 @@
     padding: 10px 0px 0px 0px;
     margin: 0px 15px 20px 15px;
     width: 90%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    // display: flex;
+    // justify-content: space-between;
+    // flex-wrap: wrap;
     font-size: 0.9rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @include screen-1200-max {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
 
     &__li {
       //list-style: upper-roman;
       //   list-style: '✓';
       list-style: none;
       //border: 1px solid white;
-      width: 48%;
+      //width: 48%;
+      width: 100%;
       padding: 0;
       margin: 2px 0px 5px 0px;
       font-size: 1.1rem;
+      @include screen-1200-max {
+        margin-left: 30%;
+      }
+      @include screen-900-max {
+        margin-left: 20%;
+      }
+      @include screen-800-max {
+        margin-left: 0;
+      }
 
       //   display: flex;
       //   justify-content: center;
