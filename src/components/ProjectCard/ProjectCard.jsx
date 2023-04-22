@@ -5,12 +5,8 @@ import projectLabels from '../../assets/projectLabels.json';
 
 const ProjectCard = (props) => {
   console.log(props);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(true);
   let tagsList = props.tags.split(' ');
-
-  function toggleProjectModal() {
-    setModalOpen(!modalOpen);
-  }
   //console.log(props);
   let folderName = props.name.toLowerCase().replace(/\s/g, '');
   let overViewPath = './projectImages/' + folderName + '/overview.png';
@@ -44,7 +40,11 @@ const ProjectCard = (props) => {
             }}
           >
             <div className='projectCard__modalContainer__modal__abstract'>
-              {props.abstract}
+              {props.abstract.map((parag, index) => (
+                <React.Fragment key={index}>
+                  {parag} {<br />}
+                </React.Fragment>
+              ))}
             </div>
             <div className='projectCard__modalContainer__modal__tagList'>
               Mots-clés:{' '}

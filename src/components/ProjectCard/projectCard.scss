@@ -27,7 +27,10 @@
     &__overview {
       height: 250px;
       width: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      @include screen-1200-max {
+        height: 200px;
+      }
     }
     &__modal {
       background-color: $color-modal-bg;

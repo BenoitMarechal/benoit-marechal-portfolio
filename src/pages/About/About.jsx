@@ -28,7 +28,7 @@ const About = () => {
           {<YoutubeVid {...videoProps}></YoutubeVid>}
           <p className='aboutContainer__p'>
             Chargé de chiffrer et de mener à bien des études de faisabilité et
-            la réalisation de prototypes ou de démonstrateurs, j’ai dû devenir
+            la réalisation de prototypes ou de démonstrateurs, j’ai pu devenir
             expert dans une technologie complexe (logiciel et machine) pour
             laquelle il n’existait pas à proprement parler de formation
             académique.
@@ -36,7 +36,7 @@ const About = () => {
           <p className='aboutContainer__p'>
             Le poste étant à l’interface entre le technique et le commercial,
             j’ai pu développer mon sens du contact client et de la pédagogie, en
-            participant aux réunions techniques ou en donnant des formations.
+            participant aux réunions techniques et en donnant des formations.
           </p>
           <p className='aboutContainer__p'>
             Travailler au contact des développeurs et développeuses logiciel
@@ -44,9 +44,9 @@ const About = () => {
             aiguisé ma curiosité envers le monde du développement informatique.
           </p>
           <p className='aboutContainer__p'>
-            De part mes centres d'intérêts personnels, c’est vers le web que je
-            me suis tourné pour entamer une reconversion après cette première
-            carrière de douze ans.
+            Attiré par la créativité et le dynamisme du secteur, c’est vers le
+            web que je me suis tourné pour entamer une reconversion après cette
+            première carrière de douze ans.
           </p>
           <p className='aboutContainer__p'>
             Après avoir mené à bien une formation de développeur d’applications

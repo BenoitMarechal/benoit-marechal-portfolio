@@ -6,7 +6,11 @@
       { "link": "https://benoitmarechal.github.io/Livrable2/", "type": "page" }
     ],
     "tags": "html css intégration sémantique responsive",
-    "abstract": "Premier projet OpenClassRooms, l’idée est de faire l’intégration d’une maquette (desktop + responsive) en pur html + css. Personne ne code comme ça, mais il faut bien commencer quelque part! L’occasion également de découvrir l’importance de la sémantique html, nécessaire pour le référencement et l'accessibilité des pages."
+    "abstract": [
+      "Premier projet de mon parcours de formation OpenClassRooms, l’idée est de faire l’intégration d’une maquette (desktop + responsive) en pur html + css.",
+      " Personne ne code comme ça, mais il faut bien commencer quelque part!",
+      " L’occasion également de découvrir l’importance de la sémantique html, nécessaire pour le référencement et l'accessibilité des pages."
+    ]
   },
   {
     "name": "Ohmyfood",
@@ -21,7 +25,9 @@
       }
     ],
     "tags": "html css animations sass intégration",
-    "abstract": "Introduction à Sass et aux animations css sur une site de restauration. Carte blanche pour le loader de 3s au chargement de la page principale, puis reproduction imposée par le cahier des charges pour l’apparition progressive des menus et leur animation au survol de la souris. "
+    "abstract": [
+      "Introduction à Sass et aux animations css sur un site de restauration. Carte blanche pour le loader de 3s au chargement de la page principale, puis reproduction imposée par le cahier des charges pour l’apparition progressive des menus et leur animation au survol de la souris. "
+    ]
   },
   {
     "name": "GameOn",
@@ -36,7 +42,9 @@
       }
     ],
     "tags": "JavaScript Validation",
-    "abstract": "Initiation à JavaScript (vanilla) pour la validation et la gestion des messages d’erreur."
+    "abstract": [
+      "Initiation à JavaScript (vanilla) pour la validation et la gestion des messages d’erreur."
+    ]
   },
   {
     "name": "FishEye",
@@ -51,7 +59,9 @@
       }
     ],
     "tags": "html css sass JavaScript intégration POO responsive",
-    "abstract": "Programmation en JavaScript orienté objet d’une plateforme de photographes accessible aux personnes en situation de handicap. La navigation est possible au clavier et le site doit être compatible avec les lecteurs d’écran type NVDA. Un système de hashtags est implémenté afin de trier les photographes et leurs photos ou vidéos par thèmes. Un factory design pattern permet de traiter différemment les photos et les vidéos."
+    "abstract": [
+      "Programmation en JavaScript orienté objet d’une plateforme de photographes accessible aux personnes en situation de handicap. La navigation est possible au clavier et le site est compatible avec les lecteurs d’écran type NVDA. Un système de hashtags permet de trier les photographes et leurs photos ou vidéos par thèmes. Les photos et les vidéos sont traitées de manières différentes grâce à un factory design pattern."
+    ]
   },
 
   {
@@ -67,7 +77,9 @@
       }
     ],
     "tags": "html css sass JavaScript intégration POO responsive bootstrap algorithmie",
-    "abstract": "Intégration maquette sur bootstrap + JavaScript orienté objet. ‘Les petits plats’ est un site de recettes avec une section de recherche par frappe clavier et/ou par clic sur des mots-clés de différentes catégories (ingrédient, ustensile, appareil). Pour l’exercice, deux algorithmes de recherches différents (chacun sur une branche gitHub) ont été développés, puis leurs performances respectives ont été comparées sur JsBench."
+    "abstract": [
+      "Intégration maquette sur bootstrap + JavaScript orienté objet. ‘Les petits plats’ est un site de recettes avec une section de recherche par frappe clavier et/ou par clic sur des mots-clés de différentes catégories (ingrédient, ustensile, appareil). Pour l’exercice, deux algorithmes de recherches différents (chacun sur une branche gitHub) ont été développés, puis leurs performances respectives ont été comparées sur JsBench."
+    ]
   },
   {
     "name": "Billed",
@@ -79,7 +91,9 @@
     ],
 
     "tags": "test jest",
-    "abstract": "Sur une appli de gestion de note de frais, le but du projet est de débugger une liste de tickets et d'implémenter des tests Jest pour obtenir un taux de couverture de 100%."
+    "abstract": [
+      "Appli de gestion de note de frais. Le but du projet est de débugger une liste de tickets et d'implémenter des tests Jest pour obtenir un taux de couverture de 100%."
+    ]
   },
   {
     "name": "Learn@home",
@@ -90,7 +104,9 @@
       }
     ],
     "tags": "user-stories kanban maquette",
-    "abstract": "Confection de maquettes desktop et mobile sur Figma pour une appli de soutien scolaire. Rédaction des user stories, de diagrammes de cas d'usage et d'un tableau kanban."
+    "abstract": [
+      "Confection de maquettes desktop et mobile sur Figma pour une appli de soutien scolaire. Rédaction des user stories, de diagrammes de cas d'usage et d'un tableau kanban."
+    ]
   },
   {
     "name": "Kaza",
@@ -105,7 +121,9 @@
       }
     ],
     "tags": "html css sass JavaScript React intégration responsive",
-    "abstract": "Intégration sous React et React Router d’une appli de recherche d’appartements."
+    "abstract": [
+      "Intégration sous React et React Router d’une appli de recherche d’appartements."
+    ]
   },
   {
     "name": "SportSee",
@@ -116,7 +134,9 @@
       }
     ],
     "tags": "html css sass JavaScript React intégration responsive graphiques Recharts",
-    "abstract": "Création sur React d’une appli dédiée au sport et à l’archivage des performances des utilisateurs. Utilisation de Recharts pour les nombreux graphiques. La récupération des données peut se faire soit par des données mockées, soit par des calls API."
+    "abstract": [
+      "Création sur React d’une appli dédiée au sport et à l’archivage des performances des utilisateurs. Utilisation de Recharts pour les nombreux graphiques. La récupération des données peut se faire soit par des données mockées, soit par des calls API."
+    ]
   },
   {
     "name": "ArgentBank",
@@ -127,7 +147,9 @@
       }
     ],
     "tags": "React API",
-    "abstract": "Gestion des calls API sur une app bancaire (React et Redux): Authentification, LogIn/LogOut, Gestion du ‘remember me’, Modification du profil utilisateur. Documentation de l’API (Swagger/yaml)"
+    "abstract": [
+      "Gestion des calls API sur une app bancaire (React et Redux): Authentification, LogIn/LogOut, Gestion du ‘remember me’, Modification du profil utilisateur. Documentation de l’API (Swagger/yaml)"
+    ]
   },
   {
     "name": "HRNet",
@@ -143,6 +165,8 @@
       }
     ],
     "tags": "React Validation algoritmie tailwind",
-    "abstract": "Refonte d’une App Jquery en React+Redux, Validation de formulaire, publication d’un composant React sur npmjs. Ajout d'un mode 'dev' caché en haut à droite pour pré-remplir le formulaire et vider la base de données. Mesure de la performances des deux versions sur Google LightHouse. PS: Non disponble sur mobile"
+    "abstract": [
+      "Refonte d’une App Jquery en React+Redux, Validation de formulaire, publication d’un composant React sur npmjs. Ajout d'un mode 'dev' caché en haut à droite pour pré-remplir le formulaire et vider la base de données. Mesure de la performances des deux versions sur Google LightHouse. PS: Non disponble sur mobile"
+    ]
   }
 ]
