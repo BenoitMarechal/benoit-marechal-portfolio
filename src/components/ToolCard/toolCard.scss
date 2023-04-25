@@ -17,6 +17,10 @@
   @include screen-400-max {
     width: 100%;
   }
+  //transform: scaleY(0.4);
+  // opacity: 0;
+  // transform-origin: top;
+  //animation: cvSection 0.5s ease-in forwards;
 
   cursor: pointer;
   &__link {

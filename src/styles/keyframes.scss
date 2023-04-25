@@ -1,0 +1,19 @@
+@keyframes cvSection {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  50% {
+    opacity: 0.1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  85% {
+    opacity: 0.45;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
