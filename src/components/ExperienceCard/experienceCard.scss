@@ -13,6 +13,10 @@
   color: $color-tertiary-lighter-10;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   font-size: 1.1rem;
+  //////transfo
+  transform: scaleY(0, 0);
+  opacity: 0;
+  animation: sectionContent 0.5s ease-in-out forwards;
   &__h3 {
     margin-left: 15px;
     @include screen-800-max {

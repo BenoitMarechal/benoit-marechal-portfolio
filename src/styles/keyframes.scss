@@ -1,7 +1,7 @@
-@keyframes cvSection {
+@keyframes sectionContent {
   0% {
     opacity: 0;
-    transform: scaleY(0);
+    transform: scaleY(0, 0);
   }
   50% {
     opacity: 0.1;
@@ -10,10 +10,48 @@
     opacity: 0.2;
   }
   85% {
-    opacity: 0.45;
+    opacity: 0.35;
   }
   100% {
     opacity: 1;
-    transform: scaleY(1);
+    transform: scaleY(1, 1);
+  }
+}
+
+@keyframes sectionHeight {
+  0% {
+    height: 0px;
+  }
+  25% {
+    height: 50px;
+  }
+  50% {
+    height: 120px;
+  }
+  75% {
+    height: 250px;
+  }
+
+  100% {
+    height: auto;
+  }
+}
+
+@keyframes sharedSections {
+  0% {
+    height: 0px;
+  }
+  25% {
+    height: 50px;
+  }
+  50% {
+    height: 120px;
+  }
+  75% {
+    height: 250px;
+  }
+
+  100% {
+    height: $sharedSectionHeight;
   }
 }
