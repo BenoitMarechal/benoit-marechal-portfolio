@@ -15,6 +15,9 @@
     justify-content: center;
     align-items: center;
     margin: 10px;
+    @include screen-800-max {
+      font-size: 1.1rem;
+    }
   }
 
   &__ul {
@@ -30,6 +33,12 @@
     grid-template-columns: 1fr 1fr;
     @include screen-1200-max {
       grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include screen-700-max {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include screen-400-max {
+      grid-template-columns: 1fr;
     }
 
     &__li {
@@ -50,6 +59,9 @@
       }
       @include screen-800-max {
         margin-left: 0;
+      }
+      @include screen-600-max {
+        font-size: 0.9rem;
       }
 
       //   display: flex;
