@@ -17,10 +17,10 @@
   @include screen-400-max {
     width: 100%;
   }
-  transform: scale(0, 0);
-  transform-origin: top;
-  opacity: 0;
-  animation: sectionContent 0.3s ease-in-out forwards;
+  // transform: scale(0, 0);
+  // transform-origin: top;
+  // opacity: 0;
+  // animation: sectionContent 0.3s ease-in-out forwards;
   cursor: pointer;
   &__link {
     font-size: 1.2rem;
