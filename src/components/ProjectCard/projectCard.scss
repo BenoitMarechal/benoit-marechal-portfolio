@@ -8,11 +8,7 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border: 2px solid $color-secondary-lighter-10;
   text-align: justify;
-  ///////anim
-  transform: scale(0, 0);
-  transform-origin: top;
-  opacity: 0;
-  animation: appear 0.1s ease-in-out forwards;
+
   &__modalContainer {
     position: relative;
     width: 100%;
@@ -54,6 +50,10 @@
       }
     }
     &__modal {
+      ///////anim
+      transform: scale(0, 0);
+      transform-origin: center;
+      animation: appear 0.1s ease-in-out forwards;
       background-color: $color-modal-bg;
       color: $color-secondary;
       position: absolute;
