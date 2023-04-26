@@ -26,7 +26,21 @@ const FieldSection = (props) => {
           <VscTriangleDown className='section__title__icon' />
         )}{' '}
       </button>
-      {open ? props.content : ''}
+
+      <div
+        className={
+          open
+            ? 'section__content__open ' +
+              props.class +
+              '__section__content__open'
+            : 'section__content__closed ' +
+              props.class +
+              '__section__content__closed'
+        }
+      >
+        {props.content}
+      </div>
+      {/* {open ? props.content : ''} */}
     </div>
   );
 };

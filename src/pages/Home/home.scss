@@ -19,7 +19,7 @@
   border: none;
   flex-wrap: nowrap;
   align-items: stretch;
-  min-height: 100px;
+  min-height: $sectionMinHeight;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 5px 10px 0px,
     rgba(60, 64, 67, 0.15) 0px 4px 6px 4px;
   position: relative;
@@ -52,23 +52,22 @@
       padding-top: 5px;
     }
   }
-  &__content {
+  &__content__open {
     width: 100%;
     margin: 35px 15px 15px 15px;
     display: flex;
-    // height: 0px;
-    //display: none;
     flex-direction: column;
     justify-content: space-between;
     animation: sectionHeight 0.2s cubic-bezier(0.5, 0.29, 0.25, 1.29) forwards;
-    //border: 2px solid red;
-    /////partie a animer
-    //height: auto;
-
-    //opacity: 0;
-    //transform-origin: top;
-
-    ///
+  }
+  &__content__closed {
+    width: 100%;
+    margin: 35px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: sectionHeightReverse 0.2s cubic-bezier(0.5, 0.29, 0.25, 1.29)
+      reverse;
   }
 }
 .cv {
@@ -190,7 +189,7 @@
     }
   }
   &-tools__section {
-    &__content {
+    &__content__open {
       display: grid !important;
       grid-template-columns: repeat(auto-fill, 250px);
       @include screen-1200-max {
@@ -200,6 +199,28 @@
         display: flex !important;
         flex-direction: column;
         align-items: center;
+      }
+    }
+    &__content__closed {
+      animation: sectionHeightReverse 0.2s cubic-bezier(0.5, 0.29, 0.25, 1.29)
+        forwards;
+      display: grid !important;
+      grid-template-columns: repeat(auto-fill, 250px);
+      @include screen-1200-max {
+        grid-template-columns: repeat(auto-fill, 165px);
+      }
+      @include screen-400-max {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+      }
+      & > div {
+        //background-color: red;
+        //display: none;
+        transform: scale(1, 1);
+        transform-origin: top;
+        // opacity: 1;
+        animation: eraseContent 0.2s ease-in-out forwards;
       }
     }
   }
@@ -238,7 +259,7 @@
     @include screen-1200-max {
       width: 100%;
     }
-    &__content {
+    &__content__open {
       height: $sharedSectionHeight;
       animation: skillsSectionHeight 0.2s cubic-bezier(0.5, 0.29, 0.25, 1.29);
       @include screen-1300-max {
@@ -254,10 +275,5 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: nowrap;
-    // width: 100%;
-
-    // &__content {
-    //   //margin: 5px;
-    // }
   }
 }

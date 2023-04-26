@@ -1,23 +1,3 @@
-@keyframes sectionContent {
-  0% {
-    opacity: 0;
-    transform: scaleY(0, 0);
-  }
-  50% {
-    opacity: 0.1;
-  }
-  75% {
-    opacity: 0.2;
-  }
-  85% {
-    opacity: 0.35;
-  }
-  100% {
-    opacity: 1;
-    transform: scaleY(1, 1);
-  }
-}
-
 @keyframes sectionHeight {
   0% {
     height: 0px;
@@ -37,6 +17,27 @@
   }
 }
 
+@keyframes sectionHeightReverse {
+  0% {
+    height: auto;
+  }
+  50% {
+    height: auto;
+  }
+  55% {
+    height: 250px;
+  }
+  75% {
+    height: 120px;
+  }
+  88% {
+    height: 50px;
+  }
+  100% {
+    height: 0px;
+  }
+}
+
 @keyframes sharedSections {
   0% {
     height: 0px;
@@ -53,5 +54,46 @@
 
   100% {
     height: $sharedSectionHeight;
+  }
+}
+
+@keyframes sectionContent {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  35% {
+    opacity: 0.05;
+    transform: scale(0.2, 0);
+  }
+  99% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes eraseContent {
+  0% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(0.7, 0.5);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.5, 0);
+  }
+  75% {
+    opacity: 0.2;
+    transform: scale(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0, 0);
   }
 }
