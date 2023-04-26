@@ -77,25 +77,6 @@
   }
 }
 
-@keyframes appear {
-  0% {
-    opacity: 0;
-    transform: scale(0, 0);
-  }
-  // 50% {
-  //   opacity: 0;
-  //   transform: scale(0, 0);
-  // }
-  // 55% {
-  //   opacity: 0.2;
-  //   transform: scale(0.4, 0.2);
-  // }
-  100% {
-    opacity: 1;
-    transform: scale(1, 1);
-  }
-}
-
 @keyframes eraseContent {
   0% {
     opacity: 1;
@@ -116,5 +97,27 @@
   100% {
     opacity: 0;
     transform: scale(0, 0);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes burger {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
   }
 }
