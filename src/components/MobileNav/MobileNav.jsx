@@ -24,13 +24,13 @@ const MobileNav = (props) => {
         <div className='header__mobileNav__background'>
           <FocusTrap>
             <nav className='header__mobileNav__background__nav'>
-              <span
+              <button
                 tabIndex='0'
                 className='header__mobileNav__background__nav__closeBtn'
                 onClick={toggleOpen}
               >
                 <ImCross />
-              </span>
+              </button>
               {navBarContent.map((elt, index) => {
                 return elt.type === 'regular' ? (
                   <MenuItem

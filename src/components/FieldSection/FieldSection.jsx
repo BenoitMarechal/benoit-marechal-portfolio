@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { VscTriangleDown, VscTriangleUp } from 'react-icons/vsc';
-// notes pour implementer click outside
-// https://stackoverflow.com/questions/32553158/detect-click-outside-react-component
 
 const FieldSection = (props) => {
   // console.log('props fieldset');
   // console.log(props);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(undefined);
   function toggleOpen() {
     setOpen(!open);
   }
@@ -27,7 +25,24 @@ const FieldSection = (props) => {
         )}{' '}
       </button>
 
-      <div
+      {open === undefined ? (
+        ''
+      ) : (
+        <div
+          className={
+            open
+              ? 'section__content__open ' +
+                props.class +
+                '__section__content__open'
+              : 'section__content__closed ' +
+                props.class +
+                '__section__content__closed'
+          }
+        >
+          {props.content}
+        </div>
+      )}
+      {/* <div
         className={
           open
             ? 'section__content__open ' +
@@ -39,7 +54,7 @@ const FieldSection = (props) => {
         }
       >
         {props.content}
-      </div>
+      </div> */}
       {/* {open ? props.content : ''} */}
     </div>
   );
