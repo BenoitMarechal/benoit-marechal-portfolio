@@ -5,11 +5,11 @@ import ExperienceCard from '../ExperienceCard/ExperienceCard.jsx';
 const StudiesContent = () => {
   //   console.log(studies);
   return (
-    <div className='section__content cv-studies__section__content '>
+    <>
       {studies.map((study, index) => (
         <ExperienceCard {...study} key={'studies-' + index} />
       ))}
-    </div>
+    </>
   );
 };
 
