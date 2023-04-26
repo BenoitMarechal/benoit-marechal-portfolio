@@ -14,7 +14,7 @@ $sectionMinHeight: 60px;
 $toolLogoDiameter: 40px;
 $toolCardWidth: 110px;
 $toolCardHeigth: 35px;
-$sharedSectionHeight: 645px;
+$sharedSectionHeight: 660px;
 
 $color-primary-darker-10: darken($color-primary, 10%);
 $color-primary-darker-20: darken($color-primary, 20%);
@@ -303,4 +303,10 @@ $color-tertiary-lighter-30: lighten($color-tertiary, 30%);
 
 @mixin projectCard-radius {
   border-radius: 15px 15px 0px 0px;
+}
+
+@mixin bigOnHover {
+  &:hover {
+    transform: scale(1.03) !important;
+  }
 }

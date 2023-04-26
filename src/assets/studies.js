@@ -31,7 +31,7 @@ export const studies = [
     end: '2005',
   },
   {
-    title: 'Bac S Physique/Chiumie, mention AB',
+    title: 'Bac S Physique/Chimie, mention AB',
     place: 'Lycée Dupuy de Lôme, Lorient',
     //start: '2003',
     end: '2003',

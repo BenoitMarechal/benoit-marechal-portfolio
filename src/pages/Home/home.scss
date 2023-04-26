@@ -52,22 +52,32 @@
       padding-top: 5px;
     }
   }
-  &__content__open {
-    width: 100%;
-    margin: 35px 15px 15px 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    animation: sectionHeight 0.2s cubic-bezier(0.5, 0.29, 0.25, 1.29) forwards;
-  }
+  //generic2s0.
+  &__content__open,
   &__content__closed {
     width: 100%;
     margin: 35px 15px 15px 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    animation: sectionHeightReverse 0.2s cubic-bezier(0.5, 0.29, 0.25, 1.29)
-      reverse;
+  }
+  //generic
+  &__content__open {
+    animation: sectionHeight 0.3s cubic-bezier(0.5, 0.29, 0.25, 1.29) forwards;
+    & > div {
+      transform: scale(0, 0);
+      transform-origin: top;
+      opacity: 0;
+      animation: sectionContent 0.3s ease-in-out forwards;
+    }
+  } //generic
+  &__content__closed {
+    animation: sectionHeightReverse 0.3s cubic-bezier(0.5, 0.29, 0.25, 1.29)
+      forwards;
+    & > div {
+      transform-origin: top;
+      animation: eraseContent 0.3s ease-in-out forwards;
+    }
   }
 }
 .cv {
@@ -189,21 +199,8 @@
     }
   }
   &-tools__section {
-    &__content__open {
-      display: grid !important;
-      grid-template-columns: repeat(auto-fill, 250px);
-      @include screen-1200-max {
-        grid-template-columns: repeat(auto-fill, 165px);
-      }
-      @include screen-400-max {
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-      }
-    }
+    &__content__open,
     &__content__closed {
-      animation: sectionHeightReverse 0.2s cubic-bezier(0.5, 0.29, 0.25, 1.29)
-        forwards;
       display: grid !important;
       grid-template-columns: repeat(auto-fill, 250px);
       @include screen-1200-max {
@@ -214,15 +211,19 @@
         flex-direction: column;
         align-items: center;
       }
-      & > div {
-        //background-color: red;
-        //display: none;
-        transform: scale(1, 1);
-        transform-origin: top;
-        // opacity: 1;
-        animation: eraseContent 0.2s ease-in-out forwards;
-      }
     }
+    // &__content__closed {
+    //   display: grid !important;
+    //   grid-template-columns: repeat(auto-fill, 250px);
+    //   @include screen-1200-max {
+    //     grid-template-columns: repeat(auto-fill, 165px);
+    //   }
+    //   @include screen-400-max {
+    //     display: flex !important;
+    //     flex-direction: column;
+    //     align-items: center;
+    //   }
+    // }
   }
   &-skills__section {
     width: 35%;
@@ -235,14 +236,13 @@
       width: 100%;
     }
 
-    &__content {
+    &__content__open {
       display: flex;
       flex-direction: column;
       align-content: center;
       font-size: 1.1rem;
       height: $sharedSectionHeight;
-      animation: skillsSectionHeight 0.2s cubic-bezier(0.5, 0.29, 0.25, 1.29)
-        forwards;
+      animation: sharedSection 0.3s cubic-bezier(0.5, 0.29, 0.25, 1.29) forwards;
       @include screen-1300-max {
         height: 700px;
       }
@@ -261,7 +261,7 @@
     }
     &__content__open {
       height: $sharedSectionHeight;
-      animation: skillsSectionHeight 0.2s cubic-bezier(0.5, 0.29, 0.25, 1.29);
+      animation: sharedSection 0.3s cubic-bezier(0.5, 0.29, 0.25, 1.29) forwards;
       @include screen-1300-max {
         height: 700px;
       }
