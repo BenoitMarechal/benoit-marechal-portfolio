@@ -1,4 +1,4 @@
-footer {
+.footer {
   background-color: $color-primary;
   color: $color-secondary;
   display: flex;
@@ -6,4 +6,46 @@ footer {
   align-items: center;
   justify-content: center;
   //margin-top: 50px;
+  &__container {
+    //width: 49%;
+    //border: 1px solid green;
+    // margin: 0px 50%;
+    display: flex;
+    justify-content: space-between;
+    @include screen-600-max {
+      flex-direction: column;
+      padding: 10px 0px;
+    }
+  }
+  &__p {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: justify;
+    //width: 100%;
+    // border: 1px solid red;
+    margin: 50px 15px;
+    @include screen-600-max {
+      margin: 5px 15px;
+    }
+    @include screen-400-max {
+      font-size: 0.9rem;
+    }
+    // height: 60px;
+    // border: 1px solid red;
+    &__a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //  height: 60px;
+      //  border: 1px solid red;
+      margin-left: 8px;
+      font-size: 2rem;
+      color: $color-secondary;
+      @include screen-400-max {
+        font-size: 1.3rem;
+      }
+    }
+  }
 }
